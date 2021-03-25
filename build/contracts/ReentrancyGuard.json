@@ -1,0 +1,681 @@
+{
+  "contractName": "ReentrancyGuard",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.9+commit.3e3065ac\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"DODO Breeder\",\"methods\":{},\"title\":\"ReentrancyGuard\"},\"userdoc\":{\"methods\":{},\"notice\":\"Protect functions from Reentrancy Attack\"}},\"settings\":{\"compilationTarget\":{\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/ReentrancyGuard.sol\":\"ReentrancyGuard\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/ReentrancyGuard.sol\":{\"keccak256\":\"0xc9c3fc946350fd72083a9d5b1327ff923533ef37b054bc7b6007562b20b0faaf\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fc140417457139fb240427629673bfaf970c5d4568ad1cfe582764c6e4855bbb\",\"dweb:/ipfs/Qmd7ESYe5kyM6NYiSzeFE74f1YGGPXzpdVd5qnYg2AvgH8\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220b72323c12a5d43a5247934184ee2441678243b582aa80c21ec0a7ce8634141cd64736f6c63430006090033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220b72323c12a5d43a5247934184ee2441678243b582aa80c21ec0a7ce8634141cd64736f6c63430006090033",
+  "immutableReferences": {},
+  "sourceMap": "249:362:22:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "249:362:22:-:0;;;;;",
+  "source": "/*\n\n    Copyright 2020 DODO ZOO.\n    SPDX-License-Identifier: Apache-2.0\n\n*/\n\npragma solidity 0.6.9;\npragma experimental ABIEncoderV2;\n\n/**\n * @title ReentrancyGuard\n * @author DODO Breeder\n *\n * @notice Protect functions from Reentrancy Attack\n */\ncontract ReentrancyGuard {\n    // https://solidity.readthedocs.io/en/latest/control-structures.html?highlight=zero-state#scoping-and-declarations\n    // zero-state of _ENTERED_ is false\n    bool private _ENTERED_;\n\n    modifier preventReentrant() {\n        require(!_ENTERED_, \"REENTRANT\");\n        _ENTERED_ = true;\n        _;\n        _ENTERED_ = false;\n    }\n}\n",
+  "sourcePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/ReentrancyGuard.sol",
+  "ast": {
+    "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/ReentrancyGuard.sol",
+    "exportedSymbols": {
+      "ReentrancyGuard": [
+        3755
+      ]
+    },
+    "id": 3756,
+    "license": "Apache-2.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3732,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".9"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "78:22:22"
+      },
+      {
+        "id": 3733,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "101:33:22"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 3734,
+          "nodeType": "StructuredDocumentation",
+          "src": "136:112:22",
+          "text": " @title ReentrancyGuard\n @author DODO Breeder\n @notice Protect functions from Reentrancy Attack"
+        },
+        "fullyImplemented": true,
+        "id": 3755,
+        "linearizedBaseContracts": [
+          3755
+        ],
+        "name": "ReentrancyGuard",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 3736,
+            "mutability": "mutable",
+            "name": "_ENTERED_",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 3755,
+            "src": "439:22:22",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 3735,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "439:4:22",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 3753,
+              "nodeType": "Block",
+              "src": "496:113:22",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3740,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "UnaryOperation",
+                        "operator": "!",
+                        "prefix": true,
+                        "src": "514:10:22",
+                        "subExpression": {
+                          "argumentTypes": null,
+                          "id": 3739,
+                          "name": "_ENTERED_",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3736,
+                          "src": "515:9:22",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "5245454e5452414e54",
+                        "id": 3741,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "526:11:22",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_40d1ed539991cf8f0c0e2cf9c325da6c7b687870b5825a46b3a1bc60970fec73",
+                          "typeString": "literal_string \"REENTRANT\""
+                        },
+                        "value": "REENTRANT"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_40d1ed539991cf8f0c0e2cf9c325da6c7b687870b5825a46b3a1bc60970fec73",
+                          "typeString": "literal_string \"REENTRANT\""
+                        }
+                      ],
+                      "id": 3738,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "506:7:22",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 3742,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "506:32:22",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3743,
+                  "nodeType": "ExpressionStatement",
+                  "src": "506:32:22"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3746,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 3744,
+                      "name": "_ENTERED_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3736,
+                      "src": "548:9:22",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "74727565",
+                      "id": 3745,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "560:4:22",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "548:16:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 3747,
+                  "nodeType": "ExpressionStatement",
+                  "src": "548:16:22"
+                },
+                {
+                  "id": 3748,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "574:1:22"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3751,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 3749,
+                      "name": "_ENTERED_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3736,
+                      "src": "585:9:22",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "66616c7365",
+                      "id": 3750,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "597:5:22",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "false"
+                    },
+                    "src": "585:17:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 3752,
+                  "nodeType": "ExpressionStatement",
+                  "src": "585:17:22"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3754,
+            "name": "preventReentrant",
+            "nodeType": "ModifierDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 3737,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "493:2:22"
+            },
+            "src": "468:141:22",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 3756,
+        "src": "249:362:22"
+      }
+    ],
+    "src": "78:534:22"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/ReentrancyGuard.sol",
+      "exportedSymbols": {
+        "ReentrancyGuard": [
+          3755
+        ]
+      },
+      "license": "Apache-2.0"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.6",
+            ".9"
+          ]
+        },
+        "id": 3732,
+        "name": "PragmaDirective",
+        "src": "78:22:22"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "experimental",
+            "ABIEncoderV2"
+          ]
+        },
+        "id": 3733,
+        "name": "PragmaDirective",
+        "src": "101:33:22"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            3755
+          ],
+          "name": "ReentrancyGuard",
+          "scope": 3756
+        },
+        "children": [
+          {
+            "attributes": {
+              "text": " @title ReentrancyGuard\n @author DODO Breeder\n @notice Protect functions from Reentrancy Attack"
+            },
+            "id": 3734,
+            "name": "StructuredDocumentation",
+            "src": "136:112:22"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "_ENTERED_",
+              "overrides": null,
+              "scope": 3755,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "bool",
+              "value": null,
+              "visibility": "private"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "bool",
+                  "type": "bool"
+                },
+                "id": 3735,
+                "name": "ElementaryTypeName",
+                "src": "439:4:22"
+              }
+            ],
+            "id": 3736,
+            "name": "VariableDeclaration",
+            "src": "439:22:22"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "name": "preventReentrant",
+              "overrides": null,
+              "virtual": false,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 3737,
+                "name": "ParameterList",
+                "src": "493:2:22"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                },
+                                {
+                                  "typeIdentifier": "t_stringliteral_40d1ed539991cf8f0c0e2cf9c325da6c7b687870b5825a46b3a1bc60970fec73",
+                                  "typeString": "literal_string \"REENTRANT\""
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                -18,
+                                -18
+                              ],
+                              "referencedDeclaration": -18,
+                              "type": "function (bool,string memory) pure",
+                              "value": "require"
+                            },
+                            "id": 3738,
+                            "name": "Identifier",
+                            "src": "506:7:22"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "!",
+                              "prefix": true,
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 3736,
+                                  "type": "bool",
+                                  "value": "_ENTERED_"
+                                },
+                                "id": 3739,
+                                "name": "Identifier",
+                                "src": "515:9:22"
+                              }
+                            ],
+                            "id": 3740,
+                            "name": "UnaryOperation",
+                            "src": "514:10:22"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "5245454e5452414e54",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"REENTRANT\"",
+                              "value": "REENTRANT"
+                            },
+                            "id": 3741,
+                            "name": "Literal",
+                            "src": "526:11:22"
+                          }
+                        ],
+                        "id": 3742,
+                        "name": "FunctionCall",
+                        "src": "506:32:22"
+                      }
+                    ],
+                    "id": 3743,
+                    "name": "ExpressionStatement",
+                    "src": "506:32:22"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 3736,
+                              "type": "bool",
+                              "value": "_ENTERED_"
+                            },
+                            "id": 3744,
+                            "name": "Identifier",
+                            "src": "548:9:22"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "74727565",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "bool",
+                              "type": "bool",
+                              "value": "true"
+                            },
+                            "id": 3745,
+                            "name": "Literal",
+                            "src": "560:4:22"
+                          }
+                        ],
+                        "id": 3746,
+                        "name": "Assignment",
+                        "src": "548:16:22"
+                      }
+                    ],
+                    "id": 3747,
+                    "name": "ExpressionStatement",
+                    "src": "548:16:22"
+                  },
+                  {
+                    "id": 3748,
+                    "name": "PlaceholderStatement",
+                    "src": "574:1:22"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 3736,
+                              "type": "bool",
+                              "value": "_ENTERED_"
+                            },
+                            "id": 3749,
+                            "name": "Identifier",
+                            "src": "585:9:22"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "66616c7365",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "bool",
+                              "type": "bool",
+                              "value": "false"
+                            },
+                            "id": 3750,
+                            "name": "Literal",
+                            "src": "597:5:22"
+                          }
+                        ],
+                        "id": 3751,
+                        "name": "Assignment",
+                        "src": "585:17:22"
+                      }
+                    ],
+                    "id": 3752,
+                    "name": "ExpressionStatement",
+                    "src": "585:17:22"
+                  }
+                ],
+                "id": 3753,
+                "name": "Block",
+                "src": "496:113:22"
+              }
+            ],
+            "id": 3754,
+            "name": "ModifierDefinition",
+            "src": "468:141:22"
+          }
+        ],
+        "id": 3755,
+        "name": "ContractDefinition",
+        "src": "249:362:22"
+      }
+    ],
+    "id": 3756,
+    "name": "SourceUnit",
+    "src": "78:534:22"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.9+commit.3e3065ac.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-03-25T08:51:25.658Z",
+  "devdoc": {
+    "author": "DODO Breeder",
+    "methods": {},
+    "title": "ReentrancyGuard"
+  },
+  "userdoc": {
+    "methods": {},
+    "notice": "Protect functions from Reentrancy Attack"
+  }
+}

@@ -1,0 +1,4028 @@
+{
+  "contractName": "Account",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferPrepared",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "ADMIN",
+      "outputs": [
+        {
+          "internalType": "contract Admin",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "PRICING",
+      "outputs": [
+        {
+          "internalType": "contract Pricing",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "_BASE_BALANCE_",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "_COLLATERAL_POOL_TOKEN_",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "_MARGIN_ACCOUNT_",
+      "outputs": [
+        {
+          "internalType": "enum Types.Side",
+          "name": "SIDE",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "SIZE",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "ENTRY_VALUE",
+          "type": "uint256"
+        },
+        {
+          "internalType": "int256",
+          "name": "CASH_BALANCE",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "_NEW_OWNER_",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "_OWNER_",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "_POOL_INSURANCE_BALANCE_",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "_POOL_MARGIN_ACCOUNT_",
+      "outputs": [
+        {
+          "internalType": "enum Types.Side",
+          "name": "SIDE",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "SIZE",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "ENTRY_VALUE",
+          "type": "uint256"
+        },
+        {
+          "internalType": "int256",
+          "name": "CASH_BALANCE",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "_QUOTE_BALANCE_",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "_R_STATUS_",
+      "outputs": [
+        {
+          "internalType": "enum Types.Side",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "_TARGET_BASE_TOKEN_AMOUNT_",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "_TARGET_QUOTE_TOKEN_AMOUNT_",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "claimOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getPoolMarginSide",
+      "outputs": [
+        {
+          "internalType": "enum Types.Side",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getPoolMarginCashBalance",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getPoolMarginSize",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getPoolMarginEntryValue",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.9+commit.3e3065ac\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferPrepared\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"ADMIN\",\"outputs\":[{\"internalType\":\"contract Admin\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"PRICING\",\"outputs\":[{\"internalType\":\"contract Pricing\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"_BASE_BALANCE_\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"_COLLATERAL_POOL_TOKEN_\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"_MARGIN_ACCOUNT_\",\"outputs\":[{\"internalType\":\"enum Types.Side\",\"name\":\"SIDE\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"SIZE\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"ENTRY_VALUE\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"CASH_BALANCE\",\"type\":\"int256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"_NEW_OWNER_\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"_OWNER_\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"_POOL_INSURANCE_BALANCE_\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"_POOL_MARGIN_ACCOUNT_\",\"outputs\":[{\"internalType\":\"enum Types.Side\",\"name\":\"SIDE\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"SIZE\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"ENTRY_VALUE\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"CASH_BALANCE\",\"type\":\"int256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"_QUOTE_BALANCE_\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"_R_STATUS_\",\"outputs\":[{\"internalType\":\"enum Types.Side\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"_TARGET_BASE_TOKEN_AMOUNT_\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"_TARGET_QUOTE_TOKEN_AMOUNT_\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"claimOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getPoolMarginCashBalance\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getPoolMarginEntryValue\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getPoolMarginSide\",\"outputs\":[{\"internalType\":\"enum Types.Side\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getPoolMarginSize\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Parapara\",\"methods\":{},\"title\":\"Storage\"},\"userdoc\":{\"methods\":{},\"notice\":\"Local Variables\"}},\"settings\":{\"compilationTarget\":{\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/perpetual/Account.sol\":\"Account\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/admin/Admin.sol\":{\"keccak256\":\"0xb896909ce77e87811a99eab9412cee3403034a5134fada231129f3616ba99789\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://1782e17331092220ba60752dd892429a8175aeadff7a3461b05388f2e5f795aa\",\"dweb:/ipfs/QmTk4ee1BSn2WJKnG7nL8VLATnZUrFKsA7acUyC8vLvdav\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/admin/Storage.sol\":{\"keccak256\":\"0xcdc5dbbfebd9dfaa7842deaccaa89dfd9acfc6e60bb1825dae85763179404484\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://33dff3f67786deaa1f4276473e2a694877251db4571ffc9b47c5f09e1970ab2a\",\"dweb:/ipfs/QmTBGJJoHjEvMjPhShC17QJiLk7anEE58z81dmH2ZRWr79\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/interface/ILpToken.sol\":{\"keccak256\":\"0x488da9ad000ea8a670edb8fd0642e260416330d881f3771c94a4943e2053d23b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d81f542b657d8ed8c09a4aee17855140245a5acc0f11a1a3bec52653e3c1be08\",\"dweb:/ipfs/QmcwpMYJaViQrS2xZ5hURiDsKpnche4cM6GLv76v2SC4iE\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/interface/IOracle.sol\":{\"keccak256\":\"0x410be6c7bcff6ee08861bb88d5289d439df57c34bf0a9e1e070b5a0e2f79977d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a43709b0b9470335861fa688b90aec92bddfea9ca6e584fe32521897dc651819\",\"dweb:/ipfs/QmaYnUgpAsrjGYeRqyaynsmKf7Em91Ww4MwBSjsRvc1Gb8\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/DecimalMath.sol\":{\"keccak256\":\"0x30328988422ac7d24a404295a7f802766366b56b6dd57f1ab6cc6e5871a126d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://090b35b20c38abfc68a1dc545541b5f10c9323ca113ed364074a308bd9f8374c\",\"dweb:/ipfs/QmarVh4bBWCYSZGi277ja2sECB8TcjdF1R7woPSG9YNHzd\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/InitializableOwnable.sol\":{\"keccak256\":\"0xbad13c4fb459e470debb5d6f22f571ffdce0df8205b87c69a9809071f969bb17\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://72039996ee88d06810c693319fee5bacadddd3301b46801bac7e1ff81e902f9c\",\"dweb:/ipfs/QmcYLX39iULRMEPKCUCGBjM62vtwtBcdzYJWbowr2Hy43j\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/PMMCurve.sol\":{\"keccak256\":\"0x12d4b32224315ba3f0a5ca38cebf7e2fcc6b8b73efb6b74534b8515958f0efa8\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3352e0dc212c64953ae2739bfa621e1d45a3278908ca73dde2020d8cf4094dbf\",\"dweb:/ipfs/QmX1Bqsc5D5PnwcTFKARs1pj5esqduYQQZH4JMLQUEjpRQ\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/ParaMath.sol\":{\"keccak256\":\"0x2815e0fddac6aff3341a40e5545ce00a10613192f357d40de394f5984fbe5750\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://4361e73b1191151e1ccb91ae5575ecbec9a9f796ce9c8b323caba11bb8f1a42b\",\"dweb:/ipfs/QmWCURdtfq8uL54HxiohTK1KBDupRChzRBE1U2t7mc6iYn\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/ReentrancyGuard.sol\":{\"keccak256\":\"0xc9c3fc946350fd72083a9d5b1327ff923533ef37b054bc7b6007562b20b0faaf\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fc140417457139fb240427629673bfaf970c5d4568ad1cfe582764c6e4855bbb\",\"dweb:/ipfs/Qmd7ESYe5kyM6NYiSzeFE74f1YGGPXzpdVd5qnYg2AvgH8\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/SafeMath.sol\":{\"keccak256\":\"0xd34c8f9bd3a9afec9dde9dd5698f3a0dd5431a277504624687783bee70d503c8\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://bd6f1878d13593ea74e0b1f42a63330bc51469fdb29e1657e86bc9832d4dbe12\",\"dweb:/ipfs/QmZJcqeQMb3v1m2CvqTaom8EHVBW8CULvwX5WWHy6mGCuM\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/SignedSafeMath.sol\":{\"keccak256\":\"0x9596e90c1eaf002469259e401cdf4a71086c3bb4142760a8ef9a9c010d4937c5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bd9c17f4b723cb6afe470ed825d4e38ffb9c33e409bde16408a2160525cb90dd\",\"dweb:/ipfs/QmNqgz64zkkMQBqRaS3eB9sdBs7nAZpyXv4z2TUFyNJWte\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/Types.sol\":{\"keccak256\":\"0xf75c5bc075d970367bedcac5c031e171837593f888203be76516411eed6c997a\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://514c4839c7801d48ce5bf24828d1290db369e4ae83840dab90866302b5f0aa49\",\"dweb:/ipfs/Qmd3w6vXbfBzfdrX5ayjT2JnKHL1Br7nPWWtykahzYkowS\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/perpetual/Account.sol\":{\"keccak256\":\"0x7415b0c321259d90c97c2238186bbf732d9733bc4cba2cc19c4a76bbb14cb2ff\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://f5e24614d3d6a7974274495757d87df06e25bce2ff8a6a9ec1a0b4edf23dc0b1\",\"dweb:/ipfs/QmTnbgK2SpB2nbaSsp7jjoWn6x3xXTSV9MZVJwRFCScYRu\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/perpetual/Pricing.sol\":{\"keccak256\":\"0x1d7f56eed4f3b77880596f346f8cf9ac413a1916b1282abeac10f851fec421c8\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://5a85fd09aa37e082b3c0ff03a66d264e64f279a50af4251999671d71d6782393\",\"dweb:/ipfs/QmPPV773vuPh9osX8ajc4xJhgXb7dXgvNrbLdfbGV8HQpt\"]}},\"version\":1}",
+  "bytecode": "0x6080604052600e805460ff1916905534801561001a57600080fd5b506105558061002a6000396000f3fe608060405234801561001057600080fd5b50600436106101215760003560e01c80638bc60bff116100ad578063b4cab95511610071578063b4cab955146101e3578063d6b41298146101eb578063eab5d20e146101f3578063f2fde38b146101fb578063f9f8eda81461020e57610121565b80638bc60bff146101a0578063a163805c146101b8578063b192a3eb146101c0578063b1e07366146101c8578063b2094fd3146101db57610121565b80632b32812a116100f45780632b32812a146101765780634e71e0c81461017e57806372decd7a146101885780637c9b8e89146101905780638456db151461019857610121565b806316048bc41461012657806317be952e14610144578063245c9685146101595780632a0acc6a1461016e575b600080fd5b61012e610216565b60405161013b9190610453565b60405180910390f35b61014c610225565b60405161013b9190610467565b61016161022e565b60405161013b91906104a5565b61012e610234565b610161610243565b610186610249565b005b6101616102e0565b6101616102e6565b61012e6102ec565b6101a86102fb565b60405161013b949392919061047b565b61012e610310565b61012e61031f565b6101a86101d6366004610425565b61032e565b610161610359565b61016161035f565b61014c610365565b61016161036e565b610186610209366004610425565b610374565b61016161041f565b6000546001600160a01b031681565b600e5460ff1681565b600b5481565b6002546001600160a01b031681565b60065490565b6001546001600160a01b0316331461027c5760405162461bcd60e51b8152600401610273906104ae565b60405180910390fd5b600154600080546040516001600160a01b0393841693909116917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a360018054600080546001600160a01b03199081166001600160a01b03841617909155169055565b60085490565b600d5481565b6001546001600160a01b031681565b60055460065460075460085460ff9093169284565b6003546001600160a01b031681565b6004546001600160a01b031681565b600960205260009081526040902080546001820154600283015460039093015460ff90921692909184565b600a5481565b60075490565b60055460ff1690565b600c5481565b6000546001600160a01b0316331461039e5760405162461bcd60e51b8152600401610273906104fc565b6001600160a01b0381166103c45760405162461bcd60e51b8152600401610273906104d5565b600080546040516001600160a01b03808516939216917fdcf55418cee3220104fef63f979ff3c4097ad240c0c43dcb33ce837748983e6291a3600180546001600160a01b0319166001600160a01b0392909216919091179055565b600f5481565b600060208284031215610436578081fd5b81356001600160a01b038116811461044c578182fd5b9392505050565b6001600160a01b0391909116815260200190565b602081016003831061047557fe5b91905290565b608081016003861061048957fe5b9481526020810193909352604083019190915260609091015290565b90815260200190565b6020808252600d908201526c494e56414c49445f434c41494d60981b604082015260600190565b6020808252600d908201526c24a72b20a624a22fa7aba722a960991b604082015260600190565b6020808252600990820152682727aa2fa7aba722a960b91b60408201526060019056fea2646970667358221220d15604f9a1e8581bd221dfc5c261e7aa4919c8a61bef2e4932e2a21bbf1527a764736f6c63430006090033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106101215760003560e01c80638bc60bff116100ad578063b4cab95511610071578063b4cab955146101e3578063d6b41298146101eb578063eab5d20e146101f3578063f2fde38b146101fb578063f9f8eda81461020e57610121565b80638bc60bff146101a0578063a163805c146101b8578063b192a3eb146101c0578063b1e07366146101c8578063b2094fd3146101db57610121565b80632b32812a116100f45780632b32812a146101765780634e71e0c81461017e57806372decd7a146101885780637c9b8e89146101905780638456db151461019857610121565b806316048bc41461012657806317be952e14610144578063245c9685146101595780632a0acc6a1461016e575b600080fd5b61012e610216565b60405161013b9190610453565b60405180910390f35b61014c610225565b60405161013b9190610467565b61016161022e565b60405161013b91906104a5565b61012e610234565b610161610243565b610186610249565b005b6101616102e0565b6101616102e6565b61012e6102ec565b6101a86102fb565b60405161013b949392919061047b565b61012e610310565b61012e61031f565b6101a86101d6366004610425565b61032e565b610161610359565b61016161035f565b61014c610365565b61016161036e565b610186610209366004610425565b610374565b61016161041f565b6000546001600160a01b031681565b600e5460ff1681565b600b5481565b6002546001600160a01b031681565b60065490565b6001546001600160a01b0316331461027c5760405162461bcd60e51b8152600401610273906104ae565b60405180910390fd5b600154600080546040516001600160a01b0393841693909116917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a360018054600080546001600160a01b03199081166001600160a01b03841617909155169055565b60085490565b600d5481565b6001546001600160a01b031681565b60055460065460075460085460ff9093169284565b6003546001600160a01b031681565b6004546001600160a01b031681565b600960205260009081526040902080546001820154600283015460039093015460ff90921692909184565b600a5481565b60075490565b60055460ff1690565b600c5481565b6000546001600160a01b0316331461039e5760405162461bcd60e51b8152600401610273906104fc565b6001600160a01b0381166103c45760405162461bcd60e51b8152600401610273906104d5565b600080546040516001600160a01b03808516939216917fdcf55418cee3220104fef63f979ff3c4097ad240c0c43dcb33ce837748983e6291a3600180546001600160a01b0319166001600160a01b0392909216919091179055565b600f5481565b600060208284031215610436578081fd5b81356001600160a01b038116811461044c578182fd5b9392505050565b6001600160a01b0391909116815260200190565b602081016003831061047557fe5b91905290565b608081016003861061048957fe5b9481526020810193909352604083019190915260609091015290565b90815260200190565b6020808252600d908201526c494e56414c49445f434c41494d60981b604082015260600190565b6020808252600d908201526c24a72b20a624a22fa7aba722a960991b604082015260600190565b6020808252600990820152682727aa2fa7aba722a960b91b60408201526060019056fea2646970667358221220d15604f9a1e8581bd221dfc5c261e7aa4919c8a61bef2e4932e2a21bbf1527a764736f6c63430006090033",
+  "immutableReferences": {},
+  "sourceMap": "464:1858:29:-:0;;;1001:46;;;-1:-1:-1;;1001:46:29;;;464:1858;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "464:1858:29:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;264:22:18;;;:::i;:::-;;;;;;;;;;;;;;;;1001:46:29;;;:::i;:::-;;;;;;;;882:42;;;:::i;:::-;;;;;;;;616:18;;;:::i;1351:111::-;;;:::i;1007:225:18:-;;;:::i;:::-;;1220:125:29;;;:::i;965:30::-;;;:::i;292:26:18:-;;;:::i;712:48:29:-;;;:::i;:::-;;;;;;;;;;;640:22;;;:::i;668:38::-;;;:::i;766:63::-;;;;;;;;;:::i;835:41::-;;;:::i;1468:124::-;;;:::i;1100:114::-;;;:::i;930:29::-;;;:::i;781:220:18:-;;;;;;;;;:::i;1054:39:29:-;;;:::i;264:22:18:-;;;-1:-1:-1;;;;;264:22:18;;:::o;1001:46:29:-;;;;;;:::o;882:42::-;;;;:::o;616:18::-;;;-1:-1:-1;;;;;616:18:29;;:::o;1351:111::-;1429:26;;1351:111;:::o;1007:225:18:-;1074:11;;-1:-1:-1;;;;;1074:11:18;1060:10;:25;1052:51;;;;-1:-1:-1;;;1052:51:18;;;;;;;;;;;;;;;;;1148:11;;;1139:7;;1118:42;;-1:-1:-1;;;;;1148:11:18;;;;1139:7;;;;1118:42;;;1180:11;;;;1170:21;;-1:-1:-1;;;;;;1170:21:18;;;-1:-1:-1;;;;;1180:11:18;;1170:21;;;;1201:24;;;1007:225::o;1220:125:29:-;1304:34;;1220:125;:::o;965:30::-;;;;:::o;292:26:18:-;;;-1:-1:-1;;;;;292:26:18;;:::o;712:48:29:-;;;;;;;;;;;;;;;:::o;640:22::-;;;-1:-1:-1;;;;;640:22:29;;:::o;668:38::-;;;-1:-1:-1;;;;;668:38:29;;:::o;766:63::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;835:41::-;;;;:::o;1468:124::-;1552:33;;1468:124;:::o;1100:114::-;1181:21;:26;;;1100:114;:::o;930:29::-;;;;:::o;781:220:18:-;692:7;;-1:-1:-1;;;;;692:7:18;678:10;:21;670:43;;;;-1:-1:-1;;;670:43:18;;;;;;;;;-1:-1:-1;;;;;863:22:18;::::1;855:48;;;;-1:-1:-1::0;;;855:48:18::1;;;;;;;;;944:7;::::0;;918:44:::1;::::0;-1:-1:-1;;;;;918:44:18;;::::1;::::0;944:7;::::1;::::0;918:44:::1;::::0;::::1;972:11;:22:::0;;-1:-1:-1;;;;;;972:22:18::1;-1:-1:-1::0;;;;;972:22:18;;;::::1;::::0;;;::::1;::::0;;781:220::o;1054:39:29:-;;;;:::o;142:241:-1:-;;246:2;234:9;225:7;221:23;217:32;214:2;;;-1:-1;;252:12;214:2;72:20;;-1:-1;;;;;6008:54;;7026:35;;7016:2;;-1:-1;;7065:12;7016:2;304:63;208:175;-1:-1;;;208:175;2181:222;-1:-1;;;;;6008:54;;;;461:37;;2308:2;2293:18;;2279:124;2928:236;3062:2;3047:18;;6938:1;6928:12;;6918:2;;6944:9;6918:2;914:57;;;3033:131;;3171:566;3387:3;3372:19;;6938:1;6928:12;;6918:2;;6944:9;6918:2;914:57;;;3559:2;3544:18;;1052:36;;;;3642:2;3627:18;;1052:36;;;;3723:2;3708:18;;;1052:36;3358:379;;3744:218;1052:36;;;3869:2;3854:18;;3840:122;3969:416;4169:2;4183:47;;;1325:2;4154:18;;;5571:19;-1:-1;;;5611:14;;;1341:36;1396:12;;;4140:245;4392:416;4592:2;4606:47;;;1647:2;4577:18;;;5571:19;-1:-1;;;5611:14;;;1663:36;1718:12;;;4563:245;4815:416;5015:2;5029:47;;;1969:1;5000:18;;;5571:19;-1:-1;;;5611:14;;;1984:32;2035:12;;;4986:245",
+  "source": "/*\n\n    Copyright 2020 DODO ZOO.\n    SPDX-License-Identifier: Apache-2.0\n\n*/\n\npragma solidity 0.6.9;\npragma experimental ABIEncoderV2;\n\nimport {InitializableOwnable} from \"../lib/InitializableOwnable.sol\";\nimport {ReentrancyGuard} from \"../lib/ReentrancyGuard.sol\";\nimport {Types} from \"../lib/Types.sol\";\nimport {Admin} from \"../admin/Admin.sol\";\nimport {Pricing} from \"./Pricing.sol\";\n\n/**\n * @title Storage\n * @author Parapara\n *\n * @notice Local Variables\n */\ncontract Account is InitializableOwnable, ReentrancyGuard {\n    // ============ Variables for Control ============\n    bool internal _INITIALIZED_;\n    Admin public ADMIN;\n    Pricing public PRICING;\n    address public _COLLATERAL_POOL_TOKEN_;\n    Types.MarginAccount public _POOL_MARGIN_ACCOUNT_;\n    mapping(address => Types.MarginAccount) public _MARGIN_ACCOUNT_;\n    uint256 public _TARGET_BASE_TOKEN_AMOUNT_;\n    uint256 public _TARGET_QUOTE_TOKEN_AMOUNT_;\n    uint256 public _BASE_BALANCE_;\n    uint256 public _QUOTE_BALANCE_;\n    Types.Side public _R_STATUS_ = Types.Side.FLAT;\n\n    uint256 public _POOL_INSURANCE_BALANCE_;\n\n    function getPoolMarginSide() external view returns (Types.Side) {\n        return _POOL_MARGIN_ACCOUNT_.SIDE;\n    }\n\n    function getPoolMarginCashBalance() external view returns (int256) {\n        return _POOL_MARGIN_ACCOUNT_.CASH_BALANCE;\n    }\n\n    function getPoolMarginSize() external view returns (uint256) {\n        return _POOL_MARGIN_ACCOUNT_.SIZE;\n    }\n\n    function getPoolMarginEntryValue() external view returns (uint256) {\n        return _POOL_MARGIN_ACCOUNT_.ENTRY_VALUE;\n    }\n\n    function updateVirtualBalance (\n        uint256 baseTarget,\n        uint256 baseBalance,\n        uint256 quoteTarget,\n        uint256 quoteBalance,\n        Types.Side newSide\n        ) internal {\n        if (_TARGET_QUOTE_TOKEN_AMOUNT_ != quoteTarget) {\n            _TARGET_QUOTE_TOKEN_AMOUNT_ = quoteTarget;\n        }\n        if (_TARGET_BASE_TOKEN_AMOUNT_ != baseTarget) {\n            _TARGET_BASE_TOKEN_AMOUNT_ = baseTarget;\n        }\n        if (_BASE_BALANCE_ != baseBalance) {\n            _BASE_BALANCE_ = baseBalance;\n        }\n        if (_QUOTE_BALANCE_ != quoteBalance) {\n            _QUOTE_BALANCE_ = quoteBalance;\n        }\n        if (_R_STATUS_ != newSide) {\n            _R_STATUS_ = newSide;\n        }\n    }\n}\n",
+  "sourcePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/perpetual/Account.sol",
+  "ast": {
+    "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/perpetual/Account.sol",
+    "exportedSymbols": {
+      "Account": [
+        5838
+      ]
+    },
+    "id": 5839,
+    "license": "Apache-2.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5697,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".9"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "78:22:29"
+      },
+      {
+        "id": 5698,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "101:33:29"
+      },
+      {
+        "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/InitializableOwnable.sol",
+        "file": "../lib/InitializableOwnable.sol",
+        "id": 5700,
+        "nodeType": "ImportDirective",
+        "scope": 5839,
+        "sourceUnit": 2674,
+        "src": "136:69:29",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 5699,
+              "name": "InitializableOwnable",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "144:20:29",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/ReentrancyGuard.sol",
+        "file": "../lib/ReentrancyGuard.sol",
+        "id": 5702,
+        "nodeType": "ImportDirective",
+        "scope": 5839,
+        "sourceUnit": 3756,
+        "src": "206:59:29",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 5701,
+              "name": "ReentrancyGuard",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "214:15:29",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/Types.sol",
+        "file": "../lib/Types.sol",
+        "id": 5704,
+        "nodeType": "ImportDirective",
+        "scope": 5839,
+        "sourceUnit": 4452,
+        "src": "266:39:29",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 5703,
+              "name": "Types",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "274:5:29",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/admin/Admin.sol",
+        "file": "../admin/Admin.sol",
+        "id": 5706,
+        "nodeType": "ImportDirective",
+        "scope": 5839,
+        "sourceUnit": 1056,
+        "src": "306:41:29",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 5705,
+              "name": "Admin",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "314:5:29",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/perpetual/Pricing.sol",
+        "file": "./Pricing.sol",
+        "id": 5708,
+        "nodeType": "ImportDirective",
+        "scope": 5839,
+        "sourceUnit": 9137,
+        "src": "348:38:29",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 5707,
+              "name": "Pricing",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "356:7:29",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 5710,
+              "name": "InitializableOwnable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2673,
+              "src": "484:20:29",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_InitializableOwnable_$2673",
+                "typeString": "contract InitializableOwnable"
+              }
+            },
+            "id": 5711,
+            "nodeType": "InheritanceSpecifier",
+            "src": "484:20:29"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 5712,
+              "name": "ReentrancyGuard",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3755,
+              "src": "506:15:29",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ReentrancyGuard_$3755",
+                "typeString": "contract ReentrancyGuard"
+              }
+            },
+            "id": 5713,
+            "nodeType": "InheritanceSpecifier",
+            "src": "506:15:29"
+          }
+        ],
+        "contractDependencies": [
+          2673,
+          3755
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 5709,
+          "nodeType": "StructuredDocumentation",
+          "src": "388:75:29",
+          "text": " @title Storage\n @author Parapara\n @notice Local Variables"
+        },
+        "fullyImplemented": true,
+        "id": 5838,
+        "linearizedBaseContracts": [
+          5838,
+          3755,
+          2673
+        ],
+        "name": "Account",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 5715,
+            "mutability": "mutable",
+            "name": "_INITIALIZED_",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 5838,
+            "src": "583:27:29",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 5714,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "583:4:29",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "functionSelector": "2a0acc6a",
+            "id": 5717,
+            "mutability": "mutable",
+            "name": "ADMIN",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 5838,
+            "src": "616:18:29",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_Admin_$1055",
+              "typeString": "contract Admin"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 5716,
+              "name": "Admin",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1055,
+              "src": "616:5:29",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Admin_$1055",
+                "typeString": "contract Admin"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "functionSelector": "a163805c",
+            "id": 5719,
+            "mutability": "mutable",
+            "name": "PRICING",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 5838,
+            "src": "640:22:29",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_Pricing_$9136",
+              "typeString": "contract Pricing"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 5718,
+              "name": "Pricing",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 9136,
+              "src": "640:7:29",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Pricing_$9136",
+                "typeString": "contract Pricing"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "functionSelector": "b192a3eb",
+            "id": 5721,
+            "mutability": "mutable",
+            "name": "_COLLATERAL_POOL_TOKEN_",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 5838,
+            "src": "668:38:29",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 5720,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "668:7:29",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "functionSelector": "8bc60bff",
+            "id": 5723,
+            "mutability": "mutable",
+            "name": "_POOL_MARGIN_ACCOUNT_",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 5838,
+            "src": "712:48:29",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_MarginAccount_$4439_storage",
+              "typeString": "struct Types.MarginAccount"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 5722,
+              "name": "Types.MarginAccount",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4439,
+              "src": "712:19:29",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_MarginAccount_$4439_storage_ptr",
+                "typeString": "struct Types.MarginAccount"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "functionSelector": "b1e07366",
+            "id": 5727,
+            "mutability": "mutable",
+            "name": "_MARGIN_ACCOUNT_",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 5838,
+            "src": "766:63:29",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_MarginAccount_$4439_storage_$",
+              "typeString": "mapping(address => struct Types.MarginAccount)"
+            },
+            "typeName": {
+              "id": 5726,
+              "keyType": {
+                "id": 5724,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "774:7:29",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "766:39:29",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_MarginAccount_$4439_storage_$",
+                "typeString": "mapping(address => struct Types.MarginAccount)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 5725,
+                "name": "Types.MarginAccount",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 4439,
+                "src": "785:19:29",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_MarginAccount_$4439_storage_ptr",
+                  "typeString": "struct Types.MarginAccount"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "functionSelector": "b2094fd3",
+            "id": 5729,
+            "mutability": "mutable",
+            "name": "_TARGET_BASE_TOKEN_AMOUNT_",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 5838,
+            "src": "835:41:29",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 5728,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "835:7:29",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "functionSelector": "245c9685",
+            "id": 5731,
+            "mutability": "mutable",
+            "name": "_TARGET_QUOTE_TOKEN_AMOUNT_",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 5838,
+            "src": "882:42:29",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 5730,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "882:7:29",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "functionSelector": "eab5d20e",
+            "id": 5733,
+            "mutability": "mutable",
+            "name": "_BASE_BALANCE_",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 5838,
+            "src": "930:29:29",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 5732,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "930:7:29",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "functionSelector": "7c9b8e89",
+            "id": 5735,
+            "mutability": "mutable",
+            "name": "_QUOTE_BALANCE_",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 5838,
+            "src": "965:30:29",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 5734,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "965:7:29",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "functionSelector": "17be952e",
+            "id": 5740,
+            "mutability": "mutable",
+            "name": "_R_STATUS_",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 5838,
+            "src": "1001:46:29",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_enum$_Side_$4398",
+              "typeString": "enum Types.Side"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 5736,
+              "name": "Types.Side",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4398,
+              "src": "1001:10:29",
+              "typeDescriptions": {
+                "typeIdentifier": "t_enum$_Side_$4398",
+                "typeString": "enum Types.Side"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "expression": {
+                "argumentTypes": null,
+                "expression": {
+                  "argumentTypes": null,
+                  "id": 5737,
+                  "name": "Types",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 4451,
+                  "src": "1032:5:29",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_Types_$4451_$",
+                    "typeString": "type(library Types)"
+                  }
+                },
+                "id": 5738,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": false,
+                "lValueRequested": false,
+                "memberName": "Side",
+                "nodeType": "MemberAccess",
+                "referencedDeclaration": 4398,
+                "src": "1032:10:29",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_type$_t_enum$_Side_$4398_$",
+                  "typeString": "type(enum Types.Side)"
+                }
+              },
+              "id": 5739,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "lValueRequested": false,
+              "memberName": "FLAT",
+              "nodeType": "MemberAccess",
+              "referencedDeclaration": null,
+              "src": "1032:15:29",
+              "typeDescriptions": {
+                "typeIdentifier": "t_enum$_Side_$4398",
+                "typeString": "enum Types.Side"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "functionSelector": "f9f8eda8",
+            "id": 5742,
+            "mutability": "mutable",
+            "name": "_POOL_INSURANCE_BALANCE_",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 5838,
+            "src": "1054:39:29",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 5741,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1054:7:29",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 5750,
+              "nodeType": "Block",
+              "src": "1164:50:29",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 5747,
+                      "name": "_POOL_MARGIN_ACCOUNT_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5723,
+                      "src": "1181:21:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_MarginAccount_$4439_storage",
+                        "typeString": "struct Types.MarginAccount storage ref"
+                      }
+                    },
+                    "id": 5748,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "SIDE",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 4432,
+                    "src": "1181:26:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Side_$4398",
+                      "typeString": "enum Types.Side"
+                    }
+                  },
+                  "functionReturnParameters": 5746,
+                  "id": 5749,
+                  "nodeType": "Return",
+                  "src": "1174:33:29"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "d6b41298",
+            "id": 5751,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPoolMarginSide",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 5743,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1126:2:29"
+            },
+            "returnParameters": {
+              "id": 5746,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5745,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5751,
+                  "src": "1152:10:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Side_$4398",
+                    "typeString": "enum Types.Side"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 5744,
+                    "name": "Types.Side",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 4398,
+                    "src": "1152:10:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Side_$4398",
+                      "typeString": "enum Types.Side"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1151:12:29"
+            },
+            "scope": 5838,
+            "src": "1100:114:29",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 5759,
+              "nodeType": "Block",
+              "src": "1287:58:29",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 5756,
+                      "name": "_POOL_MARGIN_ACCOUNT_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5723,
+                      "src": "1304:21:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_MarginAccount_$4439_storage",
+                        "typeString": "struct Types.MarginAccount storage ref"
+                      }
+                    },
+                    "id": 5757,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "CASH_BALANCE",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 4438,
+                    "src": "1304:34:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "functionReturnParameters": 5755,
+                  "id": 5758,
+                  "nodeType": "Return",
+                  "src": "1297:41:29"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "72decd7a",
+            "id": 5760,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPoolMarginCashBalance",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 5752,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1253:2:29"
+            },
+            "returnParameters": {
+              "id": 5755,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5754,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5760,
+                  "src": "1279:6:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 5753,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1279:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1278:8:29"
+            },
+            "scope": 5838,
+            "src": "1220:125:29",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 5768,
+              "nodeType": "Block",
+              "src": "1412:50:29",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 5765,
+                      "name": "_POOL_MARGIN_ACCOUNT_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5723,
+                      "src": "1429:21:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_MarginAccount_$4439_storage",
+                        "typeString": "struct Types.MarginAccount storage ref"
+                      }
+                    },
+                    "id": 5766,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "SIZE",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 4434,
+                    "src": "1429:26:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 5764,
+                  "id": 5767,
+                  "nodeType": "Return",
+                  "src": "1422:33:29"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "2b32812a",
+            "id": 5769,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPoolMarginSize",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 5761,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1377:2:29"
+            },
+            "returnParameters": {
+              "id": 5764,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5763,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5769,
+                  "src": "1403:7:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5762,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1403:7:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1402:9:29"
+            },
+            "scope": 5838,
+            "src": "1351:111:29",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 5777,
+              "nodeType": "Block",
+              "src": "1535:57:29",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 5774,
+                      "name": "_POOL_MARGIN_ACCOUNT_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5723,
+                      "src": "1552:21:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_MarginAccount_$4439_storage",
+                        "typeString": "struct Types.MarginAccount storage ref"
+                      }
+                    },
+                    "id": 5775,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "ENTRY_VALUE",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 4436,
+                    "src": "1552:33:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 5773,
+                  "id": 5776,
+                  "nodeType": "Return",
+                  "src": "1545:40:29"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "b4cab955",
+            "id": 5778,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPoolMarginEntryValue",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 5770,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1500:2:29"
+            },
+            "returnParameters": {
+              "id": 5773,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5772,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5778,
+                  "src": "1526:7:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5771,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1526:7:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1525:9:29"
+            },
+            "scope": 5838,
+            "src": "1468:124:29",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 5836,
+              "nodeType": "Block",
+              "src": "1792:528:29",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 5793,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 5791,
+                      "name": "_TARGET_QUOTE_TOKEN_AMOUNT_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5731,
+                      "src": "1806:27:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "!=",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 5792,
+                      "name": "quoteTarget",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5784,
+                      "src": "1837:11:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1806:42:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 5799,
+                  "nodeType": "IfStatement",
+                  "src": "1802:114:29",
+                  "trueBody": {
+                    "id": 5798,
+                    "nodeType": "Block",
+                    "src": "1850:66:29",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 5796,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 5794,
+                            "name": "_TARGET_QUOTE_TOKEN_AMOUNT_",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 5731,
+                            "src": "1864:27:29",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "id": 5795,
+                            "name": "quoteTarget",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 5784,
+                            "src": "1894:11:29",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "1864:41:29",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 5797,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1864:41:29"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 5802,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 5800,
+                      "name": "_TARGET_BASE_TOKEN_AMOUNT_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5729,
+                      "src": "1929:26:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "!=",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 5801,
+                      "name": "baseTarget",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5780,
+                      "src": "1959:10:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1929:40:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 5808,
+                  "nodeType": "IfStatement",
+                  "src": "1925:110:29",
+                  "trueBody": {
+                    "id": 5807,
+                    "nodeType": "Block",
+                    "src": "1971:64:29",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 5805,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 5803,
+                            "name": "_TARGET_BASE_TOKEN_AMOUNT_",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 5729,
+                            "src": "1985:26:29",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "id": 5804,
+                            "name": "baseTarget",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 5780,
+                            "src": "2014:10:29",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "1985:39:29",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 5806,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1985:39:29"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 5811,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 5809,
+                      "name": "_BASE_BALANCE_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5733,
+                      "src": "2048:14:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "!=",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 5810,
+                      "name": "baseBalance",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5782,
+                      "src": "2066:11:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "2048:29:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 5817,
+                  "nodeType": "IfStatement",
+                  "src": "2044:88:29",
+                  "trueBody": {
+                    "id": 5816,
+                    "nodeType": "Block",
+                    "src": "2079:53:29",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 5814,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 5812,
+                            "name": "_BASE_BALANCE_",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 5733,
+                            "src": "2093:14:29",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "id": 5813,
+                            "name": "baseBalance",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 5782,
+                            "src": "2110:11:29",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "2093:28:29",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 5815,
+                        "nodeType": "ExpressionStatement",
+                        "src": "2093:28:29"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 5820,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 5818,
+                      "name": "_QUOTE_BALANCE_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5735,
+                      "src": "2145:15:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "!=",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 5819,
+                      "name": "quoteBalance",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5786,
+                      "src": "2164:12:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "2145:31:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 5826,
+                  "nodeType": "IfStatement",
+                  "src": "2141:92:29",
+                  "trueBody": {
+                    "id": 5825,
+                    "nodeType": "Block",
+                    "src": "2178:55:29",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 5823,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 5821,
+                            "name": "_QUOTE_BALANCE_",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 5735,
+                            "src": "2192:15:29",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "id": 5822,
+                            "name": "quoteBalance",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 5786,
+                            "src": "2210:12:29",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "2192:30:29",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 5824,
+                        "nodeType": "ExpressionStatement",
+                        "src": "2192:30:29"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_Side_$4398",
+                      "typeString": "enum Types.Side"
+                    },
+                    "id": 5829,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 5827,
+                      "name": "_R_STATUS_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5740,
+                      "src": "2246:10:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Side_$4398",
+                        "typeString": "enum Types.Side"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "!=",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 5828,
+                      "name": "newSide",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5788,
+                      "src": "2260:7:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Side_$4398",
+                        "typeString": "enum Types.Side"
+                      }
+                    },
+                    "src": "2246:21:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 5835,
+                  "nodeType": "IfStatement",
+                  "src": "2242:72:29",
+                  "trueBody": {
+                    "id": 5834,
+                    "nodeType": "Block",
+                    "src": "2269:45:29",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 5832,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 5830,
+                            "name": "_R_STATUS_",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 5740,
+                            "src": "2283:10:29",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Side_$4398",
+                              "typeString": "enum Types.Side"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "id": 5831,
+                            "name": "newSide",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 5788,
+                            "src": "2296:7:29",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Side_$4398",
+                              "typeString": "enum Types.Side"
+                            }
+                          },
+                          "src": "2283:20:29",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_Side_$4398",
+                            "typeString": "enum Types.Side"
+                          }
+                        },
+                        "id": 5833,
+                        "nodeType": "ExpressionStatement",
+                        "src": "2283:20:29"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 5837,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateVirtualBalance",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 5789,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5780,
+                  "mutability": "mutable",
+                  "name": "baseTarget",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5837,
+                  "src": "1638:18:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5779,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1638:7:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5782,
+                  "mutability": "mutable",
+                  "name": "baseBalance",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5837,
+                  "src": "1666:19:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5781,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1666:7:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5784,
+                  "mutability": "mutable",
+                  "name": "quoteTarget",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5837,
+                  "src": "1695:19:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5783,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1695:7:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5786,
+                  "mutability": "mutable",
+                  "name": "quoteBalance",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5837,
+                  "src": "1724:20:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5785,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1724:7:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5788,
+                  "mutability": "mutable",
+                  "name": "newSide",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5837,
+                  "src": "1754:18:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Side_$4398",
+                    "typeString": "enum Types.Side"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 5787,
+                    "name": "Types.Side",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 4398,
+                    "src": "1754:10:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Side_$4398",
+                      "typeString": "enum Types.Side"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1628:154:29"
+            },
+            "returnParameters": {
+              "id": 5790,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1792:0:29"
+            },
+            "scope": 5838,
+            "src": "1598:722:29",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 5839,
+        "src": "464:1858:29"
+      }
+    ],
+    "src": "78:2245:29"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/perpetual/Account.sol",
+      "exportedSymbols": {
+        "Account": [
+          5838
+        ]
+      },
+      "license": "Apache-2.0"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.6",
+            ".9"
+          ]
+        },
+        "id": 5697,
+        "name": "PragmaDirective",
+        "src": "78:22:29"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "experimental",
+            "ABIEncoderV2"
+          ]
+        },
+        "id": 5698,
+        "name": "PragmaDirective",
+        "src": "101:33:29"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 2674,
+          "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/InitializableOwnable.sol",
+          "file": "../lib/InitializableOwnable.sol",
+          "scope": 5839,
+          "symbolAliases": [
+            {
+              "foreign": {
+                "attributes": {
+                  "argumentTypes": null,
+                  "overloadedDeclarations": [
+                    null
+                  ],
+                  "referencedDeclaration": null,
+                  "type": null,
+                  "value": "InitializableOwnable"
+                },
+                "id": 5699,
+                "name": "Identifier",
+                "src": "144:20:29"
+              },
+              "local": null
+            }
+          ],
+          "unitAlias": ""
+        },
+        "id": 5700,
+        "name": "ImportDirective",
+        "src": "136:69:29"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 3756,
+          "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/ReentrancyGuard.sol",
+          "file": "../lib/ReentrancyGuard.sol",
+          "scope": 5839,
+          "symbolAliases": [
+            {
+              "foreign": {
+                "attributes": {
+                  "argumentTypes": null,
+                  "overloadedDeclarations": [
+                    null
+                  ],
+                  "referencedDeclaration": null,
+                  "type": null,
+                  "value": "ReentrancyGuard"
+                },
+                "id": 5701,
+                "name": "Identifier",
+                "src": "214:15:29"
+              },
+              "local": null
+            }
+          ],
+          "unitAlias": ""
+        },
+        "id": 5702,
+        "name": "ImportDirective",
+        "src": "206:59:29"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 4452,
+          "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/Types.sol",
+          "file": "../lib/Types.sol",
+          "scope": 5839,
+          "symbolAliases": [
+            {
+              "foreign": {
+                "attributes": {
+                  "argumentTypes": null,
+                  "overloadedDeclarations": [
+                    null
+                  ],
+                  "referencedDeclaration": null,
+                  "type": null,
+                  "value": "Types"
+                },
+                "id": 5703,
+                "name": "Identifier",
+                "src": "274:5:29"
+              },
+              "local": null
+            }
+          ],
+          "unitAlias": ""
+        },
+        "id": 5704,
+        "name": "ImportDirective",
+        "src": "266:39:29"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 1056,
+          "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/admin/Admin.sol",
+          "file": "../admin/Admin.sol",
+          "scope": 5839,
+          "symbolAliases": [
+            {
+              "foreign": {
+                "attributes": {
+                  "argumentTypes": null,
+                  "overloadedDeclarations": [
+                    null
+                  ],
+                  "referencedDeclaration": null,
+                  "type": null,
+                  "value": "Admin"
+                },
+                "id": 5705,
+                "name": "Identifier",
+                "src": "314:5:29"
+              },
+              "local": null
+            }
+          ],
+          "unitAlias": ""
+        },
+        "id": 5706,
+        "name": "ImportDirective",
+        "src": "306:41:29"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 9137,
+          "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/perpetual/Pricing.sol",
+          "file": "./Pricing.sol",
+          "scope": 5839,
+          "symbolAliases": [
+            {
+              "foreign": {
+                "attributes": {
+                  "argumentTypes": null,
+                  "overloadedDeclarations": [
+                    null
+                  ],
+                  "referencedDeclaration": null,
+                  "type": null,
+                  "value": "Pricing"
+                },
+                "id": 5707,
+                "name": "Identifier",
+                "src": "356:7:29"
+              },
+              "local": null
+            }
+          ],
+          "unitAlias": ""
+        },
+        "id": 5708,
+        "name": "ImportDirective",
+        "src": "348:38:29"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "contractDependencies": [
+            2673,
+            3755
+          ],
+          "contractKind": "contract",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            5838,
+            3755,
+            2673
+          ],
+          "name": "Account",
+          "scope": 5839
+        },
+        "children": [
+          {
+            "attributes": {
+              "text": " @title Storage\n @author Parapara\n @notice Local Variables"
+            },
+            "id": 5709,
+            "name": "StructuredDocumentation",
+            "src": "388:75:29"
+          },
+          {
+            "attributes": {
+              "arguments": null
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "InitializableOwnable",
+                  "referencedDeclaration": 2673,
+                  "type": "contract InitializableOwnable"
+                },
+                "id": 5710,
+                "name": "UserDefinedTypeName",
+                "src": "484:20:29"
+              }
+            ],
+            "id": 5711,
+            "name": "InheritanceSpecifier",
+            "src": "484:20:29"
+          },
+          {
+            "attributes": {
+              "arguments": null
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "ReentrancyGuard",
+                  "referencedDeclaration": 3755,
+                  "type": "contract ReentrancyGuard"
+                },
+                "id": 5712,
+                "name": "UserDefinedTypeName",
+                "src": "506:15:29"
+              }
+            ],
+            "id": 5713,
+            "name": "InheritanceSpecifier",
+            "src": "506:15:29"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "_INITIALIZED_",
+              "overrides": null,
+              "scope": 5838,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "bool",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "bool",
+                  "type": "bool"
+                },
+                "id": 5714,
+                "name": "ElementaryTypeName",
+                "src": "583:4:29"
+              }
+            ],
+            "id": 5715,
+            "name": "VariableDeclaration",
+            "src": "583:27:29"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "functionSelector": "2a0acc6a",
+              "mutability": "mutable",
+              "name": "ADMIN",
+              "overrides": null,
+              "scope": 5838,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract Admin",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "Admin",
+                  "referencedDeclaration": 1055,
+                  "type": "contract Admin"
+                },
+                "id": 5716,
+                "name": "UserDefinedTypeName",
+                "src": "616:5:29"
+              }
+            ],
+            "id": 5717,
+            "name": "VariableDeclaration",
+            "src": "616:18:29"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "functionSelector": "a163805c",
+              "mutability": "mutable",
+              "name": "PRICING",
+              "overrides": null,
+              "scope": 5838,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract Pricing",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "Pricing",
+                  "referencedDeclaration": 9136,
+                  "type": "contract Pricing"
+                },
+                "id": 5718,
+                "name": "UserDefinedTypeName",
+                "src": "640:7:29"
+              }
+            ],
+            "id": 5719,
+            "name": "VariableDeclaration",
+            "src": "640:22:29"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "functionSelector": "b192a3eb",
+              "mutability": "mutable",
+              "name": "_COLLATERAL_POOL_TOKEN_",
+              "overrides": null,
+              "scope": 5838,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "stateMutability": "nonpayable",
+                  "type": "address"
+                },
+                "id": 5720,
+                "name": "ElementaryTypeName",
+                "src": "668:7:29"
+              }
+            ],
+            "id": 5721,
+            "name": "VariableDeclaration",
+            "src": "668:38:29"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "functionSelector": "8bc60bff",
+              "mutability": "mutable",
+              "name": "_POOL_MARGIN_ACCOUNT_",
+              "overrides": null,
+              "scope": 5838,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "struct Types.MarginAccount",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "Types.MarginAccount",
+                  "referencedDeclaration": 4439,
+                  "type": "struct Types.MarginAccount"
+                },
+                "id": 5722,
+                "name": "UserDefinedTypeName",
+                "src": "712:19:29"
+              }
+            ],
+            "id": 5723,
+            "name": "VariableDeclaration",
+            "src": "712:48:29"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "functionSelector": "b1e07366",
+              "mutability": "mutable",
+              "name": "_MARGIN_ACCOUNT_",
+              "overrides": null,
+              "scope": 5838,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(address => struct Types.MarginAccount)",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(address => struct Types.MarginAccount)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 5724,
+                    "name": "ElementaryTypeName",
+                    "src": "774:7:29"
+                  },
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "Types.MarginAccount",
+                      "referencedDeclaration": 4439,
+                      "type": "struct Types.MarginAccount"
+                    },
+                    "id": 5725,
+                    "name": "UserDefinedTypeName",
+                    "src": "785:19:29"
+                  }
+                ],
+                "id": 5726,
+                "name": "Mapping",
+                "src": "766:39:29"
+              }
+            ],
+            "id": 5727,
+            "name": "VariableDeclaration",
+            "src": "766:63:29"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "functionSelector": "b2094fd3",
+              "mutability": "mutable",
+              "name": "_TARGET_BASE_TOKEN_AMOUNT_",
+              "overrides": null,
+              "scope": 5838,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint256",
+                  "type": "uint256"
+                },
+                "id": 5728,
+                "name": "ElementaryTypeName",
+                "src": "835:7:29"
+              }
+            ],
+            "id": 5729,
+            "name": "VariableDeclaration",
+            "src": "835:41:29"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "functionSelector": "245c9685",
+              "mutability": "mutable",
+              "name": "_TARGET_QUOTE_TOKEN_AMOUNT_",
+              "overrides": null,
+              "scope": 5838,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint256",
+                  "type": "uint256"
+                },
+                "id": 5730,
+                "name": "ElementaryTypeName",
+                "src": "882:7:29"
+              }
+            ],
+            "id": 5731,
+            "name": "VariableDeclaration",
+            "src": "882:42:29"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "functionSelector": "eab5d20e",
+              "mutability": "mutable",
+              "name": "_BASE_BALANCE_",
+              "overrides": null,
+              "scope": 5838,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint256",
+                  "type": "uint256"
+                },
+                "id": 5732,
+                "name": "ElementaryTypeName",
+                "src": "930:7:29"
+              }
+            ],
+            "id": 5733,
+            "name": "VariableDeclaration",
+            "src": "930:29:29"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "functionSelector": "7c9b8e89",
+              "mutability": "mutable",
+              "name": "_QUOTE_BALANCE_",
+              "overrides": null,
+              "scope": 5838,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint256",
+                  "type": "uint256"
+                },
+                "id": 5734,
+                "name": "ElementaryTypeName",
+                "src": "965:7:29"
+              }
+            ],
+            "id": 5735,
+            "name": "VariableDeclaration",
+            "src": "965:30:29"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "functionSelector": "17be952e",
+              "mutability": "mutable",
+              "name": "_R_STATUS_",
+              "overrides": null,
+              "scope": 5838,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "enum Types.Side",
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "Types.Side",
+                  "referencedDeclaration": 4398,
+                  "type": "enum Types.Side"
+                },
+                "id": 5736,
+                "name": "UserDefinedTypeName",
+                "src": "1001:10:29"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "member_name": "FLAT",
+                  "referencedDeclaration": null,
+                  "type": "enum Types.Side"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "member_name": "Side",
+                      "referencedDeclaration": 4398,
+                      "type": "type(enum Types.Side)"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 4451,
+                          "type": "type(library Types)",
+                          "value": "Types"
+                        },
+                        "id": 5737,
+                        "name": "Identifier",
+                        "src": "1032:5:29"
+                      }
+                    ],
+                    "id": 5738,
+                    "name": "MemberAccess",
+                    "src": "1032:10:29"
+                  }
+                ],
+                "id": 5739,
+                "name": "MemberAccess",
+                "src": "1032:15:29"
+              }
+            ],
+            "id": 5740,
+            "name": "VariableDeclaration",
+            "src": "1001:46:29"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "functionSelector": "f9f8eda8",
+              "mutability": "mutable",
+              "name": "_POOL_INSURANCE_BALANCE_",
+              "overrides": null,
+              "scope": 5838,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint256",
+                  "type": "uint256"
+                },
+                "id": 5741,
+                "name": "ElementaryTypeName",
+                "src": "1054:7:29"
+              }
+            ],
+            "id": 5742,
+            "name": "VariableDeclaration",
+            "src": "1054:39:29"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "functionSelector": "d6b41298",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getPoolMarginSide",
+              "overrides": null,
+              "scope": 5838,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 5743,
+                "name": "ParameterList",
+                "src": "1126:2:29"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 5751,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "enum Types.Side",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "Types.Side",
+                          "referencedDeclaration": 4398,
+                          "type": "enum Types.Side"
+                        },
+                        "id": 5744,
+                        "name": "UserDefinedTypeName",
+                        "src": "1152:10:29"
+                      }
+                    ],
+                    "id": 5745,
+                    "name": "VariableDeclaration",
+                    "src": "1152:10:29"
+                  }
+                ],
+                "id": 5746,
+                "name": "ParameterList",
+                "src": "1151:12:29"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 5746
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "member_name": "SIDE",
+                          "referencedDeclaration": 4432,
+                          "type": "enum Types.Side"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 5723,
+                              "type": "struct Types.MarginAccount storage ref",
+                              "value": "_POOL_MARGIN_ACCOUNT_"
+                            },
+                            "id": 5747,
+                            "name": "Identifier",
+                            "src": "1181:21:29"
+                          }
+                        ],
+                        "id": 5748,
+                        "name": "MemberAccess",
+                        "src": "1181:26:29"
+                      }
+                    ],
+                    "id": 5749,
+                    "name": "Return",
+                    "src": "1174:33:29"
+                  }
+                ],
+                "id": 5750,
+                "name": "Block",
+                "src": "1164:50:29"
+              }
+            ],
+            "id": 5751,
+            "name": "FunctionDefinition",
+            "src": "1100:114:29"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "functionSelector": "72decd7a",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getPoolMarginCashBalance",
+              "overrides": null,
+              "scope": 5838,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 5752,
+                "name": "ParameterList",
+                "src": "1253:2:29"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 5760,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "int256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "int256",
+                          "type": "int256"
+                        },
+                        "id": 5753,
+                        "name": "ElementaryTypeName",
+                        "src": "1279:6:29"
+                      }
+                    ],
+                    "id": 5754,
+                    "name": "VariableDeclaration",
+                    "src": "1279:6:29"
+                  }
+                ],
+                "id": 5755,
+                "name": "ParameterList",
+                "src": "1278:8:29"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 5755
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "member_name": "CASH_BALANCE",
+                          "referencedDeclaration": 4438,
+                          "type": "int256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 5723,
+                              "type": "struct Types.MarginAccount storage ref",
+                              "value": "_POOL_MARGIN_ACCOUNT_"
+                            },
+                            "id": 5756,
+                            "name": "Identifier",
+                            "src": "1304:21:29"
+                          }
+                        ],
+                        "id": 5757,
+                        "name": "MemberAccess",
+                        "src": "1304:34:29"
+                      }
+                    ],
+                    "id": 5758,
+                    "name": "Return",
+                    "src": "1297:41:29"
+                  }
+                ],
+                "id": 5759,
+                "name": "Block",
+                "src": "1287:58:29"
+              }
+            ],
+            "id": 5760,
+            "name": "FunctionDefinition",
+            "src": "1220:125:29"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "functionSelector": "2b32812a",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getPoolMarginSize",
+              "overrides": null,
+              "scope": 5838,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 5761,
+                "name": "ParameterList",
+                "src": "1377:2:29"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 5769,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 5762,
+                        "name": "ElementaryTypeName",
+                        "src": "1403:7:29"
+                      }
+                    ],
+                    "id": 5763,
+                    "name": "VariableDeclaration",
+                    "src": "1403:7:29"
+                  }
+                ],
+                "id": 5764,
+                "name": "ParameterList",
+                "src": "1402:9:29"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 5764
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "member_name": "SIZE",
+                          "referencedDeclaration": 4434,
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 5723,
+                              "type": "struct Types.MarginAccount storage ref",
+                              "value": "_POOL_MARGIN_ACCOUNT_"
+                            },
+                            "id": 5765,
+                            "name": "Identifier",
+                            "src": "1429:21:29"
+                          }
+                        ],
+                        "id": 5766,
+                        "name": "MemberAccess",
+                        "src": "1429:26:29"
+                      }
+                    ],
+                    "id": 5767,
+                    "name": "Return",
+                    "src": "1422:33:29"
+                  }
+                ],
+                "id": 5768,
+                "name": "Block",
+                "src": "1412:50:29"
+              }
+            ],
+            "id": 5769,
+            "name": "FunctionDefinition",
+            "src": "1351:111:29"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "functionSelector": "b4cab955",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getPoolMarginEntryValue",
+              "overrides": null,
+              "scope": 5838,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 5770,
+                "name": "ParameterList",
+                "src": "1500:2:29"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 5778,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 5771,
+                        "name": "ElementaryTypeName",
+                        "src": "1526:7:29"
+                      }
+                    ],
+                    "id": 5772,
+                    "name": "VariableDeclaration",
+                    "src": "1526:7:29"
+                  }
+                ],
+                "id": 5773,
+                "name": "ParameterList",
+                "src": "1525:9:29"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 5773
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "member_name": "ENTRY_VALUE",
+                          "referencedDeclaration": 4436,
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 5723,
+                              "type": "struct Types.MarginAccount storage ref",
+                              "value": "_POOL_MARGIN_ACCOUNT_"
+                            },
+                            "id": 5774,
+                            "name": "Identifier",
+                            "src": "1552:21:29"
+                          }
+                        ],
+                        "id": 5775,
+                        "name": "MemberAccess",
+                        "src": "1552:33:29"
+                      }
+                    ],
+                    "id": 5776,
+                    "name": "Return",
+                    "src": "1545:40:29"
+                  }
+                ],
+                "id": 5777,
+                "name": "Block",
+                "src": "1535:57:29"
+              }
+            ],
+            "id": 5778,
+            "name": "FunctionDefinition",
+            "src": "1468:124:29"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "updateVirtualBalance",
+              "overrides": null,
+              "scope": 5838,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "baseTarget",
+                      "overrides": null,
+                      "scope": 5837,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 5779,
+                        "name": "ElementaryTypeName",
+                        "src": "1638:7:29"
+                      }
+                    ],
+                    "id": 5780,
+                    "name": "VariableDeclaration",
+                    "src": "1638:18:29"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "baseBalance",
+                      "overrides": null,
+                      "scope": 5837,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 5781,
+                        "name": "ElementaryTypeName",
+                        "src": "1666:7:29"
+                      }
+                    ],
+                    "id": 5782,
+                    "name": "VariableDeclaration",
+                    "src": "1666:19:29"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "quoteTarget",
+                      "overrides": null,
+                      "scope": 5837,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 5783,
+                        "name": "ElementaryTypeName",
+                        "src": "1695:7:29"
+                      }
+                    ],
+                    "id": 5784,
+                    "name": "VariableDeclaration",
+                    "src": "1695:19:29"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "quoteBalance",
+                      "overrides": null,
+                      "scope": 5837,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 5785,
+                        "name": "ElementaryTypeName",
+                        "src": "1724:7:29"
+                      }
+                    ],
+                    "id": 5786,
+                    "name": "VariableDeclaration",
+                    "src": "1724:20:29"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "newSide",
+                      "overrides": null,
+                      "scope": 5837,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "enum Types.Side",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "Types.Side",
+                          "referencedDeclaration": 4398,
+                          "type": "enum Types.Side"
+                        },
+                        "id": 5787,
+                        "name": "UserDefinedTypeName",
+                        "src": "1754:10:29"
+                      }
+                    ],
+                    "id": 5788,
+                    "name": "VariableDeclaration",
+                    "src": "1754:18:29"
+                  }
+                ],
+                "id": 5789,
+                "name": "ParameterList",
+                "src": "1628:154:29"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 5790,
+                "name": "ParameterList",
+                "src": "1792:0:29"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "falseBody": null
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "!=",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 5731,
+                              "type": "uint256",
+                              "value": "_TARGET_QUOTE_TOKEN_AMOUNT_"
+                            },
+                            "id": 5791,
+                            "name": "Identifier",
+                            "src": "1806:27:29"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 5784,
+                              "type": "uint256",
+                              "value": "quoteTarget"
+                            },
+                            "id": 5792,
+                            "name": "Identifier",
+                            "src": "1837:11:29"
+                          }
+                        ],
+                        "id": 5793,
+                        "name": "BinaryOperation",
+                        "src": "1806:42:29"
+                      },
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "operator": "=",
+                                  "type": "uint256"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 5731,
+                                      "type": "uint256",
+                                      "value": "_TARGET_QUOTE_TOKEN_AMOUNT_"
+                                    },
+                                    "id": 5794,
+                                    "name": "Identifier",
+                                    "src": "1864:27:29"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 5784,
+                                      "type": "uint256",
+                                      "value": "quoteTarget"
+                                    },
+                                    "id": 5795,
+                                    "name": "Identifier",
+                                    "src": "1894:11:29"
+                                  }
+                                ],
+                                "id": 5796,
+                                "name": "Assignment",
+                                "src": "1864:41:29"
+                              }
+                            ],
+                            "id": 5797,
+                            "name": "ExpressionStatement",
+                            "src": "1864:41:29"
+                          }
+                        ],
+                        "id": 5798,
+                        "name": "Block",
+                        "src": "1850:66:29"
+                      }
+                    ],
+                    "id": 5799,
+                    "name": "IfStatement",
+                    "src": "1802:114:29"
+                  },
+                  {
+                    "attributes": {
+                      "falseBody": null
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "!=",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 5729,
+                              "type": "uint256",
+                              "value": "_TARGET_BASE_TOKEN_AMOUNT_"
+                            },
+                            "id": 5800,
+                            "name": "Identifier",
+                            "src": "1929:26:29"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 5780,
+                              "type": "uint256",
+                              "value": "baseTarget"
+                            },
+                            "id": 5801,
+                            "name": "Identifier",
+                            "src": "1959:10:29"
+                          }
+                        ],
+                        "id": 5802,
+                        "name": "BinaryOperation",
+                        "src": "1929:40:29"
+                      },
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "operator": "=",
+                                  "type": "uint256"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 5729,
+                                      "type": "uint256",
+                                      "value": "_TARGET_BASE_TOKEN_AMOUNT_"
+                                    },
+                                    "id": 5803,
+                                    "name": "Identifier",
+                                    "src": "1985:26:29"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 5780,
+                                      "type": "uint256",
+                                      "value": "baseTarget"
+                                    },
+                                    "id": 5804,
+                                    "name": "Identifier",
+                                    "src": "2014:10:29"
+                                  }
+                                ],
+                                "id": 5805,
+                                "name": "Assignment",
+                                "src": "1985:39:29"
+                              }
+                            ],
+                            "id": 5806,
+                            "name": "ExpressionStatement",
+                            "src": "1985:39:29"
+                          }
+                        ],
+                        "id": 5807,
+                        "name": "Block",
+                        "src": "1971:64:29"
+                      }
+                    ],
+                    "id": 5808,
+                    "name": "IfStatement",
+                    "src": "1925:110:29"
+                  },
+                  {
+                    "attributes": {
+                      "falseBody": null
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "!=",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 5733,
+                              "type": "uint256",
+                              "value": "_BASE_BALANCE_"
+                            },
+                            "id": 5809,
+                            "name": "Identifier",
+                            "src": "2048:14:29"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 5782,
+                              "type": "uint256",
+                              "value": "baseBalance"
+                            },
+                            "id": 5810,
+                            "name": "Identifier",
+                            "src": "2066:11:29"
+                          }
+                        ],
+                        "id": 5811,
+                        "name": "BinaryOperation",
+                        "src": "2048:29:29"
+                      },
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "operator": "=",
+                                  "type": "uint256"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 5733,
+                                      "type": "uint256",
+                                      "value": "_BASE_BALANCE_"
+                                    },
+                                    "id": 5812,
+                                    "name": "Identifier",
+                                    "src": "2093:14:29"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 5782,
+                                      "type": "uint256",
+                                      "value": "baseBalance"
+                                    },
+                                    "id": 5813,
+                                    "name": "Identifier",
+                                    "src": "2110:11:29"
+                                  }
+                                ],
+                                "id": 5814,
+                                "name": "Assignment",
+                                "src": "2093:28:29"
+                              }
+                            ],
+                            "id": 5815,
+                            "name": "ExpressionStatement",
+                            "src": "2093:28:29"
+                          }
+                        ],
+                        "id": 5816,
+                        "name": "Block",
+                        "src": "2079:53:29"
+                      }
+                    ],
+                    "id": 5817,
+                    "name": "IfStatement",
+                    "src": "2044:88:29"
+                  },
+                  {
+                    "attributes": {
+                      "falseBody": null
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "!=",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 5735,
+                              "type": "uint256",
+                              "value": "_QUOTE_BALANCE_"
+                            },
+                            "id": 5818,
+                            "name": "Identifier",
+                            "src": "2145:15:29"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 5786,
+                              "type": "uint256",
+                              "value": "quoteBalance"
+                            },
+                            "id": 5819,
+                            "name": "Identifier",
+                            "src": "2164:12:29"
+                          }
+                        ],
+                        "id": 5820,
+                        "name": "BinaryOperation",
+                        "src": "2145:31:29"
+                      },
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "operator": "=",
+                                  "type": "uint256"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 5735,
+                                      "type": "uint256",
+                                      "value": "_QUOTE_BALANCE_"
+                                    },
+                                    "id": 5821,
+                                    "name": "Identifier",
+                                    "src": "2192:15:29"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 5786,
+                                      "type": "uint256",
+                                      "value": "quoteBalance"
+                                    },
+                                    "id": 5822,
+                                    "name": "Identifier",
+                                    "src": "2210:12:29"
+                                  }
+                                ],
+                                "id": 5823,
+                                "name": "Assignment",
+                                "src": "2192:30:29"
+                              }
+                            ],
+                            "id": 5824,
+                            "name": "ExpressionStatement",
+                            "src": "2192:30:29"
+                          }
+                        ],
+                        "id": 5825,
+                        "name": "Block",
+                        "src": "2178:55:29"
+                      }
+                    ],
+                    "id": 5826,
+                    "name": "IfStatement",
+                    "src": "2141:92:29"
+                  },
+                  {
+                    "attributes": {
+                      "falseBody": null
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_enum$_Side_$4398",
+                            "typeString": "enum Types.Side"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "!=",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 5740,
+                              "type": "enum Types.Side",
+                              "value": "_R_STATUS_"
+                            },
+                            "id": 5827,
+                            "name": "Identifier",
+                            "src": "2246:10:29"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 5788,
+                              "type": "enum Types.Side",
+                              "value": "newSide"
+                            },
+                            "id": 5828,
+                            "name": "Identifier",
+                            "src": "2260:7:29"
+                          }
+                        ],
+                        "id": 5829,
+                        "name": "BinaryOperation",
+                        "src": "2246:21:29"
+                      },
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "operator": "=",
+                                  "type": "enum Types.Side"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 5740,
+                                      "type": "enum Types.Side",
+                                      "value": "_R_STATUS_"
+                                    },
+                                    "id": 5830,
+                                    "name": "Identifier",
+                                    "src": "2283:10:29"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 5788,
+                                      "type": "enum Types.Side",
+                                      "value": "newSide"
+                                    },
+                                    "id": 5831,
+                                    "name": "Identifier",
+                                    "src": "2296:7:29"
+                                  }
+                                ],
+                                "id": 5832,
+                                "name": "Assignment",
+                                "src": "2283:20:29"
+                              }
+                            ],
+                            "id": 5833,
+                            "name": "ExpressionStatement",
+                            "src": "2283:20:29"
+                          }
+                        ],
+                        "id": 5834,
+                        "name": "Block",
+                        "src": "2269:45:29"
+                      }
+                    ],
+                    "id": 5835,
+                    "name": "IfStatement",
+                    "src": "2242:72:29"
+                  }
+                ],
+                "id": 5836,
+                "name": "Block",
+                "src": "1792:528:29"
+              }
+            ],
+            "id": 5837,
+            "name": "FunctionDefinition",
+            "src": "1598:722:29"
+          }
+        ],
+        "id": 5838,
+        "name": "ContractDefinition",
+        "src": "464:1858:29"
+      }
+    ],
+    "id": 5839,
+    "name": "SourceUnit",
+    "src": "78:2245:29"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.9+commit.3e3065ac.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-03-25T08:51:25.683Z",
+  "devdoc": {
+    "author": "Parapara",
+    "methods": {},
+    "title": "Storage"
+  },
+  "userdoc": {
+    "methods": {},
+    "notice": "Local Variables"
+  }
+}
