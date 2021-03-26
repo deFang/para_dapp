@@ -83,6 +83,8 @@ contract LiquidityProvider is Margin {
         ADMIN.checkNotClosed();
         ADMIN.checkNotPaused();
         ADMIN.depositAllowed();
+        Types.MarginAccount memory lpAccount = _MARGIN_ACCOUNT_[to];
+        require(balanceMargin(lpAccount)>amount, "INSUFFICIENT_FUND");
 
         uint256 totalCapital = getTotalCollateralPoolToken();
         uint256 capital;
@@ -138,7 +140,7 @@ contract LiquidityProvider is Margin {
         ADMIN.checkNotPaused();
         // calculate capital
         uint256 totalCapital = getTotalCollateralPoolToken();
-        require(totalCapital > 0, "withdrawCollateralTo: NO_LP");
+        require(totalCapital > 0, "NO_LP");
         uint256 cashAmount = DecimalMath.mul(DecimalMath.divCeil(lpAmount, totalCapital), _POOL_MARGIN_ACCOUNT_.CASH_BALANCE.touint256());
         _marginTransferFromPool(to, cashAmount);
         uint256 sizeAmount;
@@ -148,11 +150,11 @@ contract LiquidityProvider is Margin {
             sizeAmount = DecimalMath.mul(r, _POOL_MARGIN_ACCOUNT_.SIZE);
             valueAmount = DecimalMath.mul(r, _POOL_MARGIN_ACCOUNT_.ENTRY_VALUE);
 
-            Types.MarginAccount memory traderAccount = _MARGIN_ACCOUNT_[msg.sender];
+            Types.MarginAccount memory lpAccount = _MARGIN_ACCOUNT_[to];
             Types.MarginAccount memory poolAccount = _POOL_MARGIN_ACCOUNT_;
-            traderAccount = trade(traderAccount, _POOL_MARGIN_ACCOUNT_.SIDE, valueAmount, sizeAmount);
-            poolAccount = trade(poolAccount, Types.oppositeSide(_POOL_MARGIN_ACCOUNT_.SIDE), valueAmount, sizeAmount);
-            _MARGIN_ACCOUNT_[msg.sender] = traderAccount;
+            lpAccount = trade(lpAccount, poolAccount.SIDE, valueAmount, sizeAmount);
+            poolAccount = trade(poolAccount, Types.oppositeSide(poolAccount.SIDE), valueAmount, sizeAmount);
+            _MARGIN_ACCOUNT_[to] = traderAccount;
             _POOL_MARGIN_ACCOUNT_ = poolAccount;
 
         }

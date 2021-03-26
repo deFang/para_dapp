@@ -32,58 +32,58 @@
   "bytecode": "0x6080604052348015600f57600080fd5b5060a28061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c80637ff9b59614603757806398d5fdca146051575b600080fd5b603d6057565b604051604891906063565b60405180910390f35b603d605d565b60005481565b60005490565b9081526020019056fea2646970667358221220e0a1dac53313bb7d4892d69df76d241b5103045ae669d002d90efaa0a078592c64736f6c63430006090033",
   "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c80637ff9b59614603757806398d5fdca146051575b600080fd5b603d6057565b604051604891906063565b60405180910390f35b603d605d565b60005481565b60005490565b9081526020019056fea2646970667358221220e0a1dac53313bb7d4892d69df76d241b5103045ae669d002d90efaa0a078592c64736f6c63430006090033",
   "immutableReferences": {},
-  "sourceMap": "209:147:5:-:0;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "209:147:5:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;236:25;;;:::i;:::-;;;;;;;;;;;;;;;;268:86;;;:::i;236:25::-;;;;:::o;268:86::-;311:7;337:10;268:86;:::o;125:222:-1:-;76:37;;;252:2;237:18;;223:124",
+  "sourceMap": "209:147:9:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "209:147:9:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;236:25;;;:::i;:::-;;;;;;;;;;;;;;;;268:86;;;:::i;236:25::-;;;;:::o;268:86::-;311:7;337:10;268:86;:::o;125:222:-1:-;76:37;;;252:2;237:18;;223:124",
   "source": "/*\n\n    Copyright 2020 DODO ZOO.\n    SPDX-License-Identifier: Apache-2.0\n\n*/\n\npragma solidity 0.6.9;\npragma experimental ABIEncoderV2;\n\n\nimport {IPara} from \"../interface/IPara.sol\";\n\n\n// Oracle only for test\ncontract Liquidator {\n\n    uint256 public tokenPrice;\n\n    function getPrice() external view returns (uint256) {\n        return tokenPrice;\n    }\n}\n",
   "sourcePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/helper/Liquidator.sol",
   "ast": {
     "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/helper/Liquidator.sol",
     "exportedSymbols": {
       "Liquidator": [
-        1239
+        1879
       ]
     },
-    "id": 1240,
+    "id": 1880,
     "license": "Apache-2.0",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1225,
+        "id": 1865,
         "literals": [
           "solidity",
           "0.6",
           ".9"
         ],
         "nodeType": "PragmaDirective",
-        "src": "78:22:5"
+        "src": "78:22:9"
       },
       {
-        "id": 1226,
+        "id": 1866,
         "literals": [
           "experimental",
           "ABIEncoderV2"
         ],
         "nodeType": "PragmaDirective",
-        "src": "101:33:5"
+        "src": "101:33:9"
       },
       {
         "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/interface/IPara.sol",
         "file": "../interface/IPara.sol",
-        "id": 1228,
+        "id": 1868,
         "nodeType": "ImportDirective",
-        "scope": 1240,
-        "sourceUnit": 1739,
-        "src": "137:45:5",
+        "scope": 1880,
+        "sourceUnit": 2409,
+        "src": "137:45:9",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 1227,
+              "id": 1867,
               "name": "IPara",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "145:5:5",
+              "src": "145:5:9",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -101,9 +101,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1239,
+        "id": 1879,
         "linearizedBaseContracts": [
-          1239
+          1879
         ],
         "name": "Liquidator",
         "nodeType": "ContractDefinition",
@@ -111,13 +111,13 @@
           {
             "constant": false,
             "functionSelector": "7ff9b596",
-            "id": 1230,
+            "id": 1870,
             "mutability": "mutable",
             "name": "tokenPrice",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1239,
-            "src": "236:25:5",
+            "scope": 1879,
+            "src": "236:25:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -125,10 +125,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1229,
+              "id": 1869,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "236:7:5",
+              "src": "236:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -139,34 +139,34 @@
           },
           {
             "body": {
-              "id": 1237,
+              "id": 1877,
               "nodeType": "Block",
-              "src": "320:34:5",
+              "src": "320:34:9",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1235,
+                    "id": 1875,
                     "name": "tokenPrice",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1230,
-                    "src": "337:10:5",
+                    "referencedDeclaration": 1870,
+                    "src": "337:10:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 1234,
-                  "id": 1236,
+                  "functionReturnParameters": 1874,
+                  "id": 1876,
                   "nodeType": "Return",
-                  "src": "330:17:5"
+                  "src": "330:17:9"
                 }
               ]
             },
             "documentation": null,
             "functionSelector": "98d5fdca",
-            "id": 1238,
+            "id": 1878,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -174,24 +174,24 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 1231,
+              "id": 1871,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "285:2:5"
+              "src": "285:2:9"
             },
             "returnParameters": {
-              "id": 1234,
+              "id": 1874,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1233,
+                  "id": 1873,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1238,
-                  "src": "311:7:5",
+                  "scope": 1878,
+                  "src": "311:7:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -199,10 +199,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1232,
+                    "id": 1872,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "311:7:5",
+                    "src": "311:7:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -212,27 +212,27 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "310:9:5"
+              "src": "310:9:9"
             },
-            "scope": 1239,
-            "src": "268:86:5",
+            "scope": 1879,
+            "src": "268:86:9",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 1240,
-        "src": "209:147:5"
+        "scope": 1880,
+        "src": "209:147:9"
       }
     ],
-    "src": "78:279:5"
+    "src": "78:279:9"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/helper/Liquidator.sol",
       "exportedSymbols": {
         "Liquidator": [
-          1239
+          1879
         ]
       },
       "license": "Apache-2.0"
@@ -246,9 +246,9 @@
             ".9"
           ]
         },
-        "id": 1225,
+        "id": 1865,
         "name": "PragmaDirective",
-        "src": "78:22:5"
+        "src": "78:22:9"
       },
       {
         "attributes": {
@@ -257,16 +257,16 @@
             "ABIEncoderV2"
           ]
         },
-        "id": 1226,
+        "id": 1866,
         "name": "PragmaDirective",
-        "src": "101:33:5"
+        "src": "101:33:9"
       },
       {
         "attributes": {
-          "SourceUnit": 1739,
+          "SourceUnit": 2409,
           "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/interface/IPara.sol",
           "file": "../interface/IPara.sol",
-          "scope": 1240,
+          "scope": 1880,
           "symbolAliases": [
             {
               "foreign": {
@@ -279,18 +279,18 @@
                   "type": null,
                   "value": "IPara"
                 },
-                "id": 1227,
+                "id": 1867,
                 "name": "Identifier",
-                "src": "145:5:5"
+                "src": "145:5:9"
               },
               "local": null
             }
           ],
           "unitAlias": ""
         },
-        "id": 1228,
+        "id": 1868,
         "name": "ImportDirective",
-        "src": "137:45:5"
+        "src": "137:45:9"
       },
       {
         "attributes": {
@@ -305,10 +305,10 @@
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            1239
+            1879
           ],
           "name": "Liquidator",
-          "scope": 1240
+          "scope": 1880
         },
         "children": [
           {
@@ -318,7 +318,7 @@
               "mutability": "mutable",
               "name": "tokenPrice",
               "overrides": null,
-              "scope": 1239,
+              "scope": 1879,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "uint256",
@@ -331,14 +331,14 @@
                   "name": "uint256",
                   "type": "uint256"
                 },
-                "id": 1229,
+                "id": 1869,
                 "name": "ElementaryTypeName",
-                "src": "236:7:5"
+                "src": "236:7:9"
               }
             ],
-            "id": 1230,
+            "id": 1870,
             "name": "VariableDeclaration",
-            "src": "236:25:5"
+            "src": "236:25:9"
           },
           {
             "attributes": {
@@ -352,7 +352,7 @@
               ],
               "name": "getPrice",
               "overrides": null,
-              "scope": 1239,
+              "scope": 1879,
               "stateMutability": "view",
               "virtual": false,
               "visibility": "external"
@@ -365,9 +365,9 @@
                   ]
                 },
                 "children": [],
-                "id": 1231,
+                "id": 1871,
                 "name": "ParameterList",
-                "src": "285:2:5"
+                "src": "285:2:9"
               },
               {
                 "children": [
@@ -377,7 +377,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 1238,
+                      "scope": 1878,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -390,25 +390,25 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 1232,
+                        "id": 1872,
                         "name": "ElementaryTypeName",
-                        "src": "311:7:5"
+                        "src": "311:7:9"
                       }
                     ],
-                    "id": 1233,
+                    "id": 1873,
                     "name": "VariableDeclaration",
-                    "src": "311:7:5"
+                    "src": "311:7:9"
                   }
                 ],
-                "id": 1234,
+                "id": 1874,
                 "name": "ParameterList",
-                "src": "310:9:5"
+                "src": "310:9:9"
               },
               {
                 "children": [
                   {
                     "attributes": {
-                      "functionReturnParameters": 1234
+                      "functionReturnParameters": 1874
                     },
                     "children": [
                       {
@@ -417,38 +417,38 @@
                           "overloadedDeclarations": [
                             null
                           ],
-                          "referencedDeclaration": 1230,
+                          "referencedDeclaration": 1870,
                           "type": "uint256",
                           "value": "tokenPrice"
                         },
-                        "id": 1235,
+                        "id": 1875,
                         "name": "Identifier",
-                        "src": "337:10:5"
+                        "src": "337:10:9"
                       }
                     ],
-                    "id": 1236,
+                    "id": 1876,
                     "name": "Return",
-                    "src": "330:17:5"
+                    "src": "330:17:9"
                   }
                 ],
-                "id": 1237,
+                "id": 1877,
                 "name": "Block",
-                "src": "320:34:5"
+                "src": "320:34:9"
               }
             ],
-            "id": 1238,
+            "id": 1878,
             "name": "FunctionDefinition",
-            "src": "268:86:5"
+            "src": "268:86:9"
           }
         ],
-        "id": 1239,
+        "id": 1879,
         "name": "ContractDefinition",
-        "src": "209:147:5"
+        "src": "209:147:9"
       }
     ],
-    "id": 1240,
+    "id": 1880,
     "name": "SourceUnit",
-    "src": "78:279:5"
+    "src": "78:279:9"
   },
   "compiler": {
     "name": "solc",
@@ -456,7 +456,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-03-26T05:07:53.814Z",
+  "updatedAt": "2021-03-26T06:46:20.084Z",
   "devdoc": {
     "methods": {}
   },
