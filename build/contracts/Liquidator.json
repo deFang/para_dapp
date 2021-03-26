@@ -28,62 +28,62 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.9+commit.3e3065ac\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"tokenPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/helper/Liquidator.sol\":\"Liquidator\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/admin/Admin.sol\":{\"keccak256\":\"0xb896909ce77e87811a99eab9412cee3403034a5134fada231129f3616ba99789\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://1782e17331092220ba60752dd892429a8175aeadff7a3461b05388f2e5f795aa\",\"dweb:/ipfs/QmTk4ee1BSn2WJKnG7nL8VLATnZUrFKsA7acUyC8vLvdav\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/admin/Storage.sol\":{\"keccak256\":\"0xcdc5dbbfebd9dfaa7842deaccaa89dfd9acfc6e60bb1825dae85763179404484\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://33dff3f67786deaa1f4276473e2a694877251db4571ffc9b47c5f09e1970ab2a\",\"dweb:/ipfs/QmTBGJJoHjEvMjPhShC17QJiLk7anEE58z81dmH2ZRWr79\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/helper/Liquidator.sol\":{\"keccak256\":\"0x68fe7076920f722749bd133d62f2c34a8de26bbead11715a46507b75114241c5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://144c847996c9d4bb095a15a3a582348109c5d879d5000210c3be7ffb12d4f929\",\"dweb:/ipfs/Qma7wZKixhf1WJmyxw2HPytVHnQhrr2m6T6wpNFxG4K3iy\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/interface/ILpToken.sol\":{\"keccak256\":\"0x488da9ad000ea8a670edb8fd0642e260416330d881f3771c94a4943e2053d23b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d81f542b657d8ed8c09a4aee17855140245a5acc0f11a1a3bec52653e3c1be08\",\"dweb:/ipfs/QmcwpMYJaViQrS2xZ5hURiDsKpnche4cM6GLv76v2SC4iE\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/interface/IOracle.sol\":{\"keccak256\":\"0x410be6c7bcff6ee08861bb88d5289d439df57c34bf0a9e1e070b5a0e2f79977d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a43709b0b9470335861fa688b90aec92bddfea9ca6e584fe32521897dc651819\",\"dweb:/ipfs/QmaYnUgpAsrjGYeRqyaynsmKf7Em91Ww4MwBSjsRvc1Gb8\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/interface/IPara.sol\":{\"keccak256\":\"0x8b8d9fbe769b4761a5fc7c20ea7316da38331ac3f56e6acde4e417bba6751a80\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://81b73e5f0c5da8752bf4a67d338077c9cea35f157c0aa293beee4fe9f0905a3a\",\"dweb:/ipfs/QmVswxxnBvVZhrkscw7Sf9sXKW8MLmDhheHPVBkGPS8cHE\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/DecimalMath.sol\":{\"keccak256\":\"0x30328988422ac7d24a404295a7f802766366b56b6dd57f1ab6cc6e5871a126d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://090b35b20c38abfc68a1dc545541b5f10c9323ca113ed364074a308bd9f8374c\",\"dweb:/ipfs/QmarVh4bBWCYSZGi277ja2sECB8TcjdF1R7woPSG9YNHzd\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/InitializableOwnable.sol\":{\"keccak256\":\"0xbad13c4fb459e470debb5d6f22f571ffdce0df8205b87c69a9809071f969bb17\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://72039996ee88d06810c693319fee5bacadddd3301b46801bac7e1ff81e902f9c\",\"dweb:/ipfs/QmcYLX39iULRMEPKCUCGBjM62vtwtBcdzYJWbowr2Hy43j\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/ReentrancyGuard.sol\":{\"keccak256\":\"0xc9c3fc946350fd72083a9d5b1327ff923533ef37b054bc7b6007562b20b0faaf\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fc140417457139fb240427629673bfaf970c5d4568ad1cfe582764c6e4855bbb\",\"dweb:/ipfs/Qmd7ESYe5kyM6NYiSzeFE74f1YGGPXzpdVd5qnYg2AvgH8\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/SafeMath.sol\":{\"keccak256\":\"0xd34c8f9bd3a9afec9dde9dd5698f3a0dd5431a277504624687783bee70d503c8\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://bd6f1878d13593ea74e0b1f42a63330bc51469fdb29e1657e86bc9832d4dbe12\",\"dweb:/ipfs/QmZJcqeQMb3v1m2CvqTaom8EHVBW8CULvwX5WWHy6mGCuM\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/SignedSafeMath.sol\":{\"keccak256\":\"0x9596e90c1eaf002469259e401cdf4a71086c3bb4142760a8ef9a9c010d4937c5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bd9c17f4b723cb6afe470ed825d4e38ffb9c33e409bde16408a2160525cb90dd\",\"dweb:/ipfs/QmNqgz64zkkMQBqRaS3eB9sdBs7nAZpyXv4z2TUFyNJWte\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/Types.sol\":{\"keccak256\":\"0xf75c5bc075d970367bedcac5c031e171837593f888203be76516411eed6c997a\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://514c4839c7801d48ce5bf24828d1290db369e4ae83840dab90866302b5f0aa49\",\"dweb:/ipfs/Qmd3w6vXbfBzfdrX5ayjT2JnKHL1Br7nPWWtykahzYkowS\"]}},\"version\":1}",
-  "bytecode": "0x6080604052348015600f57600080fd5b5060a28061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c80637ff9b59614603757806398d5fdca146051575b600080fd5b603d6057565b604051604891906063565b60405180910390f35b603d605d565b60005481565b60005490565b9081526020019056fea2646970667358221220d9be9f7b9f920ed9e7303cede644cdeddf5552caf0206b8197fae83fad14cf6364736f6c63430006090033",
-  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c80637ff9b59614603757806398d5fdca146051575b600080fd5b603d6057565b604051604891906063565b60405180910390f35b603d605d565b60005481565b60005490565b9081526020019056fea2646970667358221220d9be9f7b9f920ed9e7303cede644cdeddf5552caf0206b8197fae83fad14cf6364736f6c63430006090033",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.9+commit.3e3065ac\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"tokenPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/helper/Liquidator.sol\":\"Liquidator\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/admin/Admin.sol\":{\"keccak256\":\"0xb896909ce77e87811a99eab9412cee3403034a5134fada231129f3616ba99789\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://1782e17331092220ba60752dd892429a8175aeadff7a3461b05388f2e5f795aa\",\"dweb:/ipfs/QmTk4ee1BSn2WJKnG7nL8VLATnZUrFKsA7acUyC8vLvdav\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/admin/Storage.sol\":{\"keccak256\":\"0xcdc5dbbfebd9dfaa7842deaccaa89dfd9acfc6e60bb1825dae85763179404484\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://33dff3f67786deaa1f4276473e2a694877251db4571ffc9b47c5f09e1970ab2a\",\"dweb:/ipfs/QmTBGJJoHjEvMjPhShC17QJiLk7anEE58z81dmH2ZRWr79\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/helper/Liquidator.sol\":{\"keccak256\":\"0x68fe7076920f722749bd133d62f2c34a8de26bbead11715a46507b75114241c5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://144c847996c9d4bb095a15a3a582348109c5d879d5000210c3be7ffb12d4f929\",\"dweb:/ipfs/Qma7wZKixhf1WJmyxw2HPytVHnQhrr2m6T6wpNFxG4K3iy\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/interface/ILpToken.sol\":{\"keccak256\":\"0x488da9ad000ea8a670edb8fd0642e260416330d881f3771c94a4943e2053d23b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d81f542b657d8ed8c09a4aee17855140245a5acc0f11a1a3bec52653e3c1be08\",\"dweb:/ipfs/QmcwpMYJaViQrS2xZ5hURiDsKpnche4cM6GLv76v2SC4iE\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/interface/IOracle.sol\":{\"keccak256\":\"0x410be6c7bcff6ee08861bb88d5289d439df57c34bf0a9e1e070b5a0e2f79977d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a43709b0b9470335861fa688b90aec92bddfea9ca6e584fe32521897dc651819\",\"dweb:/ipfs/QmaYnUgpAsrjGYeRqyaynsmKf7Em91Ww4MwBSjsRvc1Gb8\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/interface/IPara.sol\":{\"keccak256\":\"0x8b8d9fbe769b4761a5fc7c20ea7316da38331ac3f56e6acde4e417bba6751a80\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://81b73e5f0c5da8752bf4a67d338077c9cea35f157c0aa293beee4fe9f0905a3a\",\"dweb:/ipfs/QmVswxxnBvVZhrkscw7Sf9sXKW8MLmDhheHPVBkGPS8cHE\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/DecimalMath.sol\":{\"keccak256\":\"0x30328988422ac7d24a404295a7f802766366b56b6dd57f1ab6cc6e5871a126d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://090b35b20c38abfc68a1dc545541b5f10c9323ca113ed364074a308bd9f8374c\",\"dweb:/ipfs/QmarVh4bBWCYSZGi277ja2sECB8TcjdF1R7woPSG9YNHzd\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/InitializableOwnable.sol\":{\"keccak256\":\"0xbad13c4fb459e470debb5d6f22f571ffdce0df8205b87c69a9809071f969bb17\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://72039996ee88d06810c693319fee5bacadddd3301b46801bac7e1ff81e902f9c\",\"dweb:/ipfs/QmcYLX39iULRMEPKCUCGBjM62vtwtBcdzYJWbowr2Hy43j\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/ReentrancyGuard.sol\":{\"keccak256\":\"0xc9c3fc946350fd72083a9d5b1327ff923533ef37b054bc7b6007562b20b0faaf\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fc140417457139fb240427629673bfaf970c5d4568ad1cfe582764c6e4855bbb\",\"dweb:/ipfs/Qmd7ESYe5kyM6NYiSzeFE74f1YGGPXzpdVd5qnYg2AvgH8\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/SafeMath.sol\":{\"keccak256\":\"0xd34c8f9bd3a9afec9dde9dd5698f3a0dd5431a277504624687783bee70d503c8\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://bd6f1878d13593ea74e0b1f42a63330bc51469fdb29e1657e86bc9832d4dbe12\",\"dweb:/ipfs/QmZJcqeQMb3v1m2CvqTaom8EHVBW8CULvwX5WWHy6mGCuM\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/SignedSafeMath.sol\":{\"keccak256\":\"0x9596e90c1eaf002469259e401cdf4a71086c3bb4142760a8ef9a9c010d4937c5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bd9c17f4b723cb6afe470ed825d4e38ffb9c33e409bde16408a2160525cb90dd\",\"dweb:/ipfs/QmNqgz64zkkMQBqRaS3eB9sdBs7nAZpyXv4z2TUFyNJWte\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/Types.sol\":{\"keccak256\":\"0x7441dc0cc950e5520b9c6ae234c579df3a74aec500e37053e556a99150236215\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://69dd8708d54dd06ca9288f3b06b86229a2d5391d4a7286329851d26f0912e572\",\"dweb:/ipfs/QmP6zzik1tk8fYgk1XUA5sZeJsJevhuKhgbaMCRg9hQ3Dr\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b5060a28061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c80637ff9b59614603757806398d5fdca146051575b600080fd5b603d6057565b604051604891906063565b60405180910390f35b603d605d565b60005481565b60005490565b9081526020019056fea2646970667358221220e0a1dac53313bb7d4892d69df76d241b5103045ae669d002d90efaa0a078592c64736f6c63430006090033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c80637ff9b59614603757806398d5fdca146051575b600080fd5b603d6057565b604051604891906063565b60405180910390f35b603d605d565b60005481565b60005490565b9081526020019056fea2646970667358221220e0a1dac53313bb7d4892d69df76d241b5103045ae669d002d90efaa0a078592c64736f6c63430006090033",
   "immutableReferences": {},
-  "sourceMap": "209:147:9:-:0;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "209:147:9:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;236:25;;;:::i;:::-;;;;;;;;;;;;;;;;268:86;;;:::i;236:25::-;;;;:::o;268:86::-;311:7;337:10;268:86;:::o;125:222:-1:-;76:37;;;252:2;237:18;;223:124",
+  "sourceMap": "209:147:5:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "209:147:5:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;236:25;;;:::i;:::-;;;;;;;;;;;;;;;;268:86;;;:::i;236:25::-;;;;:::o;268:86::-;311:7;337:10;268:86;:::o;125:222:-1:-;76:37;;;252:2;237:18;;223:124",
   "source": "/*\n\n    Copyright 2020 DODO ZOO.\n    SPDX-License-Identifier: Apache-2.0\n\n*/\n\npragma solidity 0.6.9;\npragma experimental ABIEncoderV2;\n\n\nimport {IPara} from \"../interface/IPara.sol\";\n\n\n// Oracle only for test\ncontract Liquidator {\n\n    uint256 public tokenPrice;\n\n    function getPrice() external view returns (uint256) {\n        return tokenPrice;\n    }\n}\n",
   "sourcePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/helper/Liquidator.sol",
   "ast": {
     "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/helper/Liquidator.sol",
     "exportedSymbols": {
       "Liquidator": [
-        1879
+        1239
       ]
     },
-    "id": 1880,
+    "id": 1240,
     "license": "Apache-2.0",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1865,
+        "id": 1225,
         "literals": [
           "solidity",
           "0.6",
           ".9"
         ],
         "nodeType": "PragmaDirective",
-        "src": "78:22:9"
+        "src": "78:22:5"
       },
       {
-        "id": 1866,
+        "id": 1226,
         "literals": [
           "experimental",
           "ABIEncoderV2"
         ],
         "nodeType": "PragmaDirective",
-        "src": "101:33:9"
+        "src": "101:33:5"
       },
       {
         "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/interface/IPara.sol",
         "file": "../interface/IPara.sol",
-        "id": 1868,
+        "id": 1228,
         "nodeType": "ImportDirective",
-        "scope": 1880,
-        "sourceUnit": 2409,
-        "src": "137:45:9",
+        "scope": 1240,
+        "sourceUnit": 1739,
+        "src": "137:45:5",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 1867,
+              "id": 1227,
               "name": "IPara",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "145:5:9",
+              "src": "145:5:5",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -101,9 +101,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1879,
+        "id": 1239,
         "linearizedBaseContracts": [
-          1879
+          1239
         ],
         "name": "Liquidator",
         "nodeType": "ContractDefinition",
@@ -111,13 +111,13 @@
           {
             "constant": false,
             "functionSelector": "7ff9b596",
-            "id": 1870,
+            "id": 1230,
             "mutability": "mutable",
             "name": "tokenPrice",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1879,
-            "src": "236:25:9",
+            "scope": 1239,
+            "src": "236:25:5",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -125,10 +125,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1869,
+              "id": 1229,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "236:7:9",
+              "src": "236:7:5",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -139,34 +139,34 @@
           },
           {
             "body": {
-              "id": 1877,
+              "id": 1237,
               "nodeType": "Block",
-              "src": "320:34:9",
+              "src": "320:34:5",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1875,
+                    "id": 1235,
                     "name": "tokenPrice",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1870,
-                    "src": "337:10:9",
+                    "referencedDeclaration": 1230,
+                    "src": "337:10:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 1874,
-                  "id": 1876,
+                  "functionReturnParameters": 1234,
+                  "id": 1236,
                   "nodeType": "Return",
-                  "src": "330:17:9"
+                  "src": "330:17:5"
                 }
               ]
             },
             "documentation": null,
             "functionSelector": "98d5fdca",
-            "id": 1878,
+            "id": 1238,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -174,24 +174,24 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 1871,
+              "id": 1231,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "285:2:9"
+              "src": "285:2:5"
             },
             "returnParameters": {
-              "id": 1874,
+              "id": 1234,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1873,
+                  "id": 1233,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1878,
-                  "src": "311:7:9",
+                  "scope": 1238,
+                  "src": "311:7:5",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -199,10 +199,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1872,
+                    "id": 1232,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "311:7:9",
+                    "src": "311:7:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -212,27 +212,27 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "310:9:9"
+              "src": "310:9:5"
             },
-            "scope": 1879,
-            "src": "268:86:9",
+            "scope": 1239,
+            "src": "268:86:5",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 1880,
-        "src": "209:147:9"
+        "scope": 1240,
+        "src": "209:147:5"
       }
     ],
-    "src": "78:279:9"
+    "src": "78:279:5"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/helper/Liquidator.sol",
       "exportedSymbols": {
         "Liquidator": [
-          1879
+          1239
         ]
       },
       "license": "Apache-2.0"
@@ -246,9 +246,9 @@
             ".9"
           ]
         },
-        "id": 1865,
+        "id": 1225,
         "name": "PragmaDirective",
-        "src": "78:22:9"
+        "src": "78:22:5"
       },
       {
         "attributes": {
@@ -257,16 +257,16 @@
             "ABIEncoderV2"
           ]
         },
-        "id": 1866,
+        "id": 1226,
         "name": "PragmaDirective",
-        "src": "101:33:9"
+        "src": "101:33:5"
       },
       {
         "attributes": {
-          "SourceUnit": 2409,
+          "SourceUnit": 1739,
           "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/interface/IPara.sol",
           "file": "../interface/IPara.sol",
-          "scope": 1880,
+          "scope": 1240,
           "symbolAliases": [
             {
               "foreign": {
@@ -279,18 +279,18 @@
                   "type": null,
                   "value": "IPara"
                 },
-                "id": 1867,
+                "id": 1227,
                 "name": "Identifier",
-                "src": "145:5:9"
+                "src": "145:5:5"
               },
               "local": null
             }
           ],
           "unitAlias": ""
         },
-        "id": 1868,
+        "id": 1228,
         "name": "ImportDirective",
-        "src": "137:45:9"
+        "src": "137:45:5"
       },
       {
         "attributes": {
@@ -305,10 +305,10 @@
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            1879
+            1239
           ],
           "name": "Liquidator",
-          "scope": 1880
+          "scope": 1240
         },
         "children": [
           {
@@ -318,7 +318,7 @@
               "mutability": "mutable",
               "name": "tokenPrice",
               "overrides": null,
-              "scope": 1879,
+              "scope": 1239,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "uint256",
@@ -331,14 +331,14 @@
                   "name": "uint256",
                   "type": "uint256"
                 },
-                "id": 1869,
+                "id": 1229,
                 "name": "ElementaryTypeName",
-                "src": "236:7:9"
+                "src": "236:7:5"
               }
             ],
-            "id": 1870,
+            "id": 1230,
             "name": "VariableDeclaration",
-            "src": "236:25:9"
+            "src": "236:25:5"
           },
           {
             "attributes": {
@@ -352,7 +352,7 @@
               ],
               "name": "getPrice",
               "overrides": null,
-              "scope": 1879,
+              "scope": 1239,
               "stateMutability": "view",
               "virtual": false,
               "visibility": "external"
@@ -365,9 +365,9 @@
                   ]
                 },
                 "children": [],
-                "id": 1871,
+                "id": 1231,
                 "name": "ParameterList",
-                "src": "285:2:9"
+                "src": "285:2:5"
               },
               {
                 "children": [
@@ -377,7 +377,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 1878,
+                      "scope": 1238,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -390,25 +390,25 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 1872,
+                        "id": 1232,
                         "name": "ElementaryTypeName",
-                        "src": "311:7:9"
+                        "src": "311:7:5"
                       }
                     ],
-                    "id": 1873,
+                    "id": 1233,
                     "name": "VariableDeclaration",
-                    "src": "311:7:9"
+                    "src": "311:7:5"
                   }
                 ],
-                "id": 1874,
+                "id": 1234,
                 "name": "ParameterList",
-                "src": "310:9:9"
+                "src": "310:9:5"
               },
               {
                 "children": [
                   {
                     "attributes": {
-                      "functionReturnParameters": 1874
+                      "functionReturnParameters": 1234
                     },
                     "children": [
                       {
@@ -417,38 +417,38 @@
                           "overloadedDeclarations": [
                             null
                           ],
-                          "referencedDeclaration": 1870,
+                          "referencedDeclaration": 1230,
                           "type": "uint256",
                           "value": "tokenPrice"
                         },
-                        "id": 1875,
+                        "id": 1235,
                         "name": "Identifier",
-                        "src": "337:10:9"
+                        "src": "337:10:5"
                       }
                     ],
-                    "id": 1876,
+                    "id": 1236,
                     "name": "Return",
-                    "src": "330:17:9"
+                    "src": "330:17:5"
                   }
                 ],
-                "id": 1877,
+                "id": 1237,
                 "name": "Block",
-                "src": "320:34:9"
+                "src": "320:34:5"
               }
             ],
-            "id": 1878,
+            "id": 1238,
             "name": "FunctionDefinition",
-            "src": "268:86:9"
+            "src": "268:86:5"
           }
         ],
-        "id": 1879,
+        "id": 1239,
         "name": "ContractDefinition",
-        "src": "209:147:9"
+        "src": "209:147:5"
       }
     ],
-    "id": 1880,
+    "id": 1240,
     "name": "SourceUnit",
-    "src": "78:279:9"
+    "src": "78:279:5"
   },
   "compiler": {
     "name": "solc",
@@ -456,7 +456,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-03-25T08:51:25.633Z",
+  "updatedAt": "2021-03-26T05:07:53.814Z",
   "devdoc": {
     "methods": {}
   },

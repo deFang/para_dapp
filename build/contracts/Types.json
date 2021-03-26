@@ -1,62 +1,62 @@
 {
   "contractName": "Types",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.9+commit.3e3065ac\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/Types.sol\":\"Types\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/SafeMath.sol\":{\"keccak256\":\"0xd34c8f9bd3a9afec9dde9dd5698f3a0dd5431a277504624687783bee70d503c8\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://bd6f1878d13593ea74e0b1f42a63330bc51469fdb29e1657e86bc9832d4dbe12\",\"dweb:/ipfs/QmZJcqeQMb3v1m2CvqTaom8EHVBW8CULvwX5WWHy6mGCuM\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/SignedSafeMath.sol\":{\"keccak256\":\"0x9596e90c1eaf002469259e401cdf4a71086c3bb4142760a8ef9a9c010d4937c5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bd9c17f4b723cb6afe470ed825d4e38ffb9c33e409bde16408a2160525cb90dd\",\"dweb:/ipfs/QmNqgz64zkkMQBqRaS3eB9sdBs7nAZpyXv4z2TUFyNJWte\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/Types.sol\":{\"keccak256\":\"0xf75c5bc075d970367bedcac5c031e171837593f888203be76516411eed6c997a\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://514c4839c7801d48ce5bf24828d1290db369e4ae83840dab90866302b5f0aa49\",\"dweb:/ipfs/Qmd3w6vXbfBzfdrX5ayjT2JnKHL1Br7nPWWtykahzYkowS\"]}},\"version\":1}",
-  "bytecode": "0x60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220379dcb2b26ef9876aec998ee52bda36713baa63a5d752c348e2f35c5ca686c0d64736f6c63430006090033",
-  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220379dcb2b26ef9876aec998ee52bda36713baa63a5d752c348e2f35c5ca686c0d64736f6c63430006090033",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.9+commit.3e3065ac\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/Types.sol\":\"Types\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/SafeMath.sol\":{\"keccak256\":\"0xd34c8f9bd3a9afec9dde9dd5698f3a0dd5431a277504624687783bee70d503c8\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://bd6f1878d13593ea74e0b1f42a63330bc51469fdb29e1657e86bc9832d4dbe12\",\"dweb:/ipfs/QmZJcqeQMb3v1m2CvqTaom8EHVBW8CULvwX5WWHy6mGCuM\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/SignedSafeMath.sol\":{\"keccak256\":\"0x9596e90c1eaf002469259e401cdf4a71086c3bb4142760a8ef9a9c010d4937c5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bd9c17f4b723cb6afe470ed825d4e38ffb9c33e409bde16408a2160525cb90dd\",\"dweb:/ipfs/QmNqgz64zkkMQBqRaS3eB9sdBs7nAZpyXv4z2TUFyNJWte\"]},\"/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/Types.sol\":{\"keccak256\":\"0x7441dc0cc950e5520b9c6ae234c579df3a74aec500e37053e556a99150236215\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://69dd8708d54dd06ca9288f3b06b86229a2d5391d4a7286329851d26f0912e572\",\"dweb:/ipfs/QmP6zzik1tk8fYgk1XUA5sZeJsJevhuKhgbaMCRg9hQ3Dr\"]}},\"version\":1}",
+  "bytecode": "0x60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122097ac38d8225c4589ddc2b41c8436560b4e7f11bd8caad546edb1fb1f8f26a8d764736f6c63430006090033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122097ac38d8225c4589ddc2b41c8436560b4e7f11bd8caad546edb1fb1f8f26a8d764736f6c63430006090033",
   "immutableReferences": {},
-  "sourceMap": "241:847:26:-:0;;;;;;;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "241:847:26:-:0;;;;;;;;",
-  "source": "/*\n\n    Copyright 2020 DODO ZOO.\n    SPDX-License-Identifier: Apache-2.0\n\n*/\n\npragma solidity 0.6.9;\npragma experimental ABIEncoderV2;\n\nimport {SafeMath} from \"../lib/SafeMath.sol\";\nimport {SignedSafeMath} from \"../lib/SignedSafeMath.sol\";\n\nlibrary Types {\n    using SafeMath for uint256;\n    using SignedSafeMath for int256;\n\n    enum RStatus {ONE, ABOVE_ONE, BELOW_ONE}\n\n    enum Side {FLAT, SHORT, LONG}\n\n    enum Status {NORMAL, EMERGENCY, SETTLED}\n\n    //  RStatus ABOVE_ONE 对应 POOL SHORT\n    // RStatus BELOW_ONE 对应 POOL LONG\n\n    function oppositeSide(Side side) internal pure returns (Side) {\n        if (side == Side.LONG) {\n            return Side.SHORT;\n        } else if (side == Side.SHORT) {\n            return Side.LONG;\n        }\n        return side;\n    }\n\n    struct MarginAccount {\n        Side SIDE;\n        uint256 SIZE;\n        uint256 ENTRY_VALUE;\n        int256 CASH_BALANCE;\n    }\n\n    struct VirtualBalance {\n        uint256 baseTarget;\n        uint256 baseBalance;\n        uint256 quoteTarget;\n        uint256 quoteBalance;\n        Side newSide;\n    }\n}\n",
+  "sourceMap": "241:876:21:-:0;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "241:876:21:-:0;;;;;;;;",
+  "source": "/*\n\n    Copyright 2020 DODO ZOO.\n    SPDX-License-Identifier: Apache-2.0\n\n*/\n\npragma solidity 0.6.9;\npragma experimental ABIEncoderV2;\n\nimport {SafeMath} from \"../lib/SafeMath.sol\";\nimport {SignedSafeMath} from \"../lib/SignedSafeMath.sol\";\n\nlibrary Types {\n    using SafeMath for uint256;\n    using SignedSafeMath for int256;\n\n    enum RStatus {ONE, ABOVE_ONE, BELOW_ONE}\n\n    enum Side {FLAT, SHORT, LONG}\n\n    enum Status {NORMAL, EMERGENCY, SETTLED}\n\n    //  RStatus ABOVE_ONE 对应 POOL SHORT\n    // RStatus BELOW_ONE 对应 POOL LONG\n\n    function oppositeSide(Side side) internal pure returns (Side) {\n        if (side == Side.LONG) {\n            return Side.SHORT;\n        } else if (side == Side.SHORT) {\n            return Side.LONG;\n        }\n        return side;\n    }\n\n    struct MarginAccount {\n        Side SIDE;\n        uint256 SIZE;\n        uint256 ENTRY_VALUE;\n        int256 CASH_BALANCE;\n        uint256 ENTRY_SLOSS;\n    }\n\n    struct VirtualBalance {\n        uint256 baseTarget;\n        uint256 baseBalance;\n        uint256 quoteTarget;\n        uint256 quoteBalance;\n        Side newSide;\n    }\n}\n",
   "sourcePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/Types.sol",
   "ast": {
     "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/Types.sol",
     "exportedSymbols": {
       "Types": [
-        4451
+        3783
       ]
     },
-    "id": 4452,
+    "id": 3784,
     "license": "Apache-2.0",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 4379,
+        "id": 3709,
         "literals": [
           "solidity",
           "0.6",
           ".9"
         ],
         "nodeType": "PragmaDirective",
-        "src": "78:22:26"
+        "src": "78:22:21"
       },
       {
-        "id": 4380,
+        "id": 3710,
         "literals": [
           "experimental",
           "ABIEncoderV2"
         ],
         "nodeType": "PragmaDirective",
-        "src": "101:33:26"
+        "src": "101:33:21"
       },
       {
         "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/SafeMath.sol",
         "file": "../lib/SafeMath.sol",
-        "id": 4382,
+        "id": 3712,
         "nodeType": "ImportDirective",
-        "scope": 4452,
-        "sourceUnit": 4144,
-        "src": "136:45:26",
+        "scope": 3784,
+        "sourceUnit": 3474,
+        "src": "136:45:21",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 4381,
+              "id": 3711,
               "name": "SafeMath",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "144:8:26",
+              "src": "144:8:21",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -70,21 +70,21 @@
       {
         "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/SignedSafeMath.sol",
         "file": "../lib/SignedSafeMath.sol",
-        "id": 4384,
+        "id": 3714,
         "nodeType": "ImportDirective",
-        "scope": 4452,
-        "sourceUnit": 4378,
-        "src": "182:57:26",
+        "scope": 3784,
+        "sourceUnit": 3708,
+        "src": "182:57:21",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 4383,
+              "id": 3713,
               "name": "SignedSafeMath",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "190:14:26",
+              "src": "190:14:21",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -102,34 +102,34 @@
         "contractKind": "library",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 4451,
+        "id": 3783,
         "linearizedBaseContracts": [
-          4451
+          3783
         ],
         "name": "Types",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
-            "id": 4387,
+            "id": 3717,
             "libraryName": {
               "contractScope": null,
-              "id": 4385,
+              "id": 3715,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 4143,
-              "src": "267:8:26",
+              "referencedDeclaration": 3473,
+              "src": "267:8:21",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$4143",
+                "typeIdentifier": "t_contract$_SafeMath_$3473",
                 "typeString": "library SafeMath"
               }
             },
             "nodeType": "UsingForDirective",
-            "src": "261:27:26",
+            "src": "261:27:21",
             "typeName": {
-              "id": 4386,
+              "id": 3716,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "280:7:26",
+              "src": "280:7:21",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -137,26 +137,26 @@
             }
           },
           {
-            "id": 4390,
+            "id": 3720,
             "libraryName": {
               "contractScope": null,
-              "id": 4388,
+              "id": 3718,
               "name": "SignedSafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 4377,
-              "src": "299:14:26",
+              "referencedDeclaration": 3707,
+              "src": "299:14:21",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SignedSafeMath_$4377",
+                "typeIdentifier": "t_contract$_SignedSafeMath_$3707",
                 "typeString": "library SignedSafeMath"
               }
             },
             "nodeType": "UsingForDirective",
-            "src": "293:32:26",
+            "src": "293:32:21",
             "typeName": {
-              "id": 4389,
+              "id": 3719,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "318:6:26",
+              "src": "318:6:21",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -165,113 +165,113 @@
           },
           {
             "canonicalName": "Types.RStatus",
-            "id": 4394,
+            "id": 3724,
             "members": [
               {
-                "id": 4391,
+                "id": 3721,
                 "name": "ONE",
                 "nodeType": "EnumValue",
-                "src": "345:3:26"
+                "src": "345:3:21"
               },
               {
-                "id": 4392,
+                "id": 3722,
                 "name": "ABOVE_ONE",
                 "nodeType": "EnumValue",
-                "src": "350:9:26"
+                "src": "350:9:21"
               },
               {
-                "id": 4393,
+                "id": 3723,
                 "name": "BELOW_ONE",
                 "nodeType": "EnumValue",
-                "src": "361:9:26"
+                "src": "361:9:21"
               }
             ],
             "name": "RStatus",
             "nodeType": "EnumDefinition",
-            "src": "331:40:26"
+            "src": "331:40:21"
           },
           {
             "canonicalName": "Types.Side",
-            "id": 4398,
+            "id": 3728,
             "members": [
               {
-                "id": 4395,
+                "id": 3725,
                 "name": "FLAT",
                 "nodeType": "EnumValue",
-                "src": "388:4:26"
+                "src": "388:4:21"
               },
               {
-                "id": 4396,
+                "id": 3726,
                 "name": "SHORT",
                 "nodeType": "EnumValue",
-                "src": "394:5:26"
+                "src": "394:5:21"
               },
               {
-                "id": 4397,
+                "id": 3727,
                 "name": "LONG",
                 "nodeType": "EnumValue",
-                "src": "401:4:26"
+                "src": "401:4:21"
               }
             ],
             "name": "Side",
             "nodeType": "EnumDefinition",
-            "src": "377:29:26"
+            "src": "377:29:21"
           },
           {
             "canonicalName": "Types.Status",
-            "id": 4402,
+            "id": 3732,
             "members": [
               {
-                "id": 4399,
+                "id": 3729,
                 "name": "NORMAL",
                 "nodeType": "EnumValue",
-                "src": "425:6:26"
+                "src": "425:6:21"
               },
               {
-                "id": 4400,
+                "id": 3730,
                 "name": "EMERGENCY",
                 "nodeType": "EnumValue",
-                "src": "433:9:26"
+                "src": "433:9:21"
               },
               {
-                "id": 4401,
+                "id": 3731,
                 "name": "SETTLED",
                 "nodeType": "EnumValue",
-                "src": "444:7:26"
+                "src": "444:7:21"
               }
             ],
             "name": "Status",
             "nodeType": "EnumDefinition",
-            "src": "412:40:26"
+            "src": "412:40:21"
           },
           {
             "body": {
-              "id": 4429,
+              "id": 3759,
               "nodeType": "Block",
-              "src": "607:173:26",
+              "src": "607:173:21",
               "statements": [
                 {
                   "condition": {
                     "argumentTypes": null,
                     "commonType": {
-                      "typeIdentifier": "t_enum$_Side_$4398",
+                      "typeIdentifier": "t_enum$_Side_$3728",
                       "typeString": "enum Types.Side"
                     },
-                    "id": 4412,
+                    "id": 3742,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
                       "argumentTypes": null,
-                      "id": 4409,
+                      "id": 3739,
                       "name": "side",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4404,
-                      "src": "621:4:26",
+                      "referencedDeclaration": 3734,
+                      "src": "621:4:21",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_Side_$4398",
+                        "typeIdentifier": "t_enum$_Side_$3728",
                         "typeString": "enum Types.Side"
                       }
                     },
@@ -281,18 +281,18 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 4410,
+                        "id": 3740,
                         "name": "Side",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4398,
-                        "src": "629:4:26",
+                        "referencedDeclaration": 3728,
+                        "src": "629:4:21",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_enum$_Side_$4398_$",
+                          "typeIdentifier": "t_type$_t_enum$_Side_$3728_$",
                           "typeString": "type(enum Types.Side)"
                         }
                       },
-                      "id": 4411,
+                      "id": 3741,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -300,13 +300,13 @@
                       "memberName": "LONG",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "629:9:26",
+                      "src": "629:9:21",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_Side_$4398",
+                        "typeIdentifier": "t_enum$_Side_$3728",
                         "typeString": "enum Types.Side"
                       }
                     },
-                    "src": "621:17:26",
+                    "src": "621:17:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -316,24 +316,24 @@
                     "condition": {
                       "argumentTypes": null,
                       "commonType": {
-                        "typeIdentifier": "t_enum$_Side_$4398",
+                        "typeIdentifier": "t_enum$_Side_$3728",
                         "typeString": "enum Types.Side"
                       },
-                      "id": 4420,
+                      "id": 3750,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
                         "argumentTypes": null,
-                        "id": 4417,
+                        "id": 3747,
                         "name": "side",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4404,
-                        "src": "692:4:26",
+                        "referencedDeclaration": 3734,
+                        "src": "692:4:21",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_enum$_Side_$4398",
+                          "typeIdentifier": "t_enum$_Side_$3728",
                           "typeString": "enum Types.Side"
                         }
                       },
@@ -343,18 +343,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 4418,
+                          "id": 3748,
                           "name": "Side",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4398,
-                          "src": "700:4:26",
+                          "referencedDeclaration": 3728,
+                          "src": "700:4:21",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_enum$_Side_$4398_$",
+                            "typeIdentifier": "t_type$_t_enum$_Side_$3728_$",
                             "typeString": "type(enum Types.Side)"
                           }
                         },
-                        "id": 4419,
+                        "id": 3749,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -362,44 +362,44 @@
                         "memberName": "SHORT",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "700:10:26",
+                        "src": "700:10:21",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_enum$_Side_$4398",
+                          "typeIdentifier": "t_enum$_Side_$3728",
                           "typeString": "enum Types.Side"
                         }
                       },
-                      "src": "692:18:26",
+                      "src": "692:18:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       }
                     },
                     "falseBody": null,
-                    "id": 4425,
+                    "id": 3755,
                     "nodeType": "IfStatement",
-                    "src": "688:65:26",
+                    "src": "688:65:21",
                     "trueBody": {
-                      "id": 4424,
+                      "id": 3754,
                       "nodeType": "Block",
-                      "src": "712:41:26",
+                      "src": "712:41:21",
                       "statements": [
                         {
                           "expression": {
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 4421,
+                              "id": 3751,
                               "name": "Side",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 4398,
-                              "src": "733:4:26",
+                              "referencedDeclaration": 3728,
+                              "src": "733:4:21",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_enum$_Side_$4398_$",
+                                "typeIdentifier": "t_type$_t_enum$_Side_$3728_$",
                                 "typeString": "type(enum Types.Side)"
                               }
                             },
-                            "id": 4422,
+                            "id": 3752,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -407,45 +407,45 @@
                             "memberName": "LONG",
                             "nodeType": "MemberAccess",
                             "referencedDeclaration": null,
-                            "src": "733:9:26",
+                            "src": "733:9:21",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_enum$_Side_$4398",
+                              "typeIdentifier": "t_enum$_Side_$3728",
                               "typeString": "enum Types.Side"
                             }
                           },
-                          "functionReturnParameters": 4408,
-                          "id": 4423,
+                          "functionReturnParameters": 3738,
+                          "id": 3753,
                           "nodeType": "Return",
-                          "src": "726:16:26"
+                          "src": "726:16:21"
                         }
                       ]
                     }
                   },
-                  "id": 4426,
+                  "id": 3756,
                   "nodeType": "IfStatement",
-                  "src": "617:136:26",
+                  "src": "617:136:21",
                   "trueBody": {
-                    "id": 4416,
+                    "id": 3746,
                     "nodeType": "Block",
-                    "src": "640:42:26",
+                    "src": "640:42:21",
                     "statements": [
                       {
                         "expression": {
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 4413,
+                            "id": 3743,
                             "name": "Side",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 4398,
-                            "src": "661:4:26",
+                            "referencedDeclaration": 3728,
+                            "src": "661:4:21",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_enum$_Side_$4398_$",
+                              "typeIdentifier": "t_type$_t_enum$_Side_$3728_$",
                               "typeString": "type(enum Types.Side)"
                             }
                           },
-                          "id": 4414,
+                          "id": 3744,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -453,16 +453,16 @@
                           "memberName": "SHORT",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": null,
-                          "src": "661:10:26",
+                          "src": "661:10:21",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_enum$_Side_$4398",
+                            "typeIdentifier": "t_enum$_Side_$3728",
                             "typeString": "enum Types.Side"
                           }
                         },
-                        "functionReturnParameters": 4408,
-                        "id": 4415,
+                        "functionReturnParameters": 3738,
+                        "id": 3745,
                         "nodeType": "Return",
-                        "src": "654:17:26"
+                        "src": "654:17:21"
                       }
                     ]
                   }
@@ -470,26 +470,26 @@
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 4427,
+                    "id": 3757,
                     "name": "side",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 4404,
-                    "src": "769:4:26",
+                    "referencedDeclaration": 3734,
+                    "src": "769:4:21",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_Side_$4398",
+                      "typeIdentifier": "t_enum$_Side_$3728",
                       "typeString": "enum Types.Side"
                     }
                   },
-                  "functionReturnParameters": 4408,
-                  "id": 4428,
+                  "functionReturnParameters": 3738,
+                  "id": 3758,
                   "nodeType": "Return",
-                  "src": "762:11:26"
+                  "src": "762:11:21"
                 }
               ]
             },
             "documentation": null,
-            "id": 4430,
+            "id": 3760,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -497,33 +497,33 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 4405,
+              "id": 3735,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4404,
+                  "id": 3734,
                   "mutability": "mutable",
                   "name": "side",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 4430,
-                  "src": "567:9:26",
+                  "scope": 3760,
+                  "src": "567:9:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_Side_$4398",
+                    "typeIdentifier": "t_enum$_Side_$3728",
                     "typeString": "enum Types.Side"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 4403,
+                    "id": 3733,
                     "name": "Side",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 4398,
-                    "src": "567:4:26",
+                    "referencedDeclaration": 3728,
+                    "src": "567:4:21",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_Side_$4398",
+                      "typeIdentifier": "t_enum$_Side_$3728",
                       "typeString": "enum Types.Side"
                     }
                   },
@@ -531,36 +531,36 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "566:11:26"
+              "src": "566:11:21"
             },
             "returnParameters": {
-              "id": 4408,
+              "id": 3738,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4407,
+                  "id": 3737,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 4430,
-                  "src": "601:4:26",
+                  "scope": 3760,
+                  "src": "601:4:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_Side_$4398",
+                    "typeIdentifier": "t_enum$_Side_$3728",
                     "typeString": "enum Types.Side"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 4406,
+                    "id": 3736,
                     "name": "Side",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 4398,
-                    "src": "601:4:26",
+                    "referencedDeclaration": 3728,
+                    "src": "601:4:21",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_Side_$4398",
+                      "typeIdentifier": "t_enum$_Side_$3728",
                       "typeString": "enum Types.Side"
                     }
                   },
@@ -568,42 +568,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "600:6:26"
+              "src": "600:6:21"
             },
-            "scope": 4451,
-            "src": "545:235:26",
+            "scope": 3783,
+            "src": "545:235:21",
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
             "canonicalName": "Types.MarginAccount",
-            "id": 4439,
+            "id": 3771,
             "members": [
               {
                 "constant": false,
-                "id": 4432,
+                "id": 3762,
                 "mutability": "mutable",
                 "name": "SIDE",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 4439,
-                "src": "817:9:26",
+                "scope": 3771,
+                "src": "817:9:21",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_enum$_Side_$4398",
+                  "typeIdentifier": "t_enum$_Side_$3728",
                   "typeString": "enum Types.Side"
                 },
                 "typeName": {
                   "contractScope": null,
-                  "id": 4431,
+                  "id": 3761,
                   "name": "Side",
                   "nodeType": "UserDefinedTypeName",
-                  "referencedDeclaration": 4398,
-                  "src": "817:4:26",
+                  "referencedDeclaration": 3728,
+                  "src": "817:4:21",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_Side_$4398",
+                    "typeIdentifier": "t_enum$_Side_$3728",
                     "typeString": "enum Types.Side"
                   }
                 },
@@ -612,13 +612,13 @@
               },
               {
                 "constant": false,
-                "id": 4434,
+                "id": 3764,
                 "mutability": "mutable",
                 "name": "SIZE",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 4439,
-                "src": "836:12:26",
+                "scope": 3771,
+                "src": "836:12:21",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -626,10 +626,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 4433,
+                  "id": 3763,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "836:7:26",
+                  "src": "836:7:21",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -640,13 +640,13 @@
               },
               {
                 "constant": false,
-                "id": 4436,
+                "id": 3766,
                 "mutability": "mutable",
                 "name": "ENTRY_VALUE",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 4439,
-                "src": "858:19:26",
+                "scope": 3771,
+                "src": "858:19:21",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -654,10 +654,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 4435,
+                  "id": 3765,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "858:7:26",
+                  "src": "858:7:21",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -668,13 +668,13 @@
               },
               {
                 "constant": false,
-                "id": 4438,
+                "id": 3768,
                 "mutability": "mutable",
                 "name": "CASH_BALANCE",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 4439,
-                "src": "887:19:26",
+                "scope": 3771,
+                "src": "887:19:21",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -682,13 +682,41 @@
                   "typeString": "int256"
                 },
                 "typeName": {
-                  "id": 4437,
+                  "id": 3767,
                   "name": "int256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "887:6:26",
+                  "src": "887:6:21",
                   "typeDescriptions": {
                     "typeIdentifier": "t_int256",
                     "typeString": "int256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3770,
+                "mutability": "mutable",
+                "name": "ENTRY_SLOSS",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 3771,
+                "src": "916:19:21",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 3769,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "916:7:21",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   }
                 },
                 "value": null,
@@ -697,23 +725,23 @@
             ],
             "name": "MarginAccount",
             "nodeType": "StructDefinition",
-            "scope": 4451,
-            "src": "786:127:26",
+            "scope": 3783,
+            "src": "786:156:21",
             "visibility": "public"
           },
           {
             "canonicalName": "Types.VirtualBalance",
-            "id": 4450,
+            "id": 3782,
             "members": [
               {
                 "constant": false,
-                "id": 4441,
+                "id": 3773,
                 "mutability": "mutable",
                 "name": "baseTarget",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 4450,
-                "src": "951:18:26",
+                "scope": 3782,
+                "src": "980:18:21",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -721,10 +749,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 4440,
+                  "id": 3772,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "951:7:26",
+                  "src": "980:7:21",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -735,13 +763,13 @@
               },
               {
                 "constant": false,
-                "id": 4443,
+                "id": 3775,
                 "mutability": "mutable",
                 "name": "baseBalance",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 4450,
-                "src": "979:19:26",
+                "scope": 3782,
+                "src": "1008:19:21",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -749,10 +777,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 4442,
+                  "id": 3774,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "979:7:26",
+                  "src": "1008:7:21",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -763,13 +791,13 @@
               },
               {
                 "constant": false,
-                "id": 4445,
+                "id": 3777,
                 "mutability": "mutable",
                 "name": "quoteTarget",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 4450,
-                "src": "1008:19:26",
+                "scope": 3782,
+                "src": "1037:19:21",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -777,10 +805,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 4444,
+                  "id": 3776,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1008:7:26",
+                  "src": "1037:7:21",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -791,13 +819,13 @@
               },
               {
                 "constant": false,
-                "id": 4447,
+                "id": 3779,
                 "mutability": "mutable",
                 "name": "quoteBalance",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 4450,
-                "src": "1037:20:26",
+                "scope": 3782,
+                "src": "1066:20:21",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -805,10 +833,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 4446,
+                  "id": 3778,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1037:7:26",
+                  "src": "1066:7:21",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -819,28 +847,28 @@
               },
               {
                 "constant": false,
-                "id": 4449,
+                "id": 3781,
                 "mutability": "mutable",
                 "name": "newSide",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 4450,
-                "src": "1067:12:26",
+                "scope": 3782,
+                "src": "1096:12:21",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_enum$_Side_$4398",
+                  "typeIdentifier": "t_enum$_Side_$3728",
                   "typeString": "enum Types.Side"
                 },
                 "typeName": {
                   "contractScope": null,
-                  "id": 4448,
+                  "id": 3780,
                   "name": "Side",
                   "nodeType": "UserDefinedTypeName",
-                  "referencedDeclaration": 4398,
-                  "src": "1067:4:26",
+                  "referencedDeclaration": 3728,
+                  "src": "1096:4:21",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_Side_$4398",
+                    "typeIdentifier": "t_enum$_Side_$3728",
                     "typeString": "enum Types.Side"
                   }
                 },
@@ -850,23 +878,23 @@
             ],
             "name": "VirtualBalance",
             "nodeType": "StructDefinition",
-            "scope": 4451,
-            "src": "919:167:26",
+            "scope": 3783,
+            "src": "948:167:21",
             "visibility": "public"
           }
         ],
-        "scope": 4452,
-        "src": "241:847:26"
+        "scope": 3784,
+        "src": "241:876:21"
       }
     ],
-    "src": "78:1011:26"
+    "src": "78:1040:21"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/Types.sol",
       "exportedSymbols": {
         "Types": [
-          4451
+          3783
         ]
       },
       "license": "Apache-2.0"
@@ -880,9 +908,9 @@
             ".9"
           ]
         },
-        "id": 4379,
+        "id": 3709,
         "name": "PragmaDirective",
-        "src": "78:22:26"
+        "src": "78:22:21"
       },
       {
         "attributes": {
@@ -891,16 +919,16 @@
             "ABIEncoderV2"
           ]
         },
-        "id": 4380,
+        "id": 3710,
         "name": "PragmaDirective",
-        "src": "101:33:26"
+        "src": "101:33:21"
       },
       {
         "attributes": {
-          "SourceUnit": 4144,
+          "SourceUnit": 3474,
           "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/SafeMath.sol",
           "file": "../lib/SafeMath.sol",
-          "scope": 4452,
+          "scope": 3784,
           "symbolAliases": [
             {
               "foreign": {
@@ -913,25 +941,25 @@
                   "type": null,
                   "value": "SafeMath"
                 },
-                "id": 4381,
+                "id": 3711,
                 "name": "Identifier",
-                "src": "144:8:26"
+                "src": "144:8:21"
               },
               "local": null
             }
           ],
           "unitAlias": ""
         },
-        "id": 4382,
+        "id": 3712,
         "name": "ImportDirective",
-        "src": "136:45:26"
+        "src": "136:45:21"
       },
       {
         "attributes": {
-          "SourceUnit": 4378,
+          "SourceUnit": 3708,
           "absolutePath": "/Users/daniel/Codes/parapara/para_dapp_v6/contracts/lib/SignedSafeMath.sol",
           "file": "../lib/SignedSafeMath.sol",
-          "scope": 4452,
+          "scope": 3784,
           "symbolAliases": [
             {
               "foreign": {
@@ -944,18 +972,18 @@
                   "type": null,
                   "value": "SignedSafeMath"
                 },
-                "id": 4383,
+                "id": 3713,
                 "name": "Identifier",
-                "src": "190:14:26"
+                "src": "190:14:21"
               },
               "local": null
             }
           ],
           "unitAlias": ""
         },
-        "id": 4384,
+        "id": 3714,
         "name": "ImportDirective",
-        "src": "182:57:26"
+        "src": "182:57:21"
       },
       {
         "attributes": {
@@ -970,10 +998,10 @@
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            4451
+            3783
           ],
           "name": "Types",
-          "scope": 4452
+          "scope": 3784
         },
         "children": [
           {
@@ -982,26 +1010,26 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "SafeMath",
-                  "referencedDeclaration": 4143,
+                  "referencedDeclaration": 3473,
                   "type": "library SafeMath"
                 },
-                "id": 4385,
+                "id": 3715,
                 "name": "UserDefinedTypeName",
-                "src": "267:8:26"
+                "src": "267:8:21"
               },
               {
                 "attributes": {
                   "name": "uint256",
                   "type": "uint256"
                 },
-                "id": 4386,
+                "id": 3716,
                 "name": "ElementaryTypeName",
-                "src": "280:7:26"
+                "src": "280:7:21"
               }
             ],
-            "id": 4387,
+            "id": 3717,
             "name": "UsingForDirective",
-            "src": "261:27:26"
+            "src": "261:27:21"
           },
           {
             "children": [
@@ -1009,26 +1037,26 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "SignedSafeMath",
-                  "referencedDeclaration": 4377,
+                  "referencedDeclaration": 3707,
                   "type": "library SignedSafeMath"
                 },
-                "id": 4388,
+                "id": 3718,
                 "name": "UserDefinedTypeName",
-                "src": "299:14:26"
+                "src": "299:14:21"
               },
               {
                 "attributes": {
                   "name": "int256",
                   "type": "int256"
                 },
-                "id": 4389,
+                "id": 3719,
                 "name": "ElementaryTypeName",
-                "src": "318:6:26"
+                "src": "318:6:21"
               }
             ],
-            "id": 4390,
+            "id": 3720,
             "name": "UsingForDirective",
-            "src": "293:32:26"
+            "src": "293:32:21"
           },
           {
             "attributes": {
@@ -1040,30 +1068,30 @@
                 "attributes": {
                   "name": "ONE"
                 },
-                "id": 4391,
+                "id": 3721,
                 "name": "EnumValue",
-                "src": "345:3:26"
+                "src": "345:3:21"
               },
               {
                 "attributes": {
                   "name": "ABOVE_ONE"
                 },
-                "id": 4392,
+                "id": 3722,
                 "name": "EnumValue",
-                "src": "350:9:26"
+                "src": "350:9:21"
               },
               {
                 "attributes": {
                   "name": "BELOW_ONE"
                 },
-                "id": 4393,
+                "id": 3723,
                 "name": "EnumValue",
-                "src": "361:9:26"
+                "src": "361:9:21"
               }
             ],
-            "id": 4394,
+            "id": 3724,
             "name": "EnumDefinition",
-            "src": "331:40:26"
+            "src": "331:40:21"
           },
           {
             "attributes": {
@@ -1075,30 +1103,30 @@
                 "attributes": {
                   "name": "FLAT"
                 },
-                "id": 4395,
+                "id": 3725,
                 "name": "EnumValue",
-                "src": "388:4:26"
+                "src": "388:4:21"
               },
               {
                 "attributes": {
                   "name": "SHORT"
                 },
-                "id": 4396,
+                "id": 3726,
                 "name": "EnumValue",
-                "src": "394:5:26"
+                "src": "394:5:21"
               },
               {
                 "attributes": {
                   "name": "LONG"
                 },
-                "id": 4397,
+                "id": 3727,
                 "name": "EnumValue",
-                "src": "401:4:26"
+                "src": "401:4:21"
               }
             ],
-            "id": 4398,
+            "id": 3728,
             "name": "EnumDefinition",
-            "src": "377:29:26"
+            "src": "377:29:21"
           },
           {
             "attributes": {
@@ -1110,30 +1138,30 @@
                 "attributes": {
                   "name": "NORMAL"
                 },
-                "id": 4399,
+                "id": 3729,
                 "name": "EnumValue",
-                "src": "425:6:26"
+                "src": "425:6:21"
               },
               {
                 "attributes": {
                   "name": "EMERGENCY"
                 },
-                "id": 4400,
+                "id": 3730,
                 "name": "EnumValue",
-                "src": "433:9:26"
+                "src": "433:9:21"
               },
               {
                 "attributes": {
                   "name": "SETTLED"
                 },
-                "id": 4401,
+                "id": 3731,
                 "name": "EnumValue",
-                "src": "444:7:26"
+                "src": "444:7:21"
               }
             ],
-            "id": 4402,
+            "id": 3732,
             "name": "EnumDefinition",
-            "src": "412:40:26"
+            "src": "412:40:21"
           },
           {
             "attributes": {
@@ -1146,7 +1174,7 @@
               ],
               "name": "oppositeSide",
               "overrides": null,
-              "scope": 4451,
+              "scope": 3783,
               "stateMutability": "pure",
               "virtual": false,
               "visibility": "internal"
@@ -1160,7 +1188,7 @@
                       "mutability": "mutable",
                       "name": "side",
                       "overrides": null,
-                      "scope": 4430,
+                      "scope": 3760,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "enum Types.Side",
@@ -1172,22 +1200,22 @@
                         "attributes": {
                           "contractScope": null,
                           "name": "Side",
-                          "referencedDeclaration": 4398,
+                          "referencedDeclaration": 3728,
                           "type": "enum Types.Side"
                         },
-                        "id": 4403,
+                        "id": 3733,
                         "name": "UserDefinedTypeName",
-                        "src": "567:4:26"
+                        "src": "567:4:21"
                       }
                     ],
-                    "id": 4404,
+                    "id": 3734,
                     "name": "VariableDeclaration",
-                    "src": "567:9:26"
+                    "src": "567:9:21"
                   }
                 ],
-                "id": 4405,
+                "id": 3735,
                 "name": "ParameterList",
-                "src": "566:11:26"
+                "src": "566:11:21"
               },
               {
                 "children": [
@@ -1197,7 +1225,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 4430,
+                      "scope": 3760,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "enum Types.Side",
@@ -1209,22 +1237,22 @@
                         "attributes": {
                           "contractScope": null,
                           "name": "Side",
-                          "referencedDeclaration": 4398,
+                          "referencedDeclaration": 3728,
                           "type": "enum Types.Side"
                         },
-                        "id": 4406,
+                        "id": 3736,
                         "name": "UserDefinedTypeName",
-                        "src": "601:4:26"
+                        "src": "601:4:21"
                       }
                     ],
-                    "id": 4407,
+                    "id": 3737,
                     "name": "VariableDeclaration",
-                    "src": "601:4:26"
+                    "src": "601:4:21"
                   }
                 ],
-                "id": 4408,
+                "id": 3738,
                 "name": "ParameterList",
-                "src": "600:6:26"
+                "src": "600:6:21"
               },
               {
                 "children": [
@@ -1234,7 +1262,7 @@
                         "attributes": {
                           "argumentTypes": null,
                           "commonType": {
-                            "typeIdentifier": "t_enum$_Side_$4398",
+                            "typeIdentifier": "t_enum$_Side_$3728",
                             "typeString": "enum Types.Side"
                           },
                           "isConstant": false,
@@ -1251,13 +1279,13 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 4404,
+                              "referencedDeclaration": 3734,
                               "type": "enum Types.Side",
                               "value": "side"
                             },
-                            "id": 4409,
+                            "id": 3739,
                             "name": "Identifier",
-                            "src": "621:4:26"
+                            "src": "621:4:21"
                           },
                           {
                             "attributes": {
@@ -1277,29 +1305,29 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 4398,
+                                  "referencedDeclaration": 3728,
                                   "type": "type(enum Types.Side)",
                                   "value": "Side"
                                 },
-                                "id": 4410,
+                                "id": 3740,
                                 "name": "Identifier",
-                                "src": "629:4:26"
+                                "src": "629:4:21"
                               }
                             ],
-                            "id": 4411,
+                            "id": 3741,
                             "name": "MemberAccess",
-                            "src": "629:9:26"
+                            "src": "629:9:21"
                           }
                         ],
-                        "id": 4412,
+                        "id": 3742,
                         "name": "BinaryOperation",
-                        "src": "621:17:26"
+                        "src": "621:17:21"
                       },
                       {
                         "children": [
                           {
                             "attributes": {
-                              "functionReturnParameters": 4408
+                              "functionReturnParameters": 3738
                             },
                             "children": [
                               {
@@ -1320,28 +1348,28 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 4398,
+                                      "referencedDeclaration": 3728,
                                       "type": "type(enum Types.Side)",
                                       "value": "Side"
                                     },
-                                    "id": 4413,
+                                    "id": 3743,
                                     "name": "Identifier",
-                                    "src": "661:4:26"
+                                    "src": "661:4:21"
                                   }
                                 ],
-                                "id": 4414,
+                                "id": 3744,
                                 "name": "MemberAccess",
-                                "src": "661:10:26"
+                                "src": "661:10:21"
                               }
                             ],
-                            "id": 4415,
+                            "id": 3745,
                             "name": "Return",
-                            "src": "654:17:26"
+                            "src": "654:17:21"
                           }
                         ],
-                        "id": 4416,
+                        "id": 3746,
                         "name": "Block",
-                        "src": "640:42:26"
+                        "src": "640:42:21"
                       },
                       {
                         "attributes": {
@@ -1352,7 +1380,7 @@
                             "attributes": {
                               "argumentTypes": null,
                               "commonType": {
-                                "typeIdentifier": "t_enum$_Side_$4398",
+                                "typeIdentifier": "t_enum$_Side_$3728",
                                 "typeString": "enum Types.Side"
                               },
                               "isConstant": false,
@@ -1369,13 +1397,13 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 4404,
+                                  "referencedDeclaration": 3734,
                                   "type": "enum Types.Side",
                                   "value": "side"
                                 },
-                                "id": 4417,
+                                "id": 3747,
                                 "name": "Identifier",
-                                "src": "692:4:26"
+                                "src": "692:4:21"
                               },
                               {
                                 "attributes": {
@@ -1395,29 +1423,29 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 4398,
+                                      "referencedDeclaration": 3728,
                                       "type": "type(enum Types.Side)",
                                       "value": "Side"
                                     },
-                                    "id": 4418,
+                                    "id": 3748,
                                     "name": "Identifier",
-                                    "src": "700:4:26"
+                                    "src": "700:4:21"
                                   }
                                 ],
-                                "id": 4419,
+                                "id": 3749,
                                 "name": "MemberAccess",
-                                "src": "700:10:26"
+                                "src": "700:10:21"
                               }
                             ],
-                            "id": 4420,
+                            "id": 3750,
                             "name": "BinaryOperation",
-                            "src": "692:18:26"
+                            "src": "692:18:21"
                           },
                           {
                             "children": [
                               {
                                 "attributes": {
-                                  "functionReturnParameters": 4408
+                                  "functionReturnParameters": 3738
                                 },
                                 "children": [
                                   {
@@ -1438,42 +1466,42 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 4398,
+                                          "referencedDeclaration": 3728,
                                           "type": "type(enum Types.Side)",
                                           "value": "Side"
                                         },
-                                        "id": 4421,
+                                        "id": 3751,
                                         "name": "Identifier",
-                                        "src": "733:4:26"
+                                        "src": "733:4:21"
                                       }
                                     ],
-                                    "id": 4422,
+                                    "id": 3752,
                                     "name": "MemberAccess",
-                                    "src": "733:9:26"
+                                    "src": "733:9:21"
                                   }
                                 ],
-                                "id": 4423,
+                                "id": 3753,
                                 "name": "Return",
-                                "src": "726:16:26"
+                                "src": "726:16:21"
                               }
                             ],
-                            "id": 4424,
+                            "id": 3754,
                             "name": "Block",
-                            "src": "712:41:26"
+                            "src": "712:41:21"
                           }
                         ],
-                        "id": 4425,
+                        "id": 3755,
                         "name": "IfStatement",
-                        "src": "688:65:26"
+                        "src": "688:65:21"
                       }
                     ],
-                    "id": 4426,
+                    "id": 3756,
                     "name": "IfStatement",
-                    "src": "617:136:26"
+                    "src": "617:136:21"
                   },
                   {
                     "attributes": {
-                      "functionReturnParameters": 4408
+                      "functionReturnParameters": 3738
                     },
                     "children": [
                       {
@@ -1482,34 +1510,34 @@
                           "overloadedDeclarations": [
                             null
                           ],
-                          "referencedDeclaration": 4404,
+                          "referencedDeclaration": 3734,
                           "type": "enum Types.Side",
                           "value": "side"
                         },
-                        "id": 4427,
+                        "id": 3757,
                         "name": "Identifier",
-                        "src": "769:4:26"
+                        "src": "769:4:21"
                       }
                     ],
-                    "id": 4428,
+                    "id": 3758,
                     "name": "Return",
-                    "src": "762:11:26"
+                    "src": "762:11:21"
                   }
                 ],
-                "id": 4429,
+                "id": 3759,
                 "name": "Block",
-                "src": "607:173:26"
+                "src": "607:173:21"
               }
             ],
-            "id": 4430,
+            "id": 3760,
             "name": "FunctionDefinition",
-            "src": "545:235:26"
+            "src": "545:235:21"
           },
           {
             "attributes": {
               "canonicalName": "Types.MarginAccount",
               "name": "MarginAccount",
-              "scope": 4451,
+              "scope": 3783,
               "visibility": "public"
             },
             "children": [
@@ -1519,7 +1547,7 @@
                   "mutability": "mutable",
                   "name": "SIDE",
                   "overrides": null,
-                  "scope": 4439,
+                  "scope": 3771,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "enum Types.Side",
@@ -1531,17 +1559,17 @@
                     "attributes": {
                       "contractScope": null,
                       "name": "Side",
-                      "referencedDeclaration": 4398,
+                      "referencedDeclaration": 3728,
                       "type": "enum Types.Side"
                     },
-                    "id": 4431,
+                    "id": 3761,
                     "name": "UserDefinedTypeName",
-                    "src": "817:4:26"
+                    "src": "817:4:21"
                   }
                 ],
-                "id": 4432,
+                "id": 3762,
                 "name": "VariableDeclaration",
-                "src": "817:9:26"
+                "src": "817:9:21"
               },
               {
                 "attributes": {
@@ -1549,7 +1577,7 @@
                   "mutability": "mutable",
                   "name": "SIZE",
                   "overrides": null,
-                  "scope": 4439,
+                  "scope": 3771,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "uint256",
@@ -1562,14 +1590,14 @@
                       "name": "uint256",
                       "type": "uint256"
                     },
-                    "id": 4433,
+                    "id": 3763,
                     "name": "ElementaryTypeName",
-                    "src": "836:7:26"
+                    "src": "836:7:21"
                   }
                 ],
-                "id": 4434,
+                "id": 3764,
                 "name": "VariableDeclaration",
-                "src": "836:12:26"
+                "src": "836:12:21"
               },
               {
                 "attributes": {
@@ -1577,7 +1605,7 @@
                   "mutability": "mutable",
                   "name": "ENTRY_VALUE",
                   "overrides": null,
-                  "scope": 4439,
+                  "scope": 3771,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "uint256",
@@ -1590,14 +1618,14 @@
                       "name": "uint256",
                       "type": "uint256"
                     },
-                    "id": 4435,
+                    "id": 3765,
                     "name": "ElementaryTypeName",
-                    "src": "858:7:26"
+                    "src": "858:7:21"
                   }
                 ],
-                "id": 4436,
+                "id": 3766,
                 "name": "VariableDeclaration",
-                "src": "858:19:26"
+                "src": "858:19:21"
               },
               {
                 "attributes": {
@@ -1605,7 +1633,7 @@
                   "mutability": "mutable",
                   "name": "CASH_BALANCE",
                   "overrides": null,
-                  "scope": 4439,
+                  "scope": 3771,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "int256",
@@ -1618,25 +1646,53 @@
                       "name": "int256",
                       "type": "int256"
                     },
-                    "id": 4437,
+                    "id": 3767,
                     "name": "ElementaryTypeName",
-                    "src": "887:6:26"
+                    "src": "887:6:21"
                   }
                 ],
-                "id": 4438,
+                "id": 3768,
                 "name": "VariableDeclaration",
-                "src": "887:19:26"
+                "src": "887:19:21"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "ENTRY_SLOSS",
+                  "overrides": null,
+                  "scope": 3771,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 3769,
+                    "name": "ElementaryTypeName",
+                    "src": "916:7:21"
+                  }
+                ],
+                "id": 3770,
+                "name": "VariableDeclaration",
+                "src": "916:19:21"
               }
             ],
-            "id": 4439,
+            "id": 3771,
             "name": "StructDefinition",
-            "src": "786:127:26"
+            "src": "786:156:21"
           },
           {
             "attributes": {
               "canonicalName": "Types.VirtualBalance",
               "name": "VirtualBalance",
-              "scope": 4451,
+              "scope": 3783,
               "visibility": "public"
             },
             "children": [
@@ -1646,7 +1702,7 @@
                   "mutability": "mutable",
                   "name": "baseTarget",
                   "overrides": null,
-                  "scope": 4450,
+                  "scope": 3782,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "uint256",
@@ -1659,14 +1715,14 @@
                       "name": "uint256",
                       "type": "uint256"
                     },
-                    "id": 4440,
+                    "id": 3772,
                     "name": "ElementaryTypeName",
-                    "src": "951:7:26"
+                    "src": "980:7:21"
                   }
                 ],
-                "id": 4441,
+                "id": 3773,
                 "name": "VariableDeclaration",
-                "src": "951:18:26"
+                "src": "980:18:21"
               },
               {
                 "attributes": {
@@ -1674,7 +1730,7 @@
                   "mutability": "mutable",
                   "name": "baseBalance",
                   "overrides": null,
-                  "scope": 4450,
+                  "scope": 3782,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "uint256",
@@ -1687,14 +1743,14 @@
                       "name": "uint256",
                       "type": "uint256"
                     },
-                    "id": 4442,
+                    "id": 3774,
                     "name": "ElementaryTypeName",
-                    "src": "979:7:26"
+                    "src": "1008:7:21"
                   }
                 ],
-                "id": 4443,
+                "id": 3775,
                 "name": "VariableDeclaration",
-                "src": "979:19:26"
+                "src": "1008:19:21"
               },
               {
                 "attributes": {
@@ -1702,7 +1758,7 @@
                   "mutability": "mutable",
                   "name": "quoteTarget",
                   "overrides": null,
-                  "scope": 4450,
+                  "scope": 3782,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "uint256",
@@ -1715,14 +1771,14 @@
                       "name": "uint256",
                       "type": "uint256"
                     },
-                    "id": 4444,
+                    "id": 3776,
                     "name": "ElementaryTypeName",
-                    "src": "1008:7:26"
+                    "src": "1037:7:21"
                   }
                 ],
-                "id": 4445,
+                "id": 3777,
                 "name": "VariableDeclaration",
-                "src": "1008:19:26"
+                "src": "1037:19:21"
               },
               {
                 "attributes": {
@@ -1730,7 +1786,7 @@
                   "mutability": "mutable",
                   "name": "quoteBalance",
                   "overrides": null,
-                  "scope": 4450,
+                  "scope": 3782,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "uint256",
@@ -1743,14 +1799,14 @@
                       "name": "uint256",
                       "type": "uint256"
                     },
-                    "id": 4446,
+                    "id": 3778,
                     "name": "ElementaryTypeName",
-                    "src": "1037:7:26"
+                    "src": "1066:7:21"
                   }
                 ],
-                "id": 4447,
+                "id": 3779,
                 "name": "VariableDeclaration",
-                "src": "1037:20:26"
+                "src": "1066:20:21"
               },
               {
                 "attributes": {
@@ -1758,7 +1814,7 @@
                   "mutability": "mutable",
                   "name": "newSide",
                   "overrides": null,
-                  "scope": 4450,
+                  "scope": 3782,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "enum Types.Side",
@@ -1770,32 +1826,32 @@
                     "attributes": {
                       "contractScope": null,
                       "name": "Side",
-                      "referencedDeclaration": 4398,
+                      "referencedDeclaration": 3728,
                       "type": "enum Types.Side"
                     },
-                    "id": 4448,
+                    "id": 3780,
                     "name": "UserDefinedTypeName",
-                    "src": "1067:4:26"
+                    "src": "1096:4:21"
                   }
                 ],
-                "id": 4449,
+                "id": 3781,
                 "name": "VariableDeclaration",
-                "src": "1067:12:26"
+                "src": "1096:12:21"
               }
             ],
-            "id": 4450,
+            "id": 3782,
             "name": "StructDefinition",
-            "src": "919:167:26"
+            "src": "948:167:21"
           }
         ],
-        "id": 4451,
+        "id": 3783,
         "name": "ContractDefinition",
-        "src": "241:847:26"
+        "src": "241:876:21"
       }
     ],
-    "id": 4452,
+    "id": 3784,
     "name": "SourceUnit",
-    "src": "78:1011:26"
+    "src": "78:1040:21"
   },
   "compiler": {
     "name": "solc",
@@ -1803,7 +1859,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-03-25T08:51:25.667Z",
+  "updatedAt": "2021-03-26T05:07:53.825Z",
   "devdoc": {
     "methods": {}
   },

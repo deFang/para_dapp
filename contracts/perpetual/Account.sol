@@ -8,6 +8,8 @@
 pragma solidity 0.6.9;
 pragma experimental ABIEncoderV2;
 
+import {SafeMath} from "../lib/SafeMath.sol";
+import {SignedSafeMath} from "../lib/SignedSafeMath.sol";
 import {InitializableOwnable} from "../lib/InitializableOwnable.sol";
 import {ReentrancyGuard} from "../lib/ReentrancyGuard.sol";
 import {Types} from "../lib/Types.sol";
@@ -21,6 +23,8 @@ import {Pricing} from "./Pricing.sol";
  * @notice Local Variables
  */
 contract Account is InitializableOwnable, ReentrancyGuard {
+    using SafeMath for uint256;
+    using SignedSafeMath for int256;
     // ============ Variables for Control ============
     bool internal _INITIALIZED_;
     Admin public ADMIN;
@@ -34,7 +38,15 @@ contract Account is InitializableOwnable, ReentrancyGuard {
     uint256 public _QUOTE_BALANCE_;
     Types.Side public _R_STATUS_ = Types.Side.FLAT;
 
+    uint256 public _TOTAL_LONG_SIZE_;
+    uint256[3] public _SLOSS_PER_CONTRACT_;
     uint256 public _POOL_INSURANCE_BALANCE_;
+
+    function getTotalSize() public view returns (uint256[3] memory) {
+        uint256 totalSizeShort = _POOL_MARGIN_ACCOUNT_.SIDE == Types.Side.LONG?
+            _TOTAL_LONG_SIZE_.add(_POOL_MARGIN_ACCOUNT_.SIZE): _TOTAL_LONG_SIZE_.sub(_POOL_MARGIN_ACCOUNT_.SIZE);
+        return [0, totalSizeShort, _TOTAL_LONG_SIZE_];
+    }
 
     function getPoolMarginSide() external view returns (Types.Side) {
         return _POOL_MARGIN_ACCOUNT_.SIDE;
@@ -50,6 +62,10 @@ contract Account is InitializableOwnable, ReentrancyGuard {
 
     function getPoolMarginEntryValue() external view returns (uint256) {
         return _POOL_MARGIN_ACCOUNT_.ENTRY_VALUE;
+    }
+
+    function getPoolMarginEntrySloss() external view returns (uint256) {
+        return _POOL_MARGIN_ACCOUNT_.ENTRY_SLOSS;
     }
 
     function updateVirtualBalance (

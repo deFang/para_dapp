@@ -34,6 +34,8 @@ contract Margin is Settlement {
     
     event Liquidate(address indexed trader, address indexed liquidator, Types.Side liquidationSide, uint256 liquidationValue, uint256 liquidationAmount);
 
+    event SocialLossUpdate(Types.Side lossSide, int256 sloss, uint256 totalSize);
+
     event InternalUpdateBalance(
         address indexed trader,
         int256 amount,
@@ -130,6 +132,7 @@ contract Margin is Settlement {
         if (account.SIZE == 0) {
             account.SIDE = Types.Side.FLAT;
         }
+
         return account;
     }
 
@@ -164,32 +167,6 @@ contract Margin is Settlement {
         return account;
     }
 
-    function tradePool(
-        Types.Side side,
-        uint256 value,
-        uint256 amount
-    ) internal returns (uint256) {
-        uint256 closeValue;
-        uint256 openAmount = amount;
-        Types.MarginAccount memory poolAccount = _POOL_MARGIN_ACCOUNT_;
-        if (poolAccount.SIZE > 0 && poolAccount.SIDE != side) {
-            if (amount <= poolAccount.SIZE) {
-                _close(poolAccount, amount, value);
-                openAmount = 0;
-            }
-            else {
-                closeValue = DecimalMath.mul(value, DecimalMath.divCeil(poolAccount.SIZE, amount));
-                _close(poolAccount, poolAccount.SIZE, closeValue);
-                openAmount = amount.sub(poolAccount.SIZE);
-            }
-        }
-
-        if (openAmount > 0) {
-           _open(poolAccount, side, openAmount, value.sub(closeValue));
-        }
-        _POOL_MARGIN_ACCOUNT_ = poolAccount;
-        return openAmount;
-    }
 
 
     /**
@@ -208,6 +185,7 @@ contract Margin is Settlement {
         Types.MarginAccount memory traderAccount = _MARGIN_ACCOUNT_[trader];
         Types.MarginAccount memory poolAccount = _POOL_MARGIN_ACCOUNT_;
         Types.Side liquidationSide = traderAccount.SIDE;
+        Types.Side opSide = Types.oppositeSide(liquidationSide);
         int256 penaltyToLiquidator = DecimalMath.mul(ADMIN._LIQUIDATION_PENALTY_RATE_(), liquidationValue).toint256();
         int256 penaltyToPool = DecimalMath.mul(ADMIN._LIQUIDATION_PENALTY_POOL_RATE_(), liquidationValue).toint256();
 
@@ -233,14 +211,27 @@ contract Margin is Settlement {
             poolAccount.CASH_BALANCE = poolAccount.CASH_BALANCE.add(penaltyToPool);
         } else if (traderAccount.CASH_BALANCE >= penaltyToLiquidator) {
             // 2) penaltyToPool + penaltyToLiquidator> cash >penaltyToLiquidator
-            poolAccount.CASH_BALANCE = poolAccount.CASH_BALANCE.add(traderAccount.CASH_BALANCE.sub(penaltyToLiquidator));
             liquidatorAccount.CASH_BALANCE = liquidatorAccount.CASH_BALANCE.add(penaltyToLiquidator);
+            poolAccount.CASH_BALANCE = poolAccount.CASH_BALANCE.add(traderAccount.CASH_BALANCE.sub(penaltyToLiquidator));
             traderAccount.CASH_BALANCE = 0;
-        } else if (traderAccount.CASH_BALANCE >= 0) {
-            liquidatorAccount.CASH_BALANCE = liquidatorAccount.CASH_BALANCE.add(traderAccount.CASH_BALANCE);
+        } else if (traderAccount.CASH_BALANCE.add(_POOL_INSURANCE_BALANCE_.toint256()) >= penaltyToLiquidator) {
+            // 3） cash + pool_insurance > penaltyToLiquidator
+            liquidatorAccount.CASH_BALANCE = liquidatorAccount.CASH_BALANCE.add(penaltyToLiquidator);
+            int256 delta = penaltyToLiquidator.sub(traderAccount.CASH_BALANCE);
+            _POOL_INSURANCE_BALANCE_ = _POOL_INSURANCE_BALANCE_.sub(delta.touint256());
             traderAccount.CASH_BALANCE = 0;
         } else {
-            // TODO
+            // 4) cash + pool_insurance < penaltyToLiquidator
+            liquidatorAccount.CASH_BALANCE = liquidatorAccount.CASH_BALANCE.add(penaltyToLiquidator);
+            int256 sloss = penaltyToLiquidator.sub(traderAccount.CASH_BALANCE.add(_POOL_INSURANCE_BALANCE_.toint256()));
+            _POOL_INSURANCE_BALANCE_ = 0;
+            traderAccount.CASH_BALANCE = 0;
+            uint256[3] memory totalSize = getTotalSize();
+            _SLOSS_PER_CONTRACT_[uint256(opSide)] += DecimalMath.divCeil(
+                sloss.touint256(),
+                totalSize[uint256(opSide)]
+            );
+            emit SocialLossUpdate(opSide, sloss, totalSize[uint256(opSide)]);
         }
 
         _MARGIN_ACCOUNT_[trader] = traderAccount;

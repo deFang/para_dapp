@@ -94,6 +94,7 @@ contract Trader is Margin {
         traderAccount = trade(traderAccount, Types.Side.SHORT, receiveQuote, amount);
         poolAccount = trade(poolAccount, Types.Side.LONG, receiveQuote, amount);
 
+
         if (lpFeeQuote > 0) {
             traderAccount.CASH_BALANCE = traderAccount.CASH_BALANCE.sub(lpFeeQuote.toint256());
             poolAccount.CASH_BALANCE = traderAccount.CASH_BALANCE.add(lpFeeQuote.toint256());
@@ -107,6 +108,7 @@ contract Trader is Margin {
         // update storage
         _MARGIN_ACCOUNT_[msg.sender] = traderAccount;
         _POOL_MARGIN_ACCOUNT_ = poolAccount;
+        _TOTAL_LONG_SIZE_ =  _TOTAL_LONG_SIZE_.sub(amount);
         updateVirtualBalance(
             updateBalance.baseTarget,
             updateBalance.baseBalance,
@@ -168,6 +170,7 @@ contract Trader is Margin {
         updateVirtualBalance(updateBalance.baseTarget, updateBalance.baseBalance, updateBalance.quoteTarget, updateBalance.quoteBalance, updateBalance.newSide);
         _MARGIN_ACCOUNT_[msg.sender] = traderAccount;
         _POOL_MARGIN_ACCOUNT_ = poolAccount;
+        _TOTAL_LONG_SIZE_ = _TOTAL_LONG_SIZE_.add(amount);
         emit BuyBaseToken(msg.sender, amount, payQuote);
 
         return payQuote;
