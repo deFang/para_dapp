@@ -16,6 +16,7 @@ let lp2: string;
 let trader1: string;
 let trader2: string;
 let tempAccount: string;
+let poolAccount: string;
 
 async function init(ctx: ParaContext): Promise<void> {
   await ctx.setOraclePrice(decimalStr("100"));
@@ -24,6 +25,7 @@ async function init(ctx: ParaContext): Promise<void> {
   lp2 = ctx.spareAccounts[1];
   trader1 = ctx.spareAccounts[2];
   trader2 = ctx.spareAccounts[3];
+  poolAccount = ctx.Para.options.address;
   await ctx.mintTestToken(lp1, decimalStr("1000"));
   await ctx.mintTestToken(lp2, decimalStr("1000"));
   await ctx.mintTestToken(trader1, decimalStr("1000"));
@@ -123,19 +125,19 @@ describe("Trader", () => {
 		  console.log('4. withdraw from lp2', baseTarget/10**18, baseBalance/10**18, quoteTarget/10**18, quoteBalance/10**18);
           console.log('4 lp2 lp balance', await ctx.Para.methods.getCollateralPoolTokenBalanceOf(lp2).call())
           console.log('4 lp2 margin account', await ctx.Para.methods._MARGIN_ACCOUNT_(lp2).call());
-          console.log('4 pool margin account', await ctx.Para.methods._POOL_MARGIN_ACCOUNT_().call());
+          console.log('4 pool margin account', await ctx.Para.methods._MARGIN_ACCOUNT_(poolAccount).call());
 
           await ctx.Para.methods.buyBaseToken(decimalStr("0.5"), decimalStr("1000")).send(ctx.sendParam(lp2));
           [baseTarget, baseBalance, quoteTarget, quoteBalance, ] = await ctx.Pricing.methods.getExpectedTarget().call();
 		  console.log('5.lp2 close position', baseTarget/10**18, baseBalance/10**18, quoteTarget/10**18, quoteBalance/10**18);
 		  console.log('5 lp2 margin account', await ctx.Para.methods._MARGIN_ACCOUNT_(lp2).call());
-          console.log('5 pool margin account', await ctx.Para.methods._POOL_MARGIN_ACCOUNT_().call());
+          console.log('5 pool margin account', await ctx.Para.methods._MARGIN_ACCOUNT_(poolAccount).call());
 
           await ctx.Para.methods.sellBaseToken(decimalStr("1"), decimalStr("10")).send(ctx.sendParam(trader1));
           [baseTarget, baseBalance, quoteTarget, quoteBalance, ] = await ctx.Pricing.methods.getExpectedTarget().call();
 		  console.log('6.trader1 close position', baseTarget/10**18, baseBalance/10**18, quoteTarget/10**18, quoteBalance/10**18);
 		  console.log('6 trader1 margin account', await ctx.Para.methods._MARGIN_ACCOUNT_(trader1).call());
-          console.log('6 pool margin account', await ctx.Para.methods._POOL_MARGIN_ACCOUNT_().call());
+          console.log('6 pool margin account', await ctx.Para.methods._MARGIN_ACCOUNT_(poolAccount).call());
 
 
           }

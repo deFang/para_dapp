@@ -135,13 +135,16 @@ contract Pricing {
     function queryPNLwiValue(
         Types.Side accountSide,
         uint256 entryValue,
-        uint256 closeValue
+        uint256 closeValue,
+        uint256 entrySloss,
+        uint256 clossSloss
     ) public view returns (int256) {
+        int256 sloss = clossSloss.toint256().sub(entrySloss.toint256());
         int256 PNL =
             accountSide == Types.Side.LONG
                 ? closeValue.toint256().sub(entryValue.toint256())
                 : entryValue.toint256().sub(closeValue.toint256());
-        return PNL;
+        return PNL.sub(sloss);
     }
 
     // calculate pnl given the amount of position to be closed
@@ -150,21 +153,31 @@ contract Pricing {
         Types.Side accountSide,
         uint256 accountSize,
         uint256 accountEntryValue,
-        uint256 amount
+        uint256 amount,
+        uint256 accountEntrySloss
     ) public view returns (int256) {
         if (accountSize == 0) {
             return 0;
         }
         uint256 entryValue;
+        uint256 entrySloss;
         if (amount == accountSize) {
             entryValue = accountEntryValue;
+            entrySloss = accountEntrySloss;
         } else {
             entryValue =
                 DecimalMath.mul(accountEntryValue, DecimalMath.divFloor(amount, accountSize));
+            entrySloss =
+                DecimalMath.mul(accountEntrySloss, DecimalMath.divFloor(amount, accountSize));
         }
+        uint256 closeSloss = DecimalMath.mul(ACCOUNT.getSloss()[uint256(accountSide)], amount);
         uint256 closeValue = closePositionValue(accountSide, amount);
-        return queryPNLwiValue(accountSide, entryValue, closeValue);
+        return queryPNLwiValue(accountSide, entryValue, closeValue, entrySloss, closeSloss);
     }
+
+
+
+
 
     //
     function closePositionValue(

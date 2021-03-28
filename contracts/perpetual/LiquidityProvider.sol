@@ -84,7 +84,7 @@ contract LiquidityProvider is Margin {
         ADMIN.checkNotPaused();
         ADMIN.depositAllowed();
         Types.MarginAccount memory lpAccount = _MARGIN_ACCOUNT_[to];
-        require(balanceMargin(lpAccount)>amount, "INSUFFICIENT_FUND");
+        require(balanceMargin(lpAccount)>=amount.toint256(), "INSUFFICIENT_FUND");
 
         uint256 totalCapital = getTotalCollateralPoolToken();
         uint256 capital;
@@ -94,16 +94,17 @@ contract LiquidityProvider is Margin {
         }
         else {
             int256 collateralBalance;
-            if (_POOL_MARGIN_ACCOUNT_.SIDE == Types.Side.FLAT) {
-                collateralBalance = _POOL_MARGIN_ACCOUNT_.CASH_BALANCE;
+            if (_MARGIN_ACCOUNT_[address(this)].SIDE == Types.Side.FLAT) {
+                collateralBalance = _MARGIN_ACCOUNT_[address(this)].CASH_BALANCE;
             }
             else {
-                collateralBalance = _POOL_MARGIN_ACCOUNT_.CASH_BALANCE.add(
+                collateralBalance = _MARGIN_ACCOUNT_[address(this)].CASH_BALANCE.add(
                     PRICING.queryPNL(
-                        Types.oppositeSide(_POOL_MARGIN_ACCOUNT_.SIDE),
-                        _POOL_MARGIN_ACCOUNT_.SIZE,
-                        _POOL_MARGIN_ACCOUNT_.ENTRY_VALUE,
-                        _POOL_MARGIN_ACCOUNT_.SIZE
+                        Types.oppositeSide(_MARGIN_ACCOUNT_[address(this)].SIDE),
+                        _MARGIN_ACCOUNT_[address(this)].SIZE,
+                        _MARGIN_ACCOUNT_[address(this)].ENTRY_VALUE,
+                        _MARGIN_ACCOUNT_[address(this)].SIZE,
+                        _MARGIN_ACCOUNT_[address(this)].ENTRY_SLOSS
                     )
                 );
             }
@@ -112,10 +113,10 @@ contract LiquidityProvider is Margin {
 
         // settlement
         (uint256 baseTarget, uint256 baseBalance, uint256 quoteTarget, uint256 quoteBalance, Types.Side newSide) = PRICING.getExpectedTargetExt(
-            _POOL_MARGIN_ACCOUNT_.SIDE,
+            _MARGIN_ACCOUNT_[address(this)].SIDE,
             _QUOTE_BALANCE_.add(amount),
             ADMIN.getOraclePrice(),
-            _POOL_MARGIN_ACCOUNT_.SIZE,
+            _MARGIN_ACCOUNT_[address(this)].SIZE,
             ADMIN._K_()
         );
 
@@ -141,21 +142,20 @@ contract LiquidityProvider is Margin {
         // calculate capital
         uint256 totalCapital = getTotalCollateralPoolToken();
         require(totalCapital > 0, "NO_LP");
-        uint256 cashAmount = DecimalMath.mul(DecimalMath.divCeil(lpAmount, totalCapital), _POOL_MARGIN_ACCOUNT_.CASH_BALANCE.touint256());
+        Types.MarginAccount memory poolAccount = _MARGIN_ACCOUNT_[address(this)];
+        uint256 cashAmount = DecimalMath.mul(DecimalMath.divCeil(lpAmount, totalCapital), poolAccount.CASH_BALANCE.touint256());
         _marginTransferFromPool(to, cashAmount);
         uint256 sizeAmount;
         uint256 valueAmount;
         uint256 r = DecimalMath.divCeil(lpAmount, totalCapital);
-        if (_POOL_MARGIN_ACCOUNT_.SIDE != Types.Side.FLAT) {
-            sizeAmount = DecimalMath.mul(r, _POOL_MARGIN_ACCOUNT_.SIZE);
-            valueAmount = DecimalMath.mul(r, _POOL_MARGIN_ACCOUNT_.ENTRY_VALUE);
-
+        if (poolAccount.SIDE != Types.Side.FLAT) {
+            sizeAmount = DecimalMath.mul(r, poolAccount.SIZE);
+            valueAmount = DecimalMath.mul(r, poolAccount.ENTRY_VALUE);
             Types.MarginAccount memory lpAccount = _MARGIN_ACCOUNT_[to];
-            Types.MarginAccount memory poolAccount = _POOL_MARGIN_ACCOUNT_;
             lpAccount = trade(lpAccount, poolAccount.SIDE, valueAmount, sizeAmount);
             poolAccount = trade(poolAccount, Types.oppositeSide(poolAccount.SIDE), valueAmount, sizeAmount);
-            _MARGIN_ACCOUNT_[to] = traderAccount;
-            _POOL_MARGIN_ACCOUNT_ = poolAccount;
+            _MARGIN_ACCOUNT_[to] = lpAccount;
+            _MARGIN_ACCOUNT_[address(this)] = poolAccount;
 
         }
 
@@ -187,16 +187,18 @@ contract LiquidityProvider is Margin {
 
     // ============ Helper Functions ============
     function _calculatePoolEquity() internal view returns (int256 equityBalance) {
-        if (_POOL_MARGIN_ACCOUNT_.SIDE == Types.Side.FLAT) {
-            equityBalance = _POOL_MARGIN_ACCOUNT_.CASH_BALANCE;
+        Types.MarginAccount memory poolAccount = _MARGIN_ACCOUNT_[address(this)];
+        if (poolAccount.SIDE == Types.Side.FLAT) {
+            equityBalance = poolAccount.CASH_BALANCE;
         }
         else {
-            equityBalance = _POOL_MARGIN_ACCOUNT_.CASH_BALANCE.add(
+            equityBalance = poolAccount.CASH_BALANCE.add(
                 PRICING.queryPNL(
-                    Types.oppositeSide(_POOL_MARGIN_ACCOUNT_.SIDE),
-                    _POOL_MARGIN_ACCOUNT_.SIZE,
-                    _POOL_MARGIN_ACCOUNT_.ENTRY_VALUE,
-                    _POOL_MARGIN_ACCOUNT_.SIZE
+                    Types.oppositeSide(poolAccount.SIDE),
+                    poolAccount.SIZE,
+                    poolAccount.ENTRY_VALUE,
+                    poolAccount.SIZE,
+                    poolAccount.ENTRY_SLOSS
                 )
             );
         }
@@ -204,7 +206,7 @@ contract LiquidityProvider is Margin {
     // calculate ENP
     function _poolNetPositionRatio() internal view returns (uint256 ENP) {
         uint256 poolEquity = _calculatePoolEquity().max(0).touint256();
-        uint256 currentValue = DecimalMath.mul(_POOL_MARGIN_ACCOUNT_.SIZE, ADMIN.getOraclePrice());
+        uint256 currentValue = DecimalMath.mul(_MARGIN_ACCOUNT_[address(this)].SIZE, ADMIN.getOraclePrice());
         ENP = DecimalMath.divCeil(poolEquity, currentValue);
     }
 

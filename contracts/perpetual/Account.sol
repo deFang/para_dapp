@@ -30,7 +30,7 @@ contract Account is InitializableOwnable, ReentrancyGuard {
     Admin public ADMIN;
     Pricing public PRICING;
     address public _COLLATERAL_POOL_TOKEN_;
-    Types.MarginAccount public _POOL_MARGIN_ACCOUNT_;
+//    Types.MarginAccount public _MARGIN_ACCOUNT_[address(this)];
     mapping(address => Types.MarginAccount) public _MARGIN_ACCOUNT_;
     uint256 public _TARGET_BASE_TOKEN_AMOUNT_;
     uint256 public _TARGET_QUOTE_TOKEN_AMOUNT_;
@@ -42,30 +42,34 @@ contract Account is InitializableOwnable, ReentrancyGuard {
     uint256[3] public _SLOSS_PER_CONTRACT_;
     uint256 public _POOL_INSURANCE_BALANCE_;
 
+    function getSloss() public view returns (uint256[3] memory) {
+        return _SLOSS_PER_CONTRACT_;
+    }
+
     function getTotalSize() public view returns (uint256[3] memory) {
-        uint256 totalSizeShort = _POOL_MARGIN_ACCOUNT_.SIDE == Types.Side.LONG?
-            _TOTAL_LONG_SIZE_.add(_POOL_MARGIN_ACCOUNT_.SIZE): _TOTAL_LONG_SIZE_.sub(_POOL_MARGIN_ACCOUNT_.SIZE);
+        uint256 totalSizeShort = _MARGIN_ACCOUNT_[address(this)].SIDE == Types.Side.LONG?
+            _TOTAL_LONG_SIZE_.add(_MARGIN_ACCOUNT_[address(this)].SIZE): _TOTAL_LONG_SIZE_.sub(_MARGIN_ACCOUNT_[address(this)].SIZE);
         return [0, totalSizeShort, _TOTAL_LONG_SIZE_];
     }
 
     function getPoolMarginSide() external view returns (Types.Side) {
-        return _POOL_MARGIN_ACCOUNT_.SIDE;
+        return _MARGIN_ACCOUNT_[address(this)].SIDE;
     }
 
     function getPoolMarginCashBalance() external view returns (int256) {
-        return _POOL_MARGIN_ACCOUNT_.CASH_BALANCE;
+        return _MARGIN_ACCOUNT_[address(this)].CASH_BALANCE;
     }
 
     function getPoolMarginSize() external view returns (uint256) {
-        return _POOL_MARGIN_ACCOUNT_.SIZE;
+        return _MARGIN_ACCOUNT_[address(this)].SIZE;
     }
 
     function getPoolMarginEntryValue() external view returns (uint256) {
-        return _POOL_MARGIN_ACCOUNT_.ENTRY_VALUE;
+        return _MARGIN_ACCOUNT_[address(this)].ENTRY_VALUE;
     }
 
     function getPoolMarginEntrySloss() external view returns (uint256) {
-        return _POOL_MARGIN_ACCOUNT_.ENTRY_SLOSS;
+        return _MARGIN_ACCOUNT_[address(this)].ENTRY_SLOSS;
     }
 
     function updateVirtualBalance (

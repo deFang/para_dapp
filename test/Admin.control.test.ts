@@ -14,6 +14,7 @@ let lp1: string;
 let lp2: string;
 let trader: string;
 let tempAccount: string;
+let poolAccount: string;
 
 async function init(ctx: ParaContext): Promise<void> {
   await ctx.setOraclePrice(decimalStr("100"));
@@ -21,6 +22,7 @@ async function init(ctx: ParaContext): Promise<void> {
   lp1 = ctx.spareAccounts[0];
   lp2 = ctx.spareAccounts[1];
   trader = ctx.spareAccounts[2];
+  poolAccount = ctx.Para.options.address;
   await ctx.mintTestToken(lp1, decimalStr("100"));
   await ctx.mintTestToken(lp2, decimalStr("100"));
   await ctx.mintTestToken(trader, decimalStr("100"));
@@ -59,15 +61,8 @@ describe("Admin", () => {
 		  await ctx.Admin.methods
               .enableDeposit()
               .send(ctx.sendParam(ctx.Deployer));
-		  // // trader deposit
-		  // await ctx.Para.methods.
-          //     collateralTraderTransferIn(lp1, decimalStr("10"))
-          //     .send(ctx.sendParam(lp1));
-		  // await assert.equal(
-          //     (await ctx.Para.methods._MARGIN_ACCOUNT_(lp1).call())['CASH_BALANCE'],
-          //     decimalStr("10")
-          //     );
-		  // transfer from trader to pool
+          await ctx.Para.methods.collateralTraderTransferIn(lp1, decimalStr("10"))
+              .send(ctx.sendParam(lp1));
 		  await ctx.Para.methods
               .depositCollateral(decimalStr("10"))
               .send(ctx.sendParam(lp1));
@@ -132,7 +127,7 @@ describe("Admin", () => {
 
           // check pool margin account
           await assert.equal(
-              (await ctx.Para.methods._POOL_MARGIN_ACCOUNT_().call())['CASH_BALANCE'],
+              (await ctx.Para.methods._MARGIN_ACCOUNT_(poolAccount).call())['CASH_BALANCE'],
               decimalStr("40")
           );
 		  // check LPtoken

@@ -86,7 +86,7 @@ contract Settlement is Account {
 
     // ============ Donate to Liquidity Pool Functions ============
     function _donateCollateralToken(uint256 amount) internal {
-        _POOL_MARGIN_ACCOUNT_.CASH_BALANCE = _POOL_MARGIN_ACCOUNT_
+        _MARGIN_ACCOUNT_[address(this)].CASH_BALANCE = _MARGIN_ACCOUNT_[address(this)]
             .CASH_BALANCE
             .add(amount.toint256());
         emit Donate(amount);

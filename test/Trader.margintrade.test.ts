@@ -71,48 +71,44 @@ describe("Trader", () => {
   });
 
   describe("Trader", () => {
-      // it("sell large amount base token when balanced", async () => {
+      it("sell large amount base token when balanced", async () => {
+          let lpAccount = await ctx.Para.methods._MARGIN_ACCOUNT_(lp1).call();
+          console.log(lpAccount);
+          console.log(await ctx.Para.methods.balanceMargin(lpAccount).call());
+          // await ctx.Para.methods.depositCollateral(decimalStr("100000")).send(ctx.sendParam(lp1));
+
+      });
+
+      // it("liquidate position when price change", async () => {
+      //     // lp deposit 1000usd to pool
+      //     await ctx.Admin.methods.setLiquidationPenaltyRate(decimalStr("0.01")).send(ctx.sendParam(ctx.Deployer));
+      //     await ctx.Admin.methods.setLiquidationPenaltyPoolRate(decimalStr("0.005")).send(ctx.sendParam(ctx.Deployer))
       //     await ctx.Para.methods.depositCollateral(decimalStr("100000")).send(ctx.sendParam(lp1));
-      //     await assert.rejects(
-      //         ctx.Para.methods.sellBaseToken(decimalStr("100"), decimalStr("10")).send(ctx.sendParam(trader1)), /NOT_SAFE_TO_OPEN/
-      //     )
-      //     await assert.rejects(
-      //         ctx.Para.methods.buyBaseToken(decimalStr("100"), decimalStr("1000000")).send(ctx.sendParam(trader1)), /NOT_SAFE_TO_OPEN/
-      //     )
+      //     // trader1 first to buy 10 base token
+      //     await ctx.Para.methods.buyBaseToken(decimalStr("30"), decimalStr("1000000")).send(ctx.sendParam(trader1)), /NOT_SAFE_TO_OPEN/
+      //     // check trader1 account
       //     let [side, size, entry_value, cash_balance] = await ctx.Para.methods._MARGIN_ACCOUNT_(trader1).call();
       //     console.log(side, size/10**18, entry_value/10**18, cash_balance/10**18);
-      // });
-
-      it("liquidate position when price change", async () => {
-          // lp deposit 1000usd to pool
-          await ctx.Admin.methods.setLiquidationPenaltyRate(decimalStr("0.01")).send(ctx.sendParam(ctx.Deployer));
-          await ctx.Admin.methods.setLiquidationPenaltyPoolRate(decimalStr("0.005")).send(ctx.sendParam(ctx.Deployer))
-          await ctx.Para.methods.depositCollateral(decimalStr("100000")).send(ctx.sendParam(lp1));
-          // trader1 first to buy 10 base token
-          await ctx.Para.methods.buyBaseToken(decimalStr("30"), decimalStr("1000000")).send(ctx.sendParam(trader1)), /NOT_SAFE_TO_OPEN/
-          // check trader1 account
-          let [side, size, entry_value, cash_balance] = await ctx.Para.methods._MARGIN_ACCOUNT_(trader1).call();
-          console.log(side, size/10**18, entry_value/10**18, cash_balance/10**18);
-          console.log(await ctx.Para.methods.balanceMargin(await ctx.Para.methods._MARGIN_ACCOUNT_(trader1).call()).call()/10**18)
-          await ctx.setOraclePrice(decimalStr("70"));
-          console.log(await ctx.Para.methods.balanceMargin(await ctx.Para.methods._MARGIN_ACCOUNT_(trader1).call()).call()/10**18)
-
-          await ctx.Para.methods.liquidate(trader2, trader1).send(ctx.sendParam(trader2));
-          [side, size, entry_value, cash_balance] = await ctx.Para.methods._MARGIN_ACCOUNT_(trader1).call();
-          console.log('trader1', side, size/10**18, entry_value/10**18, cash_balance/10**18);
-
-          [side, size, entry_value, cash_balance] = await ctx.Para.methods._MARGIN_ACCOUNT_(trader2).call();
-          console.log('trader2', side, size/10**18, entry_value/10**18, cash_balance/10**18);
-
-          await ctx.Para.methods.sellBaseToken(decimalStr("30"), decimalStr("100")).send(ctx.sendParam(trader2));
-          [side, size, entry_value, cash_balance] = await ctx.Para.methods._MARGIN_ACCOUNT_(trader2).call();
-          console.log('trader2 after close', side, size/10**18, entry_value/10**18, cash_balance/10**18);
-
-          [side, size, entry_value, cash_balance] = await ctx.Para.methods._POOL_MARGIN_ACCOUNT_().call();
-          console.log('POOL', side, size/10**18, entry_value/10**18, cash_balance/10**18);
-
-
-      })
+      //     console.log(await ctx.Para.methods.balanceMargin(await ctx.Para.methods._MARGIN_ACCOUNT_(trader1).call()).call()/10**18)
+      //     await ctx.setOraclePrice(decimalStr("70"));
+      //     console.log(await ctx.Para.methods.balanceMargin(await ctx.Para.methods._MARGIN_ACCOUNT_(trader1).call()).call()/10**18)
+      //
+      //     await ctx.Para.methods.liquidate(trader2, trader1).send(ctx.sendParam(trader2));
+      //     [side, size, entry_value, cash_balance] = await ctx.Para.methods._MARGIN_ACCOUNT_(trader1).call();
+      //     console.log('trader1', side, size/10**18, entry_value/10**18, cash_balance/10**18);
+      //
+      //     [side, size, entry_value, cash_balance] = await ctx.Para.methods._MARGIN_ACCOUNT_(trader2).call();
+      //     console.log('trader2', side, size/10**18, entry_value/10**18, cash_balance/10**18);
+      //
+      //     await ctx.Para.methods.sellBaseToken(decimalStr("30"), decimalStr("100")).send(ctx.sendParam(trader2));
+      //     [side, size, entry_value, cash_balance] = await ctx.Para.methods._MARGIN_ACCOUNT_(trader2).call();
+      //     console.log('trader2 after close', side, size/10**18, entry_value/10**18, cash_balance/10**18);
+      //
+      //     [side, size, entry_value, cash_balance] = await ctx.Para.methods._POOL_MARGIN_ACCOUNT_().call();
+      //     console.log('POOL', side, size/10**18, entry_value/10**18, cash_balance/10**18);
+      //
+      //
+      // })
 
 
   })

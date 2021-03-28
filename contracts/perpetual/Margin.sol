@@ -64,7 +64,11 @@ contract Margin is Settlement {
     // CASH_BALANCE + UNREALIZED_PNL
     function balanceMargin(Types.MarginAccount memory account)
         public view returns (int256) {
-        return account.CASH_BALANCE.add(PRICING.queryPNL(account.SIDE, account.SIZE, account.ENTRY_VALUE, account.SIZE));
+        return account.CASH_BALANCE.add(
+            PRICING.queryPNL(
+                account.SIDE, account.SIZE, account.ENTRY_VALUE, account.SIZE, account.ENTRY_SLOSS
+            )
+        );
     }
 
     // 可用保证金
@@ -106,7 +110,11 @@ contract Margin is Settlement {
         }
         account.SIZE = account.SIZE.add(amount);
         account.ENTRY_VALUE = account.ENTRY_VALUE.add(entryValue);
+        account.ENTRY_SLOSS = account.ENTRY_SLOSS.add(DecimalMath.mul(_SLOSS_PER_CONTRACT_[uint256(side)], amount));
 
+        if (side == Types.Side.LONG) {
+            _TOTAL_LONG_SIZE_ = _TOTAL_LONG_SIZE_.add(amount);
+        }
         return account;
     }
 
@@ -119,18 +127,29 @@ contract Margin is Settlement {
         require(amount > 0, "close: invalid amount");
 
         uint256 entryValue;
+        uint256 entrySloss;
         if (amount == account.SIZE) {
             entryValue = account.ENTRY_VALUE;
+            entrySloss = account.ENTRY_SLOSS;
         } else {
             entryValue =
                 DecimalMath.mul(account.ENTRY_VALUE, DecimalMath.divFloor(amount, account.SIZE));
+            entrySloss =
+                DecimalMath.mul(account.ENTRY_SLOSS, DecimalMath.divFloor(amount, account.SIZE));
         }
-        int256 realizedPNL = PRICING.queryPNLwiValue(account.SIDE, entryValue, closeValue);
+        uint256 closeSloss = DecimalMath.mul(_SLOSS_PER_CONTRACT_[uint256(account.SIDE)], amount);
+        int256 realizedPNL = PRICING.queryPNLwiValue(
+            account.SIDE, entryValue, closeValue, entrySloss, closeSloss
+        );
         account.CASH_BALANCE = account.CASH_BALANCE.add(realizedPNL);
         account.ENTRY_VALUE = DecimalMath.mul(account.ENTRY_VALUE, DecimalMath.divFloor(account.SIZE.sub(amount), account.SIZE));
+        account.ENTRY_SLOSS = DecimalMath.mul(account.ENTRY_SLOSS, DecimalMath.divFloor(account.SIZE.sub(amount), account.SIZE));
         account.SIZE = account.SIZE.sub(amount);
         if (account.SIZE == 0) {
             account.SIDE = Types.Side.FLAT;
+        }
+        if (account.SIDE == Types.Side.LONG) {
+            _TOTAL_LONG_SIZE_ = _TOTAL_LONG_SIZE_.sub(amount);
         }
 
         return account;
@@ -183,7 +202,7 @@ contract Margin is Settlement {
         // liquidiated trader
         Types.MarginAccount memory liquidatorAccount = _MARGIN_ACCOUNT_[liquidator];
         Types.MarginAccount memory traderAccount = _MARGIN_ACCOUNT_[trader];
-        Types.MarginAccount memory poolAccount = _POOL_MARGIN_ACCOUNT_;
+        Types.MarginAccount memory poolAccount = _MARGIN_ACCOUNT_[address(this)];
         Types.Side liquidationSide = traderAccount.SIDE;
         Types.Side opSide = Types.oppositeSide(liquidationSide);
         int256 penaltyToLiquidator = DecimalMath.mul(ADMIN._LIQUIDATION_PENALTY_RATE_(), liquidationValue).toint256();
@@ -236,8 +255,8 @@ contract Margin is Settlement {
 
         _MARGIN_ACCOUNT_[trader] = traderAccount;
         _MARGIN_ACCOUNT_[liquidator] = liquidatorAccount;
-        if (poolAccount.CASH_BALANCE == _POOL_MARGIN_ACCOUNT_.CASH_BALANCE) {
-            _POOL_MARGIN_ACCOUNT_ = poolAccount;
+        if (poolAccount.CASH_BALANCE == _MARGIN_ACCOUNT_[address(this)].CASH_BALANCE) {
+            _MARGIN_ACCOUNT_[address(this)] = poolAccount;
         }
         
         emit Liquidate(liquidator, trader, liquidationSide, liquidationValue, liquidationAmount);
@@ -257,17 +276,7 @@ contract Margin is Settlement {
     }
 
 
-    function _updateCashBalance(
-        Types.MarginAccount memory account,
-        int256 amount
-    ) internal returns (Types.MarginAccount memory) {
-        if (amount == 0) {
-            return account;
-        }
-        account.CASH_BALANCE = account.CASH_BALANCE.add(amount);
 
-        return account;
-    }
 
 
     /*
@@ -278,7 +287,7 @@ contract Margin is Settlement {
     function _marginTransferToPool(address from, uint256 amount) internal {
         require(amount > 0, "MarginTransferToPool_ILLEGAL_AMOUNT");
         _MARGIN_ACCOUNT_[from].CASH_BALANCE = _MARGIN_ACCOUNT_[from].CASH_BALANCE.sub(amount.toint256()); // may be negative balance
-        _POOL_MARGIN_ACCOUNT_.CASH_BALANCE = _POOL_MARGIN_ACCOUNT_.CASH_BALANCE.add(amount.toint256());
+        _MARGIN_ACCOUNT_[address(this)].CASH_BALANCE = _MARGIN_ACCOUNT_[address(this)].CASH_BALANCE.add(amount.toint256());
     }
 
     /*
@@ -288,7 +297,7 @@ contract Margin is Settlement {
      */
     function _marginTransferFromPool(address to, uint256 amount) internal {
         require(amount > 0, "MarginTransferFromPool_ILLEGAL_AMOUNT");
-        _POOL_MARGIN_ACCOUNT_.CASH_BALANCE = _POOL_MARGIN_ACCOUNT_.CASH_BALANCE.sub(amount.toint256());
+        _MARGIN_ACCOUNT_[address(this)].CASH_BALANCE = _MARGIN_ACCOUNT_[address(this)].CASH_BALANCE.sub(amount.toint256());
         _MARGIN_ACCOUNT_[to].CASH_BALANCE = _MARGIN_ACCOUNT_[to].CASH_BALANCE.add(amount.toint256()); // may be negative balance
     }
 
@@ -303,5 +312,8 @@ contract Margin is Settlement {
         _MARGIN_ACCOUNT_[from].CASH_BALANCE = _MARGIN_ACCOUNT_[from].CASH_BALANCE.sub(amount.toint256()); // may be negative balance
         _MARGIN_ACCOUNT_[to].CASH_BALANCE = _MARGIN_ACCOUNT_[to].CASH_BALANCE.add(amount.toint256());
     }
+
+
+
 
 }

@@ -87,10 +87,9 @@ contract Trader is Margin {
         // settle assets
 
         Types.MarginAccount memory traderAccount = _MARGIN_ACCOUNT_[msg.sender];
-        Types.MarginAccount memory poolAccount = _POOL_MARGIN_ACCOUNT_;
+        Types.MarginAccount memory poolAccount = _MARGIN_ACCOUNT_[address(this)];
 
         require(isSafeOpen(traderAccount, receiveQuote), "NOT_SAFE_TO_OPEN"); // check traderAccount safety
-
         traderAccount = trade(traderAccount, Types.Side.SHORT, receiveQuote, amount);
         poolAccount = trade(poolAccount, Types.Side.LONG, receiveQuote, amount);
 
@@ -107,8 +106,7 @@ contract Trader is Margin {
 
         // update storage
         _MARGIN_ACCOUNT_[msg.sender] = traderAccount;
-        _POOL_MARGIN_ACCOUNT_ = poolAccount;
-        _TOTAL_LONG_SIZE_ =  _TOTAL_LONG_SIZE_.sub(amount);
+        _MARGIN_ACCOUNT_[address(this)] = poolAccount;
         updateVirtualBalance(
             updateBalance.baseTarget,
             updateBalance.baseBalance,
@@ -150,7 +148,7 @@ contract Trader is Margin {
 
         // settle assets
         Types.MarginAccount memory traderAccount = _MARGIN_ACCOUNT_[msg.sender];
-        Types.MarginAccount memory poolAccount = _POOL_MARGIN_ACCOUNT_;
+        Types.MarginAccount memory poolAccount = _MARGIN_ACCOUNT_[address(this)];
         require(isSafeOpen(traderAccount, payQuote), "NOT_SAFE_TO_OPEN"); // check traderAccount safety
         traderAccount = trade(traderAccount, Types.Side.LONG, payQuote, amount);
         poolAccount = trade(poolAccount, Types.Side.SHORT, payQuote, amount);
@@ -169,8 +167,7 @@ contract Trader is Margin {
         // update storage
         updateVirtualBalance(updateBalance.baseTarget, updateBalance.baseBalance, updateBalance.quoteTarget, updateBalance.quoteBalance, updateBalance.newSide);
         _MARGIN_ACCOUNT_[msg.sender] = traderAccount;
-        _POOL_MARGIN_ACCOUNT_ = poolAccount;
-        _TOTAL_LONG_SIZE_ = _TOTAL_LONG_SIZE_.add(amount);
+        _MARGIN_ACCOUNT_[address(this)] = poolAccount;
         emit BuyBaseToken(msg.sender, amount, payQuote);
 
         return payQuote;
