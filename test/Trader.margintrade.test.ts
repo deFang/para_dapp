@@ -1,6 +1,6 @@
 /*
 
-    Copyright 2020 Para ZOO.
+    Copyright 2021 ParaPara
     SPDX-License-Identifier: Apache-2.0
 
 */
@@ -120,12 +120,12 @@ describe("Trader", () => {
           // b. trader2 close long position, open short position, then liquidated by trader3 when price rise
           [side, size, entry_value, cash_balance, entry_sloss] = await ctx.Para.methods._MARGIN_ACCOUNT_(trader2).call();
           console.log('before trader2', side, size/10**18, entry_value/10**18, cash_balance/10**18);
-          await ctx.Para.methods.sellBaseToken(decimalStr("20"), decimalStr("100")).send(ctx.sendParam(trader2));
+          await ctx.Para.methods.sellBaseToken(decimalStr("110"), decimalStr("100")).send(ctx.sendParam(trader2));
           [side, size, entry_value, cash_balance, entry_sloss] = await ctx.Para.methods._MARGIN_ACCOUNT_(trader2).call();
           console.log('after trader2', side, size/10**18, entry_value/10**18, cash_balance/10**18);
-          await ctx.Para.methods.sellBaseToken(decimalStr("10"), decimalStr("100")).send(ctx.sendParam(trader2));
-          [side, size, entry_value, cash_balance, entry_sloss] = await ctx.Para.methods._MARGIN_ACCOUNT_(trader2).call();
-          console.log('trader2', side, size/10**18, entry_value/10**18, cash_balance/10**18);
+          // await ctx.Para.methods.sellBaseToken(decimalStr("40"), decimalStr("100")).send(ctx.sendParam(trader2));
+          // [side, size, entry_value, cash_balance, entry_sloss] = await ctx.Para.methods._MARGIN_ACCOUNT_(trader2).call();
+          // console.log('trader2', side, size/10**18, entry_value/10**18, cash_balance/10**18);
           //
           // await ctx.Para.methods.sellBaseToken(decimalStr("30"), decimalStr("100")).send(ctx.sendParam(trader2));
           // [side, size, entry_value, cash_balance] = await ctx.Para.methods._MARGIN_ACCOUNT_(trader2).call();

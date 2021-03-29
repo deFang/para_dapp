@@ -1,6 +1,6 @@
 /*
 
-    Copyright 2020 DODO ZOO.
+    Copyright 2021 ParaPara
     SPDX-License-Identifier: Apache-2.0
 
 */
@@ -13,7 +13,7 @@ import {DecimalMath} from "./DecimalMath.sol";
 
 /**
  * @title ParaMath
- * @author DODO Breeder
+ * @author Parapara
  *
  * @notice Functions for complex calculating. Including ONE Integration and TWO Quadratic solutions
  */

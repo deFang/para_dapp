@@ -1,6 +1,6 @@
 /*
 
-    Copyright 2020 DODO ZOO.
+    Copyright 2021 ParaPara
     SPDX-License-Identifier: Apache-2.0
     This is a simplified version of OpenZepplin's SafeERC20 library
 

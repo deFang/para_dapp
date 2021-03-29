@@ -1,6 +1,6 @@
 /*
 
-    Copyright 2020 DODO ZOO.
+    Copyright 2021 ParaPara
     SPDX-License-Identifier: Apache-2.0
 
 */
@@ -12,9 +12,8 @@ import {SafeMath} from "../lib/SafeMath.sol";
 import {SignedSafeMath} from "../lib/SignedSafeMath.sol";
 import {DecimalMath} from "../lib/DecimalMath.sol";
 import {Types} from "../lib/Types.sol";
-import {Settlement} from "./Settlement.sol";
 import {IAdmin} from "../interface/IAdmin.sol";
-
+import {Account} from "./Account.sol";
 
 /**
  * @title Pricing
@@ -22,7 +21,7 @@ import {IAdmin} from "../interface/IAdmin.sol";
  *
  * @notice Parapara's margin account model
  */
-contract Margin is Settlement {
+contract Margin is Account {
     using SafeMath for uint256;
     using SignedSafeMath for int256;
 

@@ -1,6 +1,6 @@
 /*
 
-    Copyright 2020 DODO ZOO.
+    Copyright 2021 ParaPara
     SPDX-License-Identifier: Apache-2.0
 
 */
@@ -16,7 +16,7 @@ import {Types} from "../lib/Types.sol";
 import {ILpToken} from "../interface/ILpToken.sol";
 import {IERC20} from "../interface/IERC20.sol";
 import {IAdmin} from "../interface/IAdmin.sol";
-import {Account} from "./Account.sol";
+import {Margin} from "./Margin.sol";
 
 
 /**
@@ -25,7 +25,7 @@ import {Account} from "./Account.sol";
  *
  * @notice Functions for assets settlement
  */
-contract Settlement is Account {
+contract Settlement is Margin {
     using SafeMath for uint256;
     using SignedSafeMath for int256;
     using SafeERC20 for IERC20;
@@ -68,6 +68,9 @@ contract Settlement is Account {
      * @param amount collateral amount
      */
     function _collateralTraderTransferOut(address to, uint256 amount) internal {
+        Types.MarginAccount memory traderAccount = _MARGIN_ACCOUNT_[msg.sender];
+        require(availableMargin(traderAccount, ADMIN.getOraclePrice())>=amount.toint256(), "INSUFFICIENT_FUND_TO_WITHDRAW");
+
         _MARGIN_ACCOUNT_[to].CASH_BALANCE = _MARGIN_ACCOUNT_[to]
             .CASH_BALANCE
             .sub(amount.toint256());
@@ -76,10 +79,15 @@ contract Settlement is Account {
 
 
     function collateralTraderTransferIn(address from, uint256 amount) external {
+        ADMIN.checkNotClosed();
+        ADMIN.checkNotPaused();
+        ADMIN.depositAllowed();
         _collateralTraderTransferIn(from, amount);
     }
 
     function collateralTraderTransferOut(address to, uint256 amount) external {
+        ADMIN.checkNotClosed();
+        ADMIN.checkNotPaused();
         _collateralTraderTransferOut(to, amount);
     }
 
