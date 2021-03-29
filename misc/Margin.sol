@@ -101,14 +101,10 @@ contract Margin is Settlement {
         Types.MarginAccount memory account,
         Types.Side side,
         uint256 amount,
-        uint256 entryValue,
-        bool isPool
+        uint256 entryValue
     ) internal returns (Types.MarginAccount memory) {
         require(amount > 0, "open: invalid amount");
 //        require(checkTradeEligibility(account, entryValue), "open: INSUFFICIENT FUNDS");
-        if (!isPool) {
-            require(isSafeOpen(account, entryValue), "NOT_SAFE_TO_OPEN");
-            }
         if (account.SIZE == 0) {
             account.SIDE = side;
         }
@@ -126,8 +122,7 @@ contract Margin is Settlement {
     function _close(
         Types.MarginAccount memory account,
         uint256 amount,
-        uint256 closeValue,
-        bool isPool
+        uint256 closeValue
     ) internal returns (Types.MarginAccount memory) {
         require(amount > 0, "close: invalid amount");
 
@@ -170,8 +165,7 @@ contract Margin is Settlement {
         Types.MarginAccount memory account,
         Types.Side side,
         uint256 value,
-        uint256 amount,
-        bool isPool
+        uint256 amount
     ) internal returns (Types.MarginAccount memory) {
         uint256 closeValue;
         uint256 openAmount = amount;
@@ -179,16 +173,16 @@ contract Margin is Settlement {
         if (accountSize > 0 && account.SIDE != side) {
             if (amount <= accountSize) {
                 openAmount = 0;
-                account = _close(account, amount, value, isPool);
+                account = _close(account, amount, value);
             }
             else {
                 closeValue = DecimalMath.mul(value, DecimalMath.divCeil(account.SIZE, amount));
                 openAmount = amount.sub(accountSize);
-                account = _close(account, accountSize, closeValue, isPool);
+                account = _close(account, accountSize, closeValue);
             }
         }
         if (openAmount > 0) {
-           account = _open(account, side, openAmount, value.sub(closeValue), isPool);
+           account = _open(account, side, openAmount, value.sub(closeValue));
         }
         return account;
     }
@@ -220,16 +214,14 @@ contract Margin is Settlement {
             traderAccount,
             Types.oppositeSide(liquidationSide),
             liquidationValue,
-            liquidationAmount,
-            false
+            liquidationAmount
         );
 
         liquidatorAccount = trade(
                 liquidatorAccount,
                 liquidationSide,
                 liquidationValue,
-                liquidationAmount,
-                false
+                liquidationAmount
             );
 
         if (traderAccount.CASH_BALANCE >= penaltyToLiquidator.add(penaltyToPool)) {

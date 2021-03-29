@@ -65,40 +65,34 @@ contract Trader is Margin {
         require(amount > 0, "open: invalid amount");
         ADMIN.sellingAllowed();
         ADMIN.gasPriceLimit();
-        Types.MarginAccount memory traderAccount = _MARGIN_ACCOUNT_[msg.sender];
-        Types.MarginAccount memory poolAccount = _MARGIN_ACCOUNT_[address(this)];
         Types.VirtualBalance memory updateBalance;
         uint256 receiveQuote;
         uint256 lpFeeQuote;
         uint256 mtFeeQuote;
         (
-            receiveQuote,
-            lpFeeQuote,
-            mtFeeQuote,
-            updateBalance.baseTarget,
-            updateBalance.baseBalance,
-            updateBalance.quoteTarget,
-            updateBalance.quoteBalance,
-            updateBalance.newSide
+        receiveQuote,
+        lpFeeQuote,
+        mtFeeQuote,
+        updateBalance.baseTarget,
+        updateBalance.baseBalance,
+        updateBalance.quoteTarget,
+        updateBalance.quoteBalance,
+        updateBalance.newSide
         ) = PRICING._querySellBaseToken(amount);
-        require(receiveQuote >= minReceiveQuote, "SELL_BASE_RECEIVE_NOT_ENOUGH");
+        require(
+            receiveQuote >= minReceiveQuote,
+            "SELL_BASE_RECEIVE_NOT_ENOUGH"
+        );
 
-        if (traderAccount.SIDE == Types.Side.LONG && traderAccount.SIZE < amount) {
-            // close current position
-            uint256 closeAmount = traderAccount.SIZE;
-            (uint256 receiveQuote_, , , , , , , ) = PRICING._querySellBaseToken(closeAmount);
-            traderAccount = trade(traderAccount, Types.Side.SHORT, receiveQuote_, closeAmount, false);
-            poolAccount = trade(poolAccount, Types.Side.LONG, receiveQuote_, closeAmount, true);
-            uint256 deltaQuote = receiveQuote.sub(receiveQuote_);
-            uint256 deltaAmount = amount.sub(closeAmount);
-            traderAccount = trade(traderAccount, Types.Side.SHORT, deltaQuote, deltaAmount, false);
-            poolAccount = trade(poolAccount, Types.Side.LONG, deltaQuote, deltaAmount, true);
+        // settle assets
 
-        }
-        else {
-            traderAccount = trade(traderAccount, Types.Side.SHORT, receiveQuote, amount, false);
-            poolAccount = trade(poolAccount, Types.Side.LONG, receiveQuote, amount, true);
-        }
+        Types.MarginAccount memory traderAccount = _MARGIN_ACCOUNT_[msg.sender];
+        Types.MarginAccount memory poolAccount = _MARGIN_ACCOUNT_[address(this)];
+
+//        require(isSafeOpen(traderAccount, receiveQuote), "NOT_SAFE_TO_OPEN"); // check traderAccount safety
+        traderAccount = trade(traderAccount, Types.Side.SHORT, receiveQuote, amount);
+        poolAccount = trade(poolAccount, Types.Side.LONG, receiveQuote, amount);
+
 
         if (lpFeeQuote > 0) {
             traderAccount.CASH_BALANCE = traderAccount.CASH_BALANCE.sub(lpFeeQuote.toint256());
@@ -136,8 +130,6 @@ contract Trader is Margin {
         ADMIN.buyingAllowed();
         ADMIN.gasPriceLimit();
         // query price
-        Types.MarginAccount memory traderAccount = _MARGIN_ACCOUNT_[msg.sender];
-        Types.MarginAccount memory poolAccount = _MARGIN_ACCOUNT_[address(this)];
         Types.VirtualBalance memory updateBalance;
         uint256 payQuote;
         uint256 lpFeeQuote;
@@ -154,22 +146,13 @@ contract Trader is Margin {
         ) = PRICING._queryBuyBaseToken(amount);
         require(payQuote.add(lpFeeQuote).add(mtFeeQuote) <= maxPayQuote, "BUY_BASE_COST_TOO_MUCH");
 
-        // settle asset
-        if (traderAccount.SIDE == Types.Side.SHORT && traderAccount.SIZE < amount) {
-            // close current position
-            uint256 closeAmount = traderAccount.SIZE;
-            (uint256 payQuote_, , , , , , , ) = PRICING._queryBuyBaseToken(closeAmount);
-            traderAccount = trade(traderAccount, Types.Side.LONG, payQuote_, closeAmount, false);
-            poolAccount = trade(poolAccount, Types.Side.SHORT, payQuote_, closeAmount, true);
-            uint256 deltaQuote = payQuote.sub(payQuote_);
-            uint256 deltaAmount = amount.sub(closeAmount);
-            traderAccount = trade(traderAccount, Types.Side.LONG, deltaQuote, deltaAmount, false);
-            poolAccount = trade(poolAccount, Types.Side.SHORT, deltaQuote, deltaAmount, true);
-        }
-        else {
-            traderAccount = trade(traderAccount, Types.Side.LONG, payQuote, amount, false);
-            poolAccount = trade(poolAccount, Types.Side.SHORT, payQuote, amount, true);
-        }
+        // settle assets
+        Types.MarginAccount memory traderAccount = _MARGIN_ACCOUNT_[msg.sender];
+        Types.MarginAccount memory poolAccount = _MARGIN_ACCOUNT_[address(this)];
+        require(isSafeOpen(traderAccount, payQuote), "NOT_SAFE_TO_OPEN"); // check traderAccount safety
+        traderAccount = trade(traderAccount, Types.Side.LONG, payQuote, amount);
+        poolAccount = trade(poolAccount, Types.Side.SHORT, payQuote, amount);
+
 
         if (lpFeeQuote > 0) {
             traderAccount.CASH_BALANCE = traderAccount.CASH_BALANCE.sub(lpFeeQuote.toint256());

@@ -5,7 +5,7 @@
 
 */
 
-// import * as assert from 'assert';
+import * as assert from 'assert';
 
 import { ParaContext, getParaContext } from './utils/Context';
 import { decimalStr } from './utils/Converter';
@@ -72,122 +72,121 @@ describe("Trader", () => {
   });
 
   describe("Trader", () => {
-	  // it("check expected balance", async () => {
-      //     var [baseTarget, baseBalance, quoteTarget, quoteBalance] = await ctx.Pricing.methods.getExpectedTarget().call();
-		//   assert.equal(
-      //         baseTarget,
-      //         decimalStr("10")
-      //     );
-		//   assert.equal(
-      //         baseBalance,
-      //         decimalStr("10")
-      //     );
-		//   assert.equal(
-      //         quoteTarget,
-      //         decimalStr("1000")
-      //     );
-		//   assert.equal(
-      //         quoteBalance,
-      //         decimalStr("1000")
-      //     );
-      //
-		//   // console.log(await ctx.Collateral_Pool_Token.methods.balanceOf(lp1).call());
-	  // });
-      //
-      // it("buy base token when balanced", async () => {
-      //     // await ctx.Para.methods.buyBaseToken(decimalStr("0.1"), decimalStr("100")).send(ctx.sendParam(trader));
-      //     await logGas(ctx.Para.methods.buyBaseToken(decimalStr("1"), decimalStr("1000")), ctx.sendParam(trader1), "buy base token when balanced");
-      //
-      //     assert.equal(
-      //         await ctx.Para.methods._TARGET_BASE_TOKEN_AMOUNT_().call(),
-      //         decimalStr("10")
-      //     );
-		//   assert.equal(
-      //         await ctx.Para.methods._TARGET_QUOTE_TOKEN_AMOUNT_().call(),
-      //         decimalStr("1000")
-      //     );
-		//   assert.equal(
-      //         await ctx.Para.methods._BASE_BALANCE_().call(),
-      //         decimalStr("9")
-      //     );
-		//   assert.equal(
-      //         await ctx.Para.methods._QUOTE_BALANCE_().call(),
-      //         "1101111111111111111100"
-      //     );
-      //
-      //     var [baseTarget, baseBalance, quoteTarget, quoteBalance] = await ctx.Pricing.methods.getExpectedTarget().call();
-		//   assert.equal(
-      //         baseTarget,
-      //         decimalStr("10")
-      //     );
-		//   assert.equal(
-      //         baseBalance,
-      //         decimalStr("9")
-      //     );
-		//   assert.equal(
-      //         quoteTarget,
-      //         decimalStr("1000")
-      //     );
-		//   assert.equal(
-      //         quoteBalance,
-      //         "1101111111111111111100"
-      //     );
-      //
-		//   var [side, size, entry_value, cash_balance] = await ctx.Para.methods._MARGIN_ACCOUNT_(trader1).call();
-		//   assert.equal(
-      //         side,
-      //         2
-      //     );
-		//   assert.equal(
-      //         size,
-      //         decimalStr("1")
-      //     );
-		//   assert.equal(
-      //         entry_value,
-      //         decimalStr("101.1111111111111111")
-      //     );
-		//   assert.equal(
-      //         cash_balance,
-      //         decimalStr("1000")
-      //     );
-      //
-		//   var [side, size, entry_value, cash_balance] = await ctx.Para.methods._POOL_MARGIN_ACCOUNT_().call();
-		//   assert.equal(
-      //         side,
-      //         1
-      //     );
-		//   assert.equal(
-      //         size,
-      //         decimalStr("1")
-      //     );
-		//   assert.equal(
-      //         entry_value,
-      //         decimalStr("101.1111111111111111")
-      //     );
-		//   assert.equal(
-      //         cash_balance,
-      //         decimalStr("1000")
-      //     );
-      // });
-      it("sell base token when balanced", async () => {
-          console.log(await ctx.Pricing.methods._querySellBaseToken(decimalStr("1")).call())
-          // await logGas(ctx.Para.methods.sellBaseToken(decimalStr("1"), decimalStr("10")), ctx.sendParam(trader1), "sell base token when balanced");
-          // assert.equal(
-          //     await ctx.Para.methods._TARGET_BASE_TOKEN_AMOUNT_().call(),
-          //     decimalStr("10")
-          // );
-		  // assert.equal(
-          //     await ctx.Para.methods._TARGET_QUOTE_TOKEN_AMOUNT_().call(),
-          //     decimalStr("1000")
-          // );
-		  // assert.equal(
-          //     await ctx.Para.methods._BASE_BALANCE_().call(),
-          //     decimalStr("11")
-          // );
-		  // assert.equal(
-          //     await ctx.Para.methods._QUOTE_BALANCE_().call(),
-          //     "901085803182938183889"
-          // );
+	  it("check expected balance", async () => {
+          var [baseTarget, baseBalance, quoteTarget, quoteBalance] = await ctx.Pricing.methods.getExpectedTarget().call();
+		  assert.equal(
+              baseTarget,
+              decimalStr("10")
+          );
+		  assert.equal(
+              baseBalance,
+              decimalStr("10")
+          );
+		  assert.equal(
+              quoteTarget,
+              decimalStr("1000")
+          );
+		  assert.equal(
+              quoteBalance,
+              decimalStr("1000")
+          );
+
+		  // console.log(await ctx.Collateral_Pool_Token.methods.balanceOf(lp1).call());
+	  });
+
+      it("buy base token when balanced", async () => {
+          // await ctx.Para.methods.buyBaseToken(decimalStr("0.1"), decimalStr("100")).send(ctx.sendParam(trader));
+          await logGas(ctx.Para.methods.buyBaseToken(decimalStr("1"), decimalStr("1000")), ctx.sendParam(trader1), "buy base token when balanced");
+
+          assert.equal(
+              await ctx.Para.methods._TARGET_BASE_TOKEN_AMOUNT_().call(),
+              decimalStr("10")
+          );
+		  assert.equal(
+              await ctx.Para.methods._TARGET_QUOTE_TOKEN_AMOUNT_().call(),
+              decimalStr("1000")
+          );
+		  assert.equal(
+              await ctx.Para.methods._BASE_BALANCE_().call(),
+              decimalStr("9")
+          );
+		  assert.equal(
+              await ctx.Para.methods._QUOTE_BALANCE_().call(),
+              "1101111111111111111100"
+          );
+
+          var [baseTarget, baseBalance, quoteTarget, quoteBalance] = await ctx.Pricing.methods.getExpectedTarget().call();
+		  assert.equal(
+              baseTarget,
+              decimalStr("10")
+          );
+		  assert.equal(
+              baseBalance,
+              decimalStr("9")
+          );
+		  assert.equal(
+              quoteTarget,
+              decimalStr("1000")
+          );
+		  assert.equal(
+              quoteBalance,
+              "1101111111111111111100"
+          );
+
+		  var [side, size, entry_value, cash_balance] = await ctx.Para.methods._MARGIN_ACCOUNT_(trader1).call();
+		  assert.equal(
+              side,
+              2
+          );
+		  assert.equal(
+              size,
+              decimalStr("1")
+          );
+		  assert.equal(
+              entry_value,
+              decimalStr("101.1111111111111111")
+          );
+		  assert.equal(
+              cash_balance,
+              decimalStr("1000")
+          );
+
+		  var [side, size, entry_value, cash_balance] = await ctx.Para.methods._POOL_MARGIN_ACCOUNT_().call();
+		  assert.equal(
+              side,
+              1
+          );
+		  assert.equal(
+              size,
+              decimalStr("1")
+          );
+		  assert.equal(
+              entry_value,
+              decimalStr("101.1111111111111111")
+          );
+		  assert.equal(
+              cash_balance,
+              decimalStr("1000")
+          );
+      });
+      it(await logGas(ctx.Para.methods.sellBaseToken(decimalStr("1"), decimalStr("10")), ctx.sendParam(trader1), "sell base token when balanced");
+          assert.equal(
+              await ctx.Para.methods._TARGET_BASE_TOKEN_AMOUNT_().call(),
+              decimalStr("10")
+          );
+		  assert.equal(
+              await ctx.Para.methods._TARGET_QUOTE_TOKEN_AMOUNT_().call(),
+              decimalStr("1000")
+          );
+		  assert.equal(
+              await ctx.Para.methods._BASE_BALANCE_().call(),
+              decimalStr("11")
+          );
+		  assert.equal(
+              await ctx.Para.methods._QUOTE_BALANCE_().call(),
+              "901085803182938183889"
+          );
+
       });
 
 

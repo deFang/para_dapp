@@ -99,7 +99,7 @@ contract LiquidityProvider is Margin {
             }
             else {
                 collateralBalance = _MARGIN_ACCOUNT_[address(this)].CASH_BALANCE.add(
-                    PRICING.queryPNL(
+                    PRICING.queryPNLMarkPrice(
                         Types.oppositeSide(_MARGIN_ACCOUNT_[address(this)].SIDE),
                         _MARGIN_ACCOUNT_[address(this)].SIZE,
                         _MARGIN_ACCOUNT_[address(this)].ENTRY_VALUE,
@@ -152,8 +152,8 @@ contract LiquidityProvider is Margin {
             sizeAmount = DecimalMath.mul(r, poolAccount.SIZE);
             valueAmount = DecimalMath.mul(r, poolAccount.ENTRY_VALUE);
             Types.MarginAccount memory lpAccount = _MARGIN_ACCOUNT_[to];
-            lpAccount = trade(lpAccount, poolAccount.SIDE, valueAmount, sizeAmount);
-            poolAccount = trade(poolAccount, Types.oppositeSide(poolAccount.SIDE), valueAmount, sizeAmount);
+            lpAccount = trade(lpAccount, poolAccount.SIDE, valueAmount, sizeAmount, false);
+            poolAccount = trade(poolAccount, Types.oppositeSide(poolAccount.SIDE), valueAmount, sizeAmount, true);
             _MARGIN_ACCOUNT_[to] = lpAccount;
             _MARGIN_ACCOUNT_[address(this)] = poolAccount;
 
@@ -193,7 +193,7 @@ contract LiquidityProvider is Margin {
         }
         else {
             equityBalance = poolAccount.CASH_BALANCE.add(
-                PRICING.queryPNL(
+                PRICING.queryPNLMarkPrice(
                     Types.oppositeSide(poolAccount.SIDE),
                     poolAccount.SIZE,
                     poolAccount.ENTRY_VALUE,

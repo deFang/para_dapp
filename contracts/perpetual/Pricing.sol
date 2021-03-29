@@ -177,8 +177,6 @@ contract Pricing {
 
 
 
-
-
     //
     function closePositionValue(
         Types.Side side,
@@ -195,6 +193,32 @@ contract Pricing {
         }
     }
 
+
+    function queryPNLMarkPrice(
+        Types.Side accountSide,
+        uint256 accountSize,
+        uint256 accountEntryValue,
+        uint256 amount,
+        uint256 accountEntrySloss
+    ) public view returns (int256) {
+        if (accountSize == 0) {
+            return 0;
+        }
+        uint256 entryValue;
+        uint256 entrySloss;
+        if (amount == accountSize) {
+            entryValue = accountEntryValue;
+            entrySloss = accountEntrySloss;
+        } else {
+            entryValue =
+                DecimalMath.mul(accountEntryValue, DecimalMath.divFloor(amount, accountSize));
+            entrySloss =
+                DecimalMath.mul(accountEntrySloss, DecimalMath.divFloor(amount, accountSize));
+        }
+        uint256 closeSloss = DecimalMath.mul(ACCOUNT.getSloss()[uint256(accountSide)], amount);
+        uint256 closeValue = DecimalMath.mul(amount, ADMIN.getOraclePrice());
+        return queryPNLwiValue(accountSide, entryValue, closeValue, entrySloss, closeSloss);
+    }
 
     function querySellBaseToken(uint256 amount)
         public
