@@ -46,10 +46,10 @@ contract Account is InitializableOwnable, ReentrancyGuard {
         return _SLOSS_PER_CONTRACT_;
     }
 
-    function getTotalSize() public view returns (uint256[3] memory) {
-        uint256 totalSizeShort = _MARGIN_ACCOUNT_[address(this)].SIDE == Types.Side.LONG?
-            _TOTAL_LONG_SIZE_.add(_MARGIN_ACCOUNT_[address(this)].SIZE): _TOTAL_LONG_SIZE_.sub(_MARGIN_ACCOUNT_[address(this)].SIZE);
-        return [0, totalSizeShort, _TOTAL_LONG_SIZE_];
+    function getTotalSize() public view returns (uint256) {
+        uint256 totalSize = _MARGIN_ACCOUNT_[address(this)].SIDE == Types.Side.LONG?
+            _TOTAL_LONG_SIZE_.add(_MARGIN_ACCOUNT_[address(this)].SIZE): _TOTAL_LONG_SIZE_;
+        return totalSize;
     }
 
     function getPoolMarginSide() external view returns (Types.Side) {

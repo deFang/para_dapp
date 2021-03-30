@@ -115,7 +115,7 @@ contract Margin is Account {
         account.ENTRY_VALUE = account.ENTRY_VALUE.add(entryValue);
         account.ENTRY_SLOSS = account.ENTRY_SLOSS.add(DecimalMath.mul(_SLOSS_PER_CONTRACT_[uint256(side)], amount));
 
-        if (side == Types.Side.LONG) {
+        if (side == Types.Side.LONG && !isPool) {
             _TOTAL_LONG_SIZE_ = _TOTAL_LONG_SIZE_.add(amount);
         }
         return account;
@@ -149,11 +149,11 @@ contract Margin is Account {
         account.ENTRY_VALUE = DecimalMath.mul(account.ENTRY_VALUE, DecimalMath.divFloor(account.SIZE.sub(amount), account.SIZE));
         account.ENTRY_SLOSS = DecimalMath.mul(account.ENTRY_SLOSS, DecimalMath.divFloor(account.SIZE.sub(amount), account.SIZE));
         account.SIZE = account.SIZE.sub(amount);
+        if (account.SIDE == Types.Side.LONG && !isPool) {
+            _TOTAL_LONG_SIZE_ = _TOTAL_LONG_SIZE_.sub(amount);
+        }
         if (account.SIZE == 0) {
             account.SIDE = Types.Side.FLAT;
-        }
-        if (account.SIDE == Types.Side.LONG) {
-            _TOTAL_LONG_SIZE_ = _TOTAL_LONG_SIZE_.sub(amount);
         }
 
         return account;
@@ -255,12 +255,14 @@ contract Margin is Account {
             int256 sloss = penaltyToLiquidator.sub(traderAccount.CASH_BALANCE.add(_POOL_INSURANCE_BALANCE_.toint256()));
             _POOL_INSURANCE_BALANCE_ = 0;
             traderAccount.CASH_BALANCE = 0;
-            uint256[3] memory totalSize = getTotalSize();
-            _SLOSS_PER_CONTRACT_[uint256(opSide)] += DecimalMath.divCeil(
-                sloss.touint256(),
-                totalSize[uint256(opSide)]
+            uint256 totalSize = getTotalSize();
+            _SLOSS_PER_CONTRACT_[uint256(opSide)] = _SLOSS_PER_CONTRACT_[uint256(opSide)].add(
+                DecimalMath.divCeil(
+                    sloss.touint256(),
+                    totalSize
+                )
             );
-            emit SocialLossUpdate(opSide, sloss, totalSize[uint256(opSide)]);
+            emit SocialLossUpdate(opSide, sloss, totalSize);
         }
 
         _MARGIN_ACCOUNT_[trader] = traderAccount;

@@ -15,6 +15,8 @@ import {LpToken} from "./perpetual/LpToken.sol";
 import {LiquidityProvider} from "./perpetual/LiquidityProvider.sol";
 import {Admin} from "./admin/Admin.sol";
 import {Pricing} from "./perpetual/Pricing.sol";
+import {Settlement} from "./perpetual/Settlement.sol";
+import "./perpetual/Settlement.sol";
 
 /**
  * @title Para
@@ -23,7 +25,7 @@ import {Pricing} from "./perpetual/Pricing.sol";
  * @notice Entrance for users
  */
 
-contract Para is Trader, LiquidityProvider {
+contract Para is Trader, LiquidityProvider, Settlement {
     function init(
         address adminAddress,
         address pricingAddress,
