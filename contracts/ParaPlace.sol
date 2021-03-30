@@ -159,4 +159,12 @@ contract ParaPlace is Ownable {
     function getParas() external view returns (address[] memory) {
         return _PARAS;
     }
+
+    fallback() external payable {
+        require(msg.sender == address(this), "WE_SAVED_YOUR_ETH_");
+    }
+
+    receive() external payable {
+        require(msg.sender == address(this), "WE_SAVED_YOUR_ETH_");
+    }
 }
