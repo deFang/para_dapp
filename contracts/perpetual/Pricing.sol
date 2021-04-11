@@ -48,7 +48,7 @@ contract Pricing {
         uint256 price,
         uint256 deltaB,
         uint256 _K_
-    ) internal view returns (
+    ) internal pure returns (
         uint256, uint256, uint256, uint256, Types.Side
     ) {
         uint256 baseTarget;
@@ -63,7 +63,7 @@ contract Pricing {
         }
     }
 
-    function _expectedTargetHelperWhenBalanced(uint256 quoteBalance, uint256 price) internal view returns (
+    function _expectedTargetHelperWhenBalanced(uint256 quoteBalance, uint256 price) internal pure returns (
         uint256, uint256, uint256, uint256, Types.Side
     ) {
         uint256 baseTarget = DecimalMath.divFloor(quoteBalance, price);
@@ -92,7 +92,7 @@ contract Pricing {
         uint256 _K_
     )
         public
-        view
+        pure
         returns (uint256, uint256, uint256, uint256, Types.Side) {
         if (side ==  Types.Side.FLAT) {
             return _expectedTargetHelperWhenBalanced(quoteBalance, price);
@@ -138,7 +138,7 @@ contract Pricing {
         uint256 closeValue,
         uint256 entrySloss,
         uint256 clossSloss
-    ) public view returns (int256) {
+    ) public pure returns (int256) {
         int256 sloss = clossSloss.toint256().sub(entrySloss.toint256());
         int256 PNL =
             accountSide == Types.Side.LONG

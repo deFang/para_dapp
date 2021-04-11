@@ -3,6 +3,7 @@
 .env.local
 .idea
 
+
 build/
 dist/
 node_modules/

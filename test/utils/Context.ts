@@ -66,14 +66,18 @@ export class ParaContext {
   constructor() {}
 
   async init(config: ParaContextInitConfig) {
+    console.log("start01")
     this.EVM = new EVM();
+    console.log("start evm")
     this.Web3 = getDefaultWeb3();
+    console.log("start web3")
     var cloneFactory = await contracts.newContract(
       contracts.CLONE_FACTORY_CONTRACT_NAME
     );
+    console.log("start")
     this.Collateral = await contracts.newContract(
       contracts.ERC20_CONTRACT_NAME,
-      ["TestUSDT", 18]
+      ["TestUSDT", "TestUSDT"]
     );
     this.Oracle = await contracts.newContract(
       contracts.NAIVE_ORACLE_CONTRACT_NAME
@@ -122,6 +126,8 @@ export class ParaContext {
       )
       .send(this.sendParam(this.Deployer));
 
+    console.log(1)
+
     this.Para = contracts.getContractWithAddress(
       contracts.PARA_CONTRACT_NAME,
       await this.ParaPlace.methods
@@ -139,7 +145,7 @@ export class ParaContext {
         await this.Para.methods.PRICING().call()
     )
 
-
+    console.log(2)
     await this.Admin.methods
       .enableDeposit()
       .send(this.sendParam(this.Deployer));
